@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/8494/8494367.png" type="image/x-icon">
+    <title>Horror Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+ integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+ crossorigin=""/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <div class="container">
+    <h1>Horror Stories Map Ph</h1>
+    <div id="map"></div>
+    <h2>Post a Story</h2>
+    <form action="" id="storyForm">
+        <div id="titleDiv">
+            <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        </div>
+        
+      <div id="storyDiv">
+          <label for="story">Story:</label>
+        <textarea id="story" name="story" required></textarea>
+      </div>
+    <div id="locationDiv">
+    <label for="locationName">Location Name:</label>
+    <input type="text" id="locationName" name="locationName" readonly required> 
+        </div>
+       <div id="latitudeDiv">
+         <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" readonly required>
+       </div>
+        
+       <div id="longitudeDiv">
+         <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" readonly required>
+       </div>
+        
+        <button type="submit">Post Story</button>
+      
+    </form>
+    </div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
+    <script src="client.js"></script>
+</body>
+</html>
