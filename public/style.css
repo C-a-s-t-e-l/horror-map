@@ -1,26 +1,127 @@
+/* In public/style.css */
+
 body {
-    font-family: Special Elite;
-    margin: 20px;
-    background-color: #f4f4f4;
-    background-image: url('https://www.gog.com/blog/wp-content/uploads/2022/10/Little.jpg'); 
-    background-repeat: repeat;
+    font-family: Arial, Helvetica, sans-serif; /* General readable font */
+    margin: 0; /* Use margin: 0; then control spacing with .horrorMapContainer */
+    background-color: #1a1a1a; /* Dark base if image fails or for contrast */
+    background-image: url('https://www.gog.com/blog/wp-content/uploads/2022/10/Little.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #e0e0e0; /* Default light text color for dark backgrounds */
 }
 
+.horrorMapContainer { /* This is your main page wrapper */
+    max-width: 90%; /* A bit wider for larger screens, or use px like 1200px */
+    margin: 20px auto; /* Centering and top/bottom space */
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.9); /* Dark, slightly transparent background for content */
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    border-radius: 8px;
+    /* position: relative; /* Not strictly needed here unless it has ::before/::after itself */
+}
 
-h1, h2 {
+h1, h2 { /* Keep form out of this generic selector if it needs different font */
     font-family: 'Special Elite', cursive;
-    color: white;
-   
+    color: #e74c3c; /* Using your red accent for headings */
+    text-align: center;
+    
 }
+/* If you want forms to also use Special Elite, add it specifically: */
+/*
+#storyForm, #storyForm label, #storyForm button {
+    font-family: 'Special Elite', cursive;
+}
+*/
 
+h2{
+    width: 100%;
+}
 
 #map {
     height: 500px;
     width: 100%;
-    border: 3px solid #444;
+    border: 2px solid #555; /* Slightly different border */
     border-radius: 6px;
-    margin-bottom: 30px;
-    background-color: #333;
+    margin-bottom: 20px; /* Adjusted from 30px from your #map-column */
+    background-color: #111; /* Darker placeholder for map */
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add border-color transition */
+    border: 2px solid #555; /* <<< GOOD PRACTICE: to contain pseudo-elements if #map has border-radius */
+                           /* and to prevent Leaflet controls from overflowing if map is too small */
+}
+
+/* Fog effect using ::before on the map element itself */
+#map.philippines-focused-style { /* NEW class when PH is focused */
+    border-color: #e74c3c; /* Your theme red for accent */
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.5); /* Subtle red glow */
+}
+
+
+
+/* ... rest of your CSS for map-controls, story list, form, etc. should be mostly fine ... */
+
+/* Minor tweak for form element font if you want it different from Special Elite */
+#storyForm input[type="text"],
+#storyForm textarea,
+#storyForm button,
+#storyForm label,
+#story-search-bar {
+    font-family: Arial, Helvetica, sans-serif; /* Or your preferred readable font */
+}
+
+/* Ensure map column takes up space if it's empty before map loads */
+#map-column {
+    flex: 3; /* Map takes up more space, e.g., 3 parts */
+    /* Or if you set form to 40%, this could be flex: 1; or width: 60% */
+    display: flex; /* Allow map-controls to be positioned easily if needed */
+    flex-direction: column;
+}
+
+.map-controls {
+    text-align: center; /* Center the button */
+    margin-bottom: 15px;
+}
+
+#form-column {
+    flex: 2; /* Form takes up less space, e.g., 2 parts */
+    /* Or width: 40%; as you mentioned */
+    background-color: rgba(20, 20, 20, 0.7); /* Optional: background for form area */
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    display: flex; /* To help with internal alignment of form if needed */
+    flex-direction: column;
+}
+
+
+#toggle-world-button {
+    padding: 8px 15px;
+    background-color: #4a5568; /* A neutral dark gray */
+    color: white;
+    border: 1px solid #2d3748;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: Special Elite, cursive; /* Theme font */
+}
+
+#toggle-world-button:hover {
+    background-color: #2d3748;
+}
+
+.horrorMapContainer {
+    max-width: 80%;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: rgba(34, 34, 34, 0.85); /* Dark, semi-transparent background for content over image */
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    border-radius: 5px;
+    position: relative; /* For vignette if you use it */
 }
 
 
@@ -28,6 +129,7 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
 
 
@@ -121,6 +223,90 @@ input[readonly] {
 }
 .leaflet-container a.leaflet-popup-close-button:hover {
     color: #ffffff;
+}
+
+
+.main-content-area {
+    display: flex;     /* Enable Flexbox for map and form columns */
+    gap: 20px;         /* Space between map and form */
+    margin-bottom: 30px; /* Space before the story list panel */
+}
+
+
+
+#story-list-panel {
+    flex: 1; /* Story list takes up 1 part of the available space */
+    /* Or you can use a fixed width or percentage: */
+    /* width: 33%; */
+    background-color: rgba(20, 20, 20, 0.7); /* Slightly different dark for panel */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column; /* Stack elements inside panel vertically */
+    max-height: 500px; /* Match map height, or adjust as needed */
+    /* overflow-y: auto; /* Will be for stories-container */
+}
+
+#story-list-panel h3 {
+    font-family: 'Special Elite', cursive; /* Theme font */
+    color: #e74c3c; /* Theme accent color */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+#story-search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #1c1c1c;
+    color: #bdbdbd;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Readable font */
+}
+
+#story-search-bar:focus {
+    outline: none;
+    border-color: #e74c3c;
+}
+
+#stories-container {
+    flex-grow: 1; /* Allows this div to take up remaining space */
+    overflow-y: auto; /* Add scrollbar if stories exceed panel height */
+    padding-right: 5px; /* Space for scrollbar */
+}
+
+/* Styling for individual story items (we'll create these with JS) */
+.story-item {
+    background-color: rgba(40, 40, 40, 0.8);
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #e74c3c; /* Accent border */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.story-item:hover {
+    background-color: rgba(60, 60, 60, 0.9);
+}
+
+.story-item h4 { /* Story title */
+    margin: 0 0 5px 0;
+    color: #f0f0f0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.1em;
+}
+
+.story-item p { /* Story snippet or location */
+    margin: 0;
+    font-size: 0.85em;
+    color: #aaa;
+    font-style: italic;
 }
 
 

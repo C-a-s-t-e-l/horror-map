@@ -17,42 +17,60 @@
  
 </head>
 <body>
-    <div class="container">
+<div class="horrorMapContainer">
     <h1>Horror Stories Map Ph</h1>
-    <div id="map"></div>
-    <h2>Post a Story</h2>
-    <form action="" id="storyForm">
-        <div id="titleDiv">
-            <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required>
+
+    <div class="main-content-area"> <!-- This will now be for MAP + FORM -->
+        <div id="map-column">
+            <div id="map"></div>
+            <div class="map-controls">
+                <button id="toggle-world-button">Open up the Horrors of the World</button>
+            </div>
         </div>
-        
-      <div id="storyDiv">
-          <label for="story">Story:</label>
-        <textarea id="story" name="story" required></textarea>
-      </div>
-    <div id="locationDiv">
-    <label for="locationName">Location Name:</label>
-    <input type="text" id="locationName" name="locationName" readonly required> 
+
+        <div id="form-column"> <!-- NEW: Column for the form -->
+            <form action="" id="storyForm">
+                <h2>Post a Story</h2>
+                <div id="titleDiv">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div id="storyDiv">
+                    <label for="story">Story:</label>
+                    <textarea id="story" name="story" required></textarea>
+                </div>
+                <div id="locationDiv">
+                    <label for="locationName">Location Name:</label>
+                    <input type="text" id="locationName" name="locationName" readonly required>
+                </div>
+                <div id="latitudeDiv">
+                    <label for="latitude">Latitude:</label>
+                    <input type="text" id="latitude" name="latitude" readonly required>
+                </div>
+                <div id="longitudeDiv">
+                    <label for="longitude">Longitude:</label>
+                    <input type="text" id="longitude" name="longitude" readonly required>
+                </div>
+                <button type="submit">Post Story</button>
+            </form>
+        </div> <!-- End of #form-column -->
+    </div> <!-- end of .main-content-area (Map + Form) -->
+
+    <!-- Story List Panel - now full width below the map/form area -->
+    <div id="story-list-panel">
+        <h3>Stories</h3> <!-- Changed heading slightly -->
+        <input type="text" id="story-search-bar" placeholder="Search stories by keyword...">
+        <div id="stories-container">
+            <p>Loading stories...</p> <!-- Placeholder text -->
         </div>
-       <div id="latitudeDiv">
-         <label for="latitude">Latitude:</label>
-        <input type="text" id="latitude" name="latitude" readonly required>
-       </div>
-        
-       <div id="longitudeDiv">
-         <label for="longitude">Longitude:</label>
-        <input type="text" id="longitude" name="longitude" readonly required>
-       </div>
-        
-        <button type="submit">Post Story</button>
-      
-    </form>
     </div>
+
+</div> <!-- End of .horrorMapContainer -->
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
  crossorigin=""></script>
     <script src="client.js"></script>
+   
 </body>
 </html>
