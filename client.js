@@ -12,14 +12,14 @@ let philippinesMapBounds = null;
 let lastClickedLatLng = null; 
 
 // Dummy data
-const dummyStories = [
-    { id: '1', title: 'The White Lady of Balete Drive', locationName: 'Balete Drive, QC', lat: 14.6282, lng: 121.0448, snippet: '...' },
-    { id: '2', title: 'Manila Film Center Tragedy', locationName: 'MFC, Pasay', lat: 14.5500, lng: 120.9849, snippet: '...' },
-    { id: '3', title: 'Haunted Diplomat Hotel', locationName: 'Diplomat Hotel, Baguio', lat: 16.4023, lng: 120.5795, snippet: '...' },
-    { id: '4', title: 'Tiyanak of San Pablo', locationName: 'San Pablo, Laguna', lat: 14.0678, lng: 121.3250, snippet: '...' },
-    { id: '5', title: 'Biringan City', locationName: 'Somewhere in Samar', lat: 11.8000, lng: 125.0000, snippet: 'A mythical invisible city...' }, // Added another story for testing
-    { id: '6', title: 'Old UST Hospital', locationName: 'UST, Manila', lat: 14.6091, lng: 120.9898, snippet: 'Many ghostly tales from the old hospital...' }
-];
+// const dummyStories = [
+//     { id: '1', title: 'The White Lady of Balete Drive', locationName: 'Balete Drive, QC', lat: 14.6282, lng: 121.0448, snippet: '...' },
+//     { id: '2', title: 'Manila Film Center Tragedy', locationName: 'MFC, Pasay', lat: 14.5500, lng: 120.9849, snippet: '...' },
+//     { id: '3', title: 'Haunted Diplomat Hotel', locationName: 'Diplomat Hotel, Baguio', lat: 16.4023, lng: 120.5795, snippet: '...' },
+//     { id: '4', title: 'Tiyanak of San Pablo', locationName: 'San Pablo, Laguna', lat: 14.0678, lng: 121.3250, snippet: '...' },
+//     { id: '5', title: 'Biringan City', locationName: 'Somewhere in Samar', lat: 11.8000, lng: 125.0000, snippet: 'A mythical invisible city...' }, // Added another story for testing
+//     { id: '6', title: 'Old UST Hospital', locationName: 'UST, Manila', lat: 14.6091, lng: 120.9898, snippet: 'Many ghostly tales from the old hospital...' }
+// ];
 
 // --- Helper Function: Haversine Distance ---
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {

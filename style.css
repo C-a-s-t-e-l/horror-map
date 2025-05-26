@@ -278,6 +278,7 @@ input[readonly] {
     flex-grow: 1; /* Allows this div to take up remaining space */
     overflow-y: auto; /* Add scrollbar if stories exceed panel height */
     padding-right: 5px; /* Space for scrollbar */
+    font-family: Special Elite, cursive; /* Theme font for stories */
 }
 
 /* Styling for individual story items (we'll create these with JS) */
@@ -298,7 +299,8 @@ input[readonly] {
 .story-item h4 { /* Story title */
     margin: 0 0 5px 0;
     color: #f0f0f0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    /* font-family: 'Helvetica Neue', Arial, sans-serif; */
+    font-family: Special Elite, cursive; /* Theme font */
     font-size: 1.1em;
 }
 
