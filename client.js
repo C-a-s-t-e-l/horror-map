@@ -1,4 +1,5 @@
 // Global variables
+
 let map;
 let currentMarker; // For the pin placed by the user when posting a new story
 let allStories = [];
@@ -11,16 +12,112 @@ const PH_BOUNDS_COORDS = {
 let philippinesMapBounds = null;
 let lastClickedLatLng = null; 
 
-// Dummy data
 // const dummyStories = [
-//     { id: '1', title: 'The White Lady of Balete Drive', locationName: 'Balete Drive, QC', lat: 14.6282, lng: 121.0448, snippet: '...' },
-//     { id: '2', title: 'Manila Film Center Tragedy', locationName: 'MFC, Pasay', lat: 14.5500, lng: 120.9849, snippet: '...' },
-//     { id: '3', title: 'Haunted Diplomat Hotel', locationName: 'Diplomat Hotel, Baguio', lat: 16.4023, lng: 120.5795, snippet: '...' },
-//     { id: '4', title: 'Tiyanak of San Pablo', locationName: 'San Pablo, Laguna', lat: 14.0678, lng: 121.3250, snippet: '...' },
-//     { id: '5', title: 'Biringan City', locationName: 'Somewhere in Samar', lat: 11.8000, lng: 125.0000, snippet: 'A mythical invisible city...' }, // Added another story for testing
-//     { id: '6', title: 'Old UST Hospital', locationName: 'UST, Manila', lat: 14.6091, lng: 120.9898, snippet: 'Many ghostly tales from the old hospital...' }
+//     {
+//         id: '1',
+//         title: 'The White Lady of Balete Drive',
+//         locationName: 'Balete Drive, Quezon City',
+//         lat: 14.6282, lng: 121.0448,
+//         snippet: 'A famous urban legend about a ghostly woman often seen by motorists at night...',
+//         fullStory: "Balete Drive in Quezon City is notorious for sightings of a 'White Lady.' Legend has it that she was a young woman who died tragically in the area, either in a car accident or as a victim of a heinous crime during the Japanese occupation. Motorists, especially taxi drivers passing through late at night, have reported seeing a beautiful woman in white hailing them, only to have her vanish from the backseat or appear terrifyingly in their rearview mirror. The large, old balete trees lining the street are said to be her favored haunting grounds, adding to the eerie atmosphere of this well-known road."
+//     },
+//     {
+//         id: '2',
+//         title: 'Manila Film Center Tragedy',
+//         locationName: 'Manila Film Center, Pasay',
+//         lat: 14.5500, lng: 120.9849,
+//         snippet: 'Rumors of workers buried alive during its rushed construction in 1981...',
+//         fullStory: "The Manila Film Center, built in a rush for an international film festival in 1981 under the Marcos regime, is shrouded in tragedy and ghostly tales. During its construction, a scaffolding collapsed, and it's widely rumored that many workers were buried alive in wet cement to meet the tight deadline, their bodies never recovered and entombed within the structure. Since then, employees and visitors have reported disembodied cries, apparitions, and an overwhelming sense of dread, particularly in the main theater. The building is considered one of the most haunted locations in Metro Manila."
+//     },
+//     {
+//         id: '3',
+//         title: 'Haunted Diplomat Hotel',
+//         locationName: 'Diplomat Hotel, Baguio City',
+//         lat: 16.4023, lng: 120.5795,
+//         snippet: 'Once a seminary, then a hotel during WWII, now known for paranormal activity...',
+//         fullStory: "The Diplomat Hotel in Baguio City sits atop Dominican Hill and has a dark history. Originally a rest house and seminary for Dominican friars in the early 20th century, it was later seized by Japanese forces during World War II and used as a garrison where many atrocities, including beheadings of priests, nuns, and refugees, reportedly took place. After the war, it was converted into a hotel, but tales of headless apparitions, ghostly children, and chilling screams persisted. Now abandoned, it's a popular spot for ghost hunters and curious visitors drawn by its terrifying reputation."
+//     },
+//     {
+//         id: '4',
+//         title: 'Tiyanak of San Pablo',
+//         locationName: 'San Pablo City, Laguna',
+//         lat: 14.0678, lng: 121.3250,
+//         snippet: 'A vampiric creature from Philippine folklore that takes the form of a baby...',
+//         fullStory: "The Tiyanak is a malevolent creature in Philippine mythology that often takes the form of a crying baby to lure unsuspecting victims into remote areas. Once picked up or approached, it reveals its true, monstrous form – often described as a small, goblin-like creature with sharp claws and fangs – and attacks. Stories of Tiyanaks are prevalent in rural areas, particularly near forests or old trees. Travelers are warned to be wary of infant cries heard in desolate places, as it might be a Tiyanak waiting to ensnare them."
+//     },
+//     {
+//         id: '5',
+//         title: 'Biringan City',
+//         locationName: 'Somewhere in Samar',
+//         lat: 11.8000, lng: 125.0000,
+//         snippet: 'A mythical invisible city said to be inhabited by engkantos...',
+//         fullStory: "Biringan City is a legendary, invisible city said to exist somewhere in the island of Samar. It is believed to be a highly advanced, beautiful city inhabited by engkantos (elemental spirits or fairies) that can only be seen by certain individuals or under specific conditions. Those who have claimed to see it describe modern-looking structures and bright lights. However, Biringan is also associated with disappearances, as it's said that engkantos sometimes lure humans into their world, from which they can never return. Fishermen often avoid certain areas of the sea believed to be gateways to Biringan."
+//     },
+//     {
+//         id: '6',
+//         title: 'Old UST Hospital',
+//         locationName: 'UST Hospital (Old Building), Manila',
+//         lat: 14.6091, lng: 120.9898,
+//         snippet: 'Many ghostly tales from the old hospital wings and corridors...',
+//         fullStory: "The University of Santo Tomas (UST) is one of the oldest universities in Asia, and its historic campus, particularly the old hospital buildings, has accumulated numerous ghost stories over the centuries. During World War II, the campus was used as an internment camp by the Japanese. Many have reported seeing ghostly figures of nuns, priests, soldiers, and former patients roaming the halls, especially at night. Cold spots, unexplained noises, and feelings of being watched are common experiences reported by students, faculty, and hospital staff who have spent time in the older sections."
+//     }
 // ];
 
+
+ const storyModal = document.getElementById('story-modal');
+const modalTitle = document.getElementById('modal-story-title');
+const modalLocation = document.getElementById('modal-story-location');
+const modalFullStory = document.getElementById('modal-full-story');
+const modalCloseButton = document.getElementById('modal-close-button');
+
+function openStoryModal(story) {
+    if (!storyModal || !modalTitle || !modalLocation || !modalFullStory) {
+        console.error('Modal elements not found!');
+        return;
+    }
+    modalTitle.textContent = story.title;
+    modalLocation.textContent = `Location: ${story.locationName}`;
+    // For the full story, to render line breaks properly if story.fullStory contains them:
+    modalFullStory.innerHTML = ''; // Clear previous content
+    const paragraphs = story.fullStory.split('\n'); // Split by newline characters
+    paragraphs.forEach(paraText => {
+        if (paraText.trim() !== '') { // Add non-empty paragraphs
+            const p = document.createElement('p');
+            p.textContent = paraText;
+            modalFullStory.appendChild(p);
+        }
+    });
+    
+    storyModal.classList.remove('modal-hidden'); // Prepare for transition
+    storyModal.classList.add('modal-visible');   // Make it visible
+}
+
+function closeStoryModal() {
+    if (!storyModal) return;
+    storyModal.classList.remove('modal-visible');
+    // The 'modal-hidden' class with transition delay will handle actual hiding
+    // Alternatively, you could add it back after transition ends if needed, but CSS handles it.
+}
+
+// Add event listeners for closing the modal
+if (modalCloseButton) {
+    modalCloseButton.addEventListener('click', closeStoryModal);
+}
+
+if (storyModal) {
+    // Close modal if user clicks on the dark overlay background
+    storyModal.addEventListener('click', function(event) {
+        if (event.target === storyModal) { // Check if the click was directly on the overlay
+            closeStoryModal();
+        }
+    });
+    // Close modal if user presses the Escape key
+    window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && storyModal.classList.contains('modal-visible')) {
+            closeStoryModal();
+        }
+    });
+}
 // --- Helper Function: Haversine Distance ---
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
     const R = 6371; // Radius of the earth in km
@@ -148,10 +245,18 @@ function displayStories(storiesToDisplay) {
 }
 
 function handleStoryItemClick(story) {
+    console.log('Clicked story in list:', story.title);
+
+    // Open the modal with the story details
+    openStoryModal(story);
+
+    // Pan map and open popup (optional, as modal now shows full story)
     if (map && story.lat && story.lng) {
         map.setView([story.lat, story.lng], 15);
-        const marker = storyMarkers[story.id];
-        if (marker) marker.openPopup();
+        const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
+        if (marker) {
+            // marker.openPopup(); // You might not need this if modal is primary focus
+        }
     }
 }
 
@@ -269,6 +374,9 @@ function handleStorySubmit(event) {
 
 document.addEventListener('DOMContentLoaded', function() {
     initMap(); 
+
+   
+
 
     const searchBar = document.getElementById('story-search-bar');
     if (searchBar) {

@@ -65,66 +65,30 @@
         </div>
     </div>
 
+<!-- In public/index.html, near the end of <body> or .horrorMapContainer -->
+<div id="story-modal" class="modal-hidden">
+    <div class="modal-content">
+        <button id="modal-close-button" class="modal-close">×</button>
+        <h2 id="modal-story-title">Story Title Here</h2>
+        <p id="modal-story-location"><em>Location: Location Name Here</em></p>
+        <hr class="modal-divider">
+        <div id="modal-full-story" class="story-text-container">
+            <p>Full story content will go here...</p>
+        </div>
+    </div>
+</div>
+
 </div> <!-- End of .horrorMapContainer -->
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
  crossorigin=""></script>
  <script>
-    const dummyStories = [
-  { id: '1', title: 'The White Lady of Balete Drive', locationName: 'Balete Drive, QC', lat: 14.6282, lng: 121.0448, snippet: 'A ghostly figure seen at night...' },
-  { id: '2', title: 'Manila Film Center Tragedy', locationName: 'MFC, Pasay', lat: 14.5500, lng: 120.9849, snippet: 'Workers trapped during construction haunt the halls...' },
-  { id: '3', title: 'Haunted Diplomat Hotel', locationName: 'Diplomat Hotel, Baguio', lat: 16.4023, lng: 120.5795, snippet: 'Ruins of an old hotel with chilling whispers...' },
-  { id: '4', title: 'Tiyanak of San Pablo', locationName: 'San Pablo, Laguna', lat: 14.0678, lng: 121.3250, snippet: 'Baby cries in the forest lure travelers to danger...' },
-  { id: '5', title: 'Biringan City', locationName: 'Somewhere in Samar', lat: 11.8000, lng: 125.0000, snippet: 'A mythical invisible city...' },
-  { id: '6', title: 'Old UST Hospital', locationName: 'UST, Manila', lat: 14.6091, lng: 120.9898, snippet: 'Many ghostly tales from the old hospital...' },
-  { id: '7', title: 'The Ghost of Fort Santiago', locationName: 'Intramuros, Manila', lat: 14.5918, lng: 120.9734, snippet: 'Soldiers’ spirits still roam here...' },
-  { id: '8', title: 'Balete Park Shadows', locationName: 'Balete Park, Nueva Vizcaya', lat: 16.5613, lng: 121.1715, snippet: 'Locals avoid the park after dark...' },
-  { id: '9', title: 'San Juan de Dios Hospital', locationName: 'San Juan de Dios, Pasay', lat: 14.5482, lng: 120.9875, snippet: 'Old spirits seen by night shift nurses...' },
-  { id: '10', title: 'La Loma Cemetery Haunts', locationName: 'La Loma, Manila', lat: 14.6286, lng: 120.9873, snippet: 'An old cemetery with restless souls...' },
-  { id: '11', title: 'Malacañang Palace Mysteries', locationName: 'Malacañang, Manila', lat: 14.5932, lng: 120.9957, snippet: 'Echoes of the past presidents...' },
-  { id: '12', title: 'Paco Park Secrets', locationName: 'Paco Park, Manila', lat: 14.5826, lng: 120.9880, snippet: 'Old burial grounds with chilling sights...' },
-  { id: '13', title: 'UP Diliman’s Night Wanderer', locationName: 'UP Diliman, QC', lat: 14.6549, lng: 121.0647, snippet: 'A figure gliding across the Sunken Garden...' },
-  { id: '14', title: 'Teachers Camp Whispers', locationName: 'Teachers Camp, Baguio', lat: 16.4197, lng: 120.6033, snippet: 'Historic site with haunted rooms...' },
-  { id: '15', title: 'Clark Airbase Ghosts', locationName: 'Clark, Pampanga', lat: 15.1860, lng: 120.5600, snippet: 'War-era spirits seen by soldiers...' },
-  { id: '16', title: 'Laperal White House', locationName: 'Baguio', lat: 16.4176, lng: 120.6010, snippet: 'A haunted white mansion of eerie past...' },
-  { id: '17', title: 'Sunken Cemetery Legends', locationName: 'Camiguin', lat: 9.1833, lng: 124.6667, snippet: 'Cross above water marks the haunted site...' },
-  { id: '18', title: 'Balay Negrense Spirits', locationName: 'Silay City, Negros Occidental', lat: 10.8039, lng: 122.9784, snippet: 'A house of spirits trapped in time...' },
-  { id: '19', title: 'The Vanishing Hitchhiker', locationName: 'Commonwealth Ave, QC', lat: 14.6909, lng: 121.0710, snippet: 'A girl seen only to disappear suddenly...' },
-  { id: '20', title: 'Mount Cristobal’s Dark Path', locationName: 'Mount Cristobal, Laguna', lat: 14.1064, lng: 121.3926, snippet: 'The devil’s mountain, a sister to Mount Banahaw...' },
-  { id: '21', title: 'Casa Gorordo Apparitions', locationName: 'Cebu City', lat: 10.3090, lng: 123.8910, snippet: 'Visitors hear faint music from the past...' },
-  { id: '22', title: 'Siquijor’s Healing Shadows', locationName: 'Siquijor', lat: 9.2000, lng: 123.5000, snippet: 'Island of mysteries and midnight rituals...' },
-  { id: '23', title: 'The Dambana’s Guardian', locationName: 'Mt. Banahaw, Quezon', lat: 14.0643, lng: 121.4849, snippet: 'Spiritual protectors guard this sacred site...' },
-  { id: '24', title: 'The Red House Murmurs', locationName: 'Iloilo City', lat: 10.7202, lng: 122.5621, snippet: 'Voices heard from its locked rooms...' },
-  { id: '25', title: 'Calle Crisologo’s Ghosts', locationName: 'Vigan, Ilocos Sur', lat: 17.5747, lng: 120.3863, snippet: 'Old cobbled streets with spectral visitors...' },
-  { id: '26', title: 'San Agustin Church Echoes', locationName: 'Intramuros, Manila', lat: 14.5896, lng: 120.9750, snippet: 'Choir songs in an empty church...' },
-  { id: '27', title: 'Ilocos Norte’s White Lady', locationName: 'Paoay Church', lat: 18.0635, lng: 120.5214, snippet: 'A bride in white seen gliding near the belfry...' },
-  { id: '28', title: 'Quiapo Church Visions', locationName: 'Quiapo, Manila', lat: 14.5995, lng: 120.9837, snippet: 'Devotees whisper of strange visions...' },
-  { id: '29', title: 'The Baguio Cathedral Ghost', locationName: 'Our Lady of Atonement Cathedral, Baguio', lat: 16.4138, lng: 120.5965, snippet: 'A nun’s figure appears among the pews...' },
-  { id: '30', title: 'Dangwa’s Phantom Vendors', locationName: 'Dangwa Flower Market, Manila', lat: 14.6093, lng: 120.9845, snippet: 'Flowers arranged by invisible hands...' },
-  { id: '31', title: 'The Twin Souls of Ayala Triangle', locationName: 'Ayala Triangle, Makati', lat: 14.5566, lng: 121.0212, snippet: 'Two figures seen dancing in the misty night...' },
-  { id: '32', title: 'Iwahig Penal Farm Ghosts', locationName: 'Puerto Princesa, Palawan', lat: 9.8057, lng: 118.7489, snippet: 'Restless inmates seen by forest rangers...' },
-  { id: '33', title: 'Sampaloc Lake Lady', locationName: 'San Pablo, Laguna', lat: 14.0656, lng: 121.3182, snippet: 'A lady in white glides over the lake’s surface...' },
-  { id: '34', title: 'Pasay Old Cemetery', locationName: 'Pasay', lat: 14.5426, lng: 121.0011, snippet: 'Graves that glow on certain nights...' },
-  { id: '35', title: 'Mount Banahaw’s Hidden Realm', locationName: 'Mount Banahaw, Quezon', lat: 14.0650, lng: 121.4840, snippet: 'A gateway to another world...' },
-  { id: '36', title: 'Manila City Hall Clock Tower', locationName: 'Manila City Hall', lat: 14.5916, lng: 120.9783, snippet: 'Chimes echo from a ghostly past...' },
-  { id: '37', title: 'The Dancing Ghosts of BGC', locationName: 'Bonifacio Global City, Taguig', lat: 14.5534, lng: 121.0494, snippet: 'Shadowy figures seen in parking lots...' },
-  { id: '38', title: 'The BGC Courtyard Mystery', locationName: 'Bonifacio High Street, BGC', lat: 14.5537, lng: 121.0453, snippet: 'Strange lights seen among the trees...' },
-  { id: '39', title: 'Tagaytay Fog Figures', locationName: 'Tagaytay City', lat: 14.1000, lng: 120.9333, snippet: 'Mist conceals more than just the view...' },
-  { id: '40', title: 'The Ancestral House of Sariaya', locationName: 'Sariaya, Quezon', lat: 13.9649, lng: 121.5260, snippet: 'Spirits of the old family still linger...' },
-  { id: '41', title: 'The Echoes of Escolta', locationName: 'Escolta, Manila', lat: 14.5991, lng: 120.9793, snippet: 'Whispers of the old trading days...' },
-  { id: '42', title: 'San Juan City Hall Ghost', locationName: 'San Juan, Manila', lat: 14.6042, lng: 121.0300, snippet: 'A mysterious figure seen after hours...' },
-  { id: '43', title: 'The Red Lady of Malate', locationName: 'Malate Church, Manila', lat: 14.5671, lng: 120.9833, snippet: 'A woman in red appears on certain nights...' },
-  { id: '44', title: 'Quiapo’s Old Graveyard', locationName: 'Quiapo, Manila', lat: 14.6003, lng: 120.9838, snippet: 'Forgotten tombs with flickering candles...' },
-  { id: '45', title: 'Pagsanjan Falls Wailing', locationName: 'Pagsanjan, Laguna', lat: 14.2708, lng: 121.4381, snippet: 'Echoes of lost souls heard in the roar of water...' },
-  { id: '46', title: 'The Lady of Sampaloc', locationName: 'Sampaloc, Manila', lat: 14.6038, lng: 120.9913, snippet: 'A lady glides down the street at night...' },
-  { id: '47', title: 'Taal Volcano’s Phantom Boat', locationName: 'Taal Lake, Batangas', lat: 14.0000, lng: 120.9833, snippet: 'A phantom boat that crosses the lake at dawn...' },
-  { id: '48', title: 'Pampanga’s Silent Hospital', locationName: 'Pampanga', lat: 15.0786, lng: 120.6623, snippet: 'Shadows in the abandoned wards...' },
-  { id: '49', title: 'The Twin Apparitions of Baguio Market', locationName: 'Baguio City Public Market', lat: 16.4167, lng: 120.5942, snippet: 'Two children seen near the old stalls...' },
-  { id: '50', title: 'The Moonlit Road of Baler', locationName: 'Baler, Aurora', lat: 15.7581, lng: 121.5600, snippet: 'A glowing figure seen by midnight surfers...' }
-];
+ // In client.js
+
 
  </script>
+ <script src="stories.js"></script>
     <script src="client.js"></script>
    
 </body>
