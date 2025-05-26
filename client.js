@@ -311,7 +311,7 @@ function updateMapFocus(newReferencePoint = null, newTitle = null) { // Allow pa
 
     if (philippinesFocus) {
         if (map && philippinesMapBounds) map.setMaxBounds(philippinesMapBounds);
-        if (toggleButton) toggleButton.textContent = 'View World Map';
+        if (toggleButton) toggleButton.textContent = 'Open up the Horrors of the World';
 
         const phStories = allStories.filter(story =>
             story.lat >= PH_BOUNDS_COORDS.minLat && story.lat <= PH_BOUNDS_COORDS.maxLat &&
