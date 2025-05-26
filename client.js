@@ -375,6 +375,30 @@ function handleStorySubmit(event) {
 document.addEventListener('DOMContentLoaded', function() {
     initMap(); 
 
+    const togglePostFormButton = document.getElementById('toggle-post-form-button');
+    const formColumn = document.getElementById('form-column'); // Get the form column div
+
+    if (togglePostFormButton && formColumn) {
+        togglePostFormButton.addEventListener('click', () => {
+            const isHidden = formColumn.classList.contains('hidden-form');
+            if (isHidden) {
+                formColumn.classList.remove('hidden-form');
+                // Optional: If using transitions that need display:flex
+                // formColumn.style.display = 'flex'; // Ensure it's flex if hidden by display:none
+                togglePostFormButton.textContent = 'Hide Submission Form';
+                // Optional: Add class to main-content-area if you need to adjust flex for map-column
+                // document.querySelector('.main-content-area').classList.add('form-visible');
+            } else {
+                formColumn.classList.add('hidden-form');
+                // Optional: If using transitions that need display:none and then flex
+                // formColumn.style.display = 'none';
+                togglePostFormButton.textContent = 'Post New Story';
+                // Optional: Remove class from main-content-area
+                // document.querySelector('.main-content-area').classList.remove('form-visible');
+            }
+        });
+    }
+
    
 
 

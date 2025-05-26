@@ -40,6 +40,7 @@ h2{
 #map {
     height: 500px;
     width: 100%;
+    min-width: 250px;
     border: 2px solid #555; /* Slightly different border */
     border-radius: 6px;
     margin-bottom: 20px; /* Adjusted from 30px from your #map-column */
@@ -79,8 +80,36 @@ h2{
 }
 
 .map-controls {
-    text-align: center; /* Center the button */
+    text-align: center;
+    margin-top: 10px; /* Add margin-top if map-column is flex-direction: column */
     margin-bottom: 15px;
+    display: flex; /* To place buttons side-by-side */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between buttons */
+}
+
+#toggle-post-form-button { /* Style for the new button */
+    padding: 8px 15px;
+    background-color: #e74c3c; /* A different color, e.g., green */
+    color: white;
+    border: 1px solid #b8a5a3;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-family: Special Elite, cursive; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+
+#toggle-post-form-button:hover {
+    background-color: #ad291d;
+}
+
+
+/* Class to hide the form column */
+#form-column.hidden-form {
+    display: none;
 }
 
 #form-column {
@@ -94,7 +123,9 @@ h2{
     flex-direction: column;
 }
 
-
+#form-column.hidden-form {
+    display: none;
+}
 #toggle-world-button {
     padding: 8px 15px;
     background-color: #4a5568; /* A neutral dark gray */
@@ -409,6 +440,103 @@ input[readonly] {
     line-height: 1.7;
     font-size: 1.05em;
 }
+
+    @media (max-width: 768px) { /* Breakpoint for tablets and large phones */
+            h1 {
+                font-size: 2.2em; /* Slightly smaller title */
+            }
+
+            .main-content-area {
+                flex-direction: column; /* Stack map and form */
+            }
+
+            #map-column, #form-column {
+                flex: 1 1 100%; /* Make them full width when stacked */
+                width: 100%;
+            }
+
+            #map {
+                height: 350px; /* Adjust map height for mobile */
+            }
+            
+            #storyForm input[type="text"],
+            #storyForm textarea,
+            #story-search-bar {
+                width: calc(100% - 20px); /* Ensure full width considering padding */
+            }
+
+            .modal-content {
+                width: 90%; /* Modal takes more screen width on smaller devices */
+                padding: 20px;
+            }
+
+            #modal-story-title {
+                font-size: 1.5em;
+            }
+            .story-text-container {
+                font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 480px) { /* Breakpoint for smaller phones */
+            .horrorMapContainer {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+
+            #map {
+                height: 300px; /* Further adjust map height */
+            }
+
+            #form-column, #story-list-panel {
+                padding: 15px;
+            }
+            
+            #storyForm label {
+                font-size: 0.9em;
+            }
+
+            #storyForm input[type="text"],
+            #storyForm textarea,
+            #story-search-bar,
+            .map-controls button,
+            #storyForm button[type="submit"] {
+                font-size: 0.9em; /* Smaller font for form elements and buttons */
+            }
+            
+            #storyForm button[type="submit"],
+            .map-controls button {
+                 padding: 10px 15px;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 15px;
+                max-height: 85vh;
+            }
+            .modal-close {
+                top: 5px;
+                right: 10px;
+                font-size: 1.8em;
+            }
+            #modal-story-title {
+                font-size: 1.3em;
+            }
+            .story-text-container {
+                font-size: 0.9em;
+            }
+             .story-card h4 {
+                font-size: 1.1em;
+            }
+            .story-card p {
+                font-size: 0.85em;
+            }
+        }
+
 
 /* Creepy scrollbar for the modal content */
 .story-text-container::-webkit-scrollbar {
