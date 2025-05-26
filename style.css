@@ -10,15 +10,14 @@ body {
     color: #e0e0e0; /* Default light text color for dark backgrounds */
 }
 
-.horrorMapContainer { /* This is your main page wrapper */
-    max-width: 90%; /* A bit wider for larger screens, or use px like 1200px */
-    margin: 20px auto; /* Centering and top/bottom space */
+/* .horrorMapContainer { 
+    max-width: 90%; 
+    margin: 20px auto; 
     padding: 20px;
-    background-color: rgba(26, 26, 26, 0.9); /* Dark, slightly transparent background for content */
+    background-color: rgba(26, 26, 26, 0.9); 
     box-shadow: 0 0 25px rgba(0,0,0,0.7);
     border-radius: 8px;
-    /* position: relative; /* Not strictly needed here unless it has ::before/::after itself */
-}
+} */
 
 h1, h2 { /* Keep form out of this generic selector if it needs different font */
     font-family: 'Special Elite', cursive;
@@ -146,7 +145,7 @@ h2{
 }
 
 .horrorMapContainer {
-    max-width: 80%;
+    max-width: 95%;
     margin: 30px auto;
     padding: 25px 30px;
     background-color: rgba(34, 34, 34, 0.85); /* Dark, semi-transparent background for content over image */
