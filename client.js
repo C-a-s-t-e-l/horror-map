@@ -207,6 +207,14 @@ function displayStories(storiesToDisplay) {
             marker.on('click', () => {
                 console.log('Map marker clicked, opening modal for:', story.title);
                 openStoryModal(story);
+
+                if (map && story.lat && story.lng) {
+                 map.setView([story.lat, story.lng], 18);
+                const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
+                   if (marker) {
+           
+        }
+    }
             });
         }
     });
