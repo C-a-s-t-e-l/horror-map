@@ -12,59 +12,16 @@ const PH_BOUNDS_COORDS = {
 let philippinesMapBounds = null;
 let lastClickedLatLng = null; 
 
-// const dummyStories = [
-//     {
-//         id: '1',
-//         title: 'The White Lady of Balete Drive',
-//         locationName: 'Balete Drive, Quezon City',
-//         lat: 14.6282, lng: 121.0448,
-//         snippet: 'A famous urban legend about a ghostly woman often seen by motorists at night...',
-//         fullStory: "Balete Drive in Quezon City is notorious for sightings of a 'White Lady.' Legend has it that she was a young woman who died tragically in the area, either in a car accident or as a victim of a heinous crime during the Japanese occupation. Motorists, especially taxi drivers passing through late at night, have reported seeing a beautiful woman in white hailing them, only to have her vanish from the backseat or appear terrifyingly in their rearview mirror. The large, old balete trees lining the street are said to be her favored haunting grounds, adding to the eerie atmosphere of this well-known road."
-//     },
-//     {
-//         id: '2',
-//         title: 'Manila Film Center Tragedy',
-//         locationName: 'Manila Film Center, Pasay',
-//         lat: 14.5500, lng: 120.9849,
-//         snippet: 'Rumors of workers buried alive during its rushed construction in 1981...',
-//         fullStory: "The Manila Film Center, built in a rush for an international film festival in 1981 under the Marcos regime, is shrouded in tragedy and ghostly tales. During its construction, a scaffolding collapsed, and it's widely rumored that many workers were buried alive in wet cement to meet the tight deadline, their bodies never recovered and entombed within the structure. Since then, employees and visitors have reported disembodied cries, apparitions, and an overwhelming sense of dread, particularly in the main theater. The building is considered one of the most haunted locations in Metro Manila."
-//     },
-//     {
-//         id: '3',
-//         title: 'Haunted Diplomat Hotel',
-//         locationName: 'Diplomat Hotel, Baguio City',
-//         lat: 16.4023, lng: 120.5795,
-//         snippet: 'Once a seminary, then a hotel during WWII, now known for paranormal activity...',
-//         fullStory: "The Diplomat Hotel in Baguio City sits atop Dominican Hill and has a dark history. Originally a rest house and seminary for Dominican friars in the early 20th century, it was later seized by Japanese forces during World War II and used as a garrison where many atrocities, including beheadings of priests, nuns, and refugees, reportedly took place. After the war, it was converted into a hotel, but tales of headless apparitions, ghostly children, and chilling screams persisted. Now abandoned, it's a popular spot for ghost hunters and curious visitors drawn by its terrifying reputation."
-//     },
-//     {
-//         id: '4',
-//         title: 'Tiyanak of San Pablo',
-//         locationName: 'San Pablo City, Laguna',
-//         lat: 14.0678, lng: 121.3250,
-//         snippet: 'A vampiric creature from Philippine folklore that takes the form of a baby...',
-//         fullStory: "The Tiyanak is a malevolent creature in Philippine mythology that often takes the form of a crying baby to lure unsuspecting victims into remote areas. Once picked up or approached, it reveals its true, monstrous form – often described as a small, goblin-like creature with sharp claws and fangs – and attacks. Stories of Tiyanaks are prevalent in rural areas, particularly near forests or old trees. Travelers are warned to be wary of infant cries heard in desolate places, as it might be a Tiyanak waiting to ensnare them."
-//     },
-//     {
-//         id: '5',
-//         title: 'Biringan City',
-//         locationName: 'Somewhere in Samar',
-//         lat: 11.8000, lng: 125.0000,
-//         snippet: 'A mythical invisible city said to be inhabited by engkantos...',
-//         fullStory: "Biringan City is a legendary, invisible city said to exist somewhere in the island of Samar. It is believed to be a highly advanced, beautiful city inhabited by engkantos (elemental spirits or fairies) that can only be seen by certain individuals or under specific conditions. Those who have claimed to see it describe modern-looking structures and bright lights. However, Biringan is also associated with disappearances, as it's said that engkantos sometimes lure humans into their world, from which they can never return. Fishermen often avoid certain areas of the sea believed to be gateways to Biringan."
-//     },
-//     {
-//         id: '6',
-//         title: 'Old UST Hospital',
-//         locationName: 'UST Hospital (Old Building), Manila',
-//         lat: 14.6091, lng: 120.9898,
-//         snippet: 'Many ghostly tales from the old hospital wings and corridors...',
-//         fullStory: "The University of Santo Tomas (UST) is one of the oldest universities in Asia, and its historic campus, particularly the old hospital buildings, has accumulated numerous ghost stories over the centuries. During World War II, the campus was used as an internment camp by the Japanese. Many have reported seeing ghostly figures of nuns, priests, soldiers, and former patients roaming the halls, especially at night. Cold spots, unexplained noises, and feelings of being watched are common experiences reported by students, faculty, and hospital staff who have spent time in the older sections."
-//     }
-// ];
+const creepyIcon = new L.Icon({
+    iconUrl: 'https://static.vecteezy.com/system/resources/previews/019/858/520/non_2x/eye-flat-color-outline-icon-free-png.png', 
+    iconSize: [25, 35],               
+    iconAnchor: [12, 35],                 
+    popupAnchor: [1, -30]              
+});
 
 
- const storyModal = document.getElementById('story-modal');
+
+const storyModal = document.getElementById('story-modal');
 const modalTitle = document.getElementById('modal-story-title');
 const modalLocation = document.getElementById('modal-story-location');
 const modalFullStory = document.getElementById('modal-full-story');
@@ -174,7 +131,7 @@ function initMap() {
 async function placeMarkerAndGetLocationName(mapClickEvent) { // For new story submission
     const latlng = mapClickEvent.latlng;
     if (currentMarker) currentMarker.remove();
-    currentMarker = L.marker([latlng.lat, latlng.lng]).addTo(map);
+    currentMarker = L.marker([latlng.lat, latlng.lng], { icon: creepyIcon }).addTo(map);
 
     document.getElementById('latitude').value = latlng.lat.toFixed(6);
     document.getElementById('longitude').value = latlng.lng.toFixed(6);
@@ -192,33 +149,35 @@ async function placeMarkerAndGetLocationName(mapClickEvent) { // For new story s
         locationNameInput.value = "Error fetching location";
     }
 }
-
 function displayStories(storiesToDisplay) {
     const storiesContainer = document.getElementById('stories-container');
-    storiesContainer.innerHTML = '';
+    storiesContainer.innerHTML = ''; // Clear previous stories in the list
 
+    // Clear existing story markers from the map before adding new ones
     for (const storyId in storyMarkers) {
-        if (storyMarkers.hasOwnProperty(storyId)) storyMarkers[storyId].remove();
+        if (storyMarkers.hasOwnProperty(storyId)) {
+            storyMarkers[storyId].remove(); // Remove from map
+        }
     }
-    storyMarkers = {};
+    storyMarkers = {}; // Reset the markers store
 
     if (storiesToDisplay.length === 0) {
         storiesContainer.innerHTML = '<p>No stories found for this view/search.</p>';
         return;
     }
 
-    // --- Sort stories by proximity to lastClickedLatLng before displaying ---
-    let sortedStories = [...storiesToDisplay]; // Create a mutable copy
+    // Sort stories by proximity to lastClickedLatLng before displaying
+    let sortedStories = [...storiesToDisplay];
     if (lastClickedLatLng) {
         sortedStories.sort((a, b) => {
             const distA = getDistanceFromLatLonInKm(lastClickedLatLng.lat, lastClickedLatLng.lng, a.lat, a.lng);
             const distB = getDistanceFromLatLonInKm(lastClickedLatLng.lat, lastClickedLatLng.lng, b.lat, b.lng);
-            return distA - distB; // Sort ascending by distance
+            return distA - distB;
         });
     }
-    // --- End sorting ---
 
-    sortedStories.forEach(story => { // Iterate over sortedStories
+    sortedStories.forEach(story => {
+        // Create and add story item to the list
         const storyItem = document.createElement('div');
         storyItem.className = 'story-item';
         storyItem.setAttribute('data-story-id', story.id);
@@ -226,7 +185,6 @@ function displayStories(storiesToDisplay) {
         const titleElement = document.createElement('h4');
         titleElement.textContent = story.title;
         const locationElement = document.createElement('p');
-        // Optionally display distance
         let distanceText = "";
         if (lastClickedLatLng) {
             const dist = getDistanceFromLatLonInKm(lastClickedLatLng.lat, lastClickedLatLng.lng, story.lat, story.lng);
@@ -234,17 +192,22 @@ function displayStories(storiesToDisplay) {
         }
         locationElement.textContent = story.locationName + distanceText;
 
-
         storyItem.appendChild(titleElement);
         storyItem.appendChild(locationElement);
-        storyItem.addEventListener('click', () => handleStoryItemClick(story));
+        storyItem.addEventListener('click', () => handleStoryItemClick(story)); // This already opens the modal
         storiesContainer.appendChild(storyItem);
 
+        // Create and add marker to the map for this story
         if (story.lat && story.lng) {
-            const marker = L.marker([story.lat, story.lng])
-                .addTo(map)
-                .bindPopup(`<b>${story.title}</b><br>${story.locationName}`);
-            storyMarkers[story.id] = marker;
+            const marker = L.marker([story.lat, story.lng], { icon: creepyIcon }).addTo(map);
+            
+            storyMarkers[story.id] = marker; // Store the marker
+
+            // When this marker is clicked on the map, open the story modal
+            marker.on('click', () => {
+                console.log('Map marker clicked, opening modal for:', story.title);
+                openStoryModal(story);
+            });
         }
     });
 }
