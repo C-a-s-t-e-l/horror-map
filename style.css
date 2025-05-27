@@ -4,10 +4,13 @@ body {
     font-family: Arial, Helvetica, sans-serif; /* General readable font */
     margin: 0; /* Use margin: 0; then control spacing with .horrorMapContainer */
     background-color: #1a1a1a; /* Dark base if image fails or for contrast */
-    background-image: url('https://www.gog.com/blog/wp-content/uploads/2022/10/Little.jpg');
+    background-image: url('https://cdn.wallpapersafari.com/27/36/jKuAis.jpg');
+    /* https://www.gog.com/blog/wp-content/uploads/2022/10/Little.jpg */
     background-size: cover;
     background-attachment: fixed;
     color: #e0e0e0; /* Default light text color for dark backgrounds */
+
+
 }
 
 /* .horrorMapContainer { 

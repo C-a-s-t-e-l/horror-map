@@ -75,22 +75,27 @@ function openStoryModal(story) {
         console.error('Modal elements not found!');
         return;
     }
-    modalTitle.textContent = story.title;
-    modalLocation.textContent = `Location: ${story.locationName}`;
-    // For the full story, to render line breaks properly if story.fullStory contains them:
+    modalTitle.textContent = story.title || 'Untitled Story';
+    modalLocation.textContent = `Location: ${story.locationName || 'Unknown Location'}`;
+
     modalFullStory.innerHTML = ''; // Clear previous content
-    const paragraphs = story.fullStory.split('\n'); // Split by newline characters
+
+    // If fullStory is missing, default to an empty string
+    const fullStoryText = story.fullStory || '';
+
+    const paragraphs = fullStoryText.split('\n');
     paragraphs.forEach(paraText => {
-        if (paraText.trim() !== '') { // Add non-empty paragraphs
+        if (paraText.trim() !== '') {
             const p = document.createElement('p');
             p.textContent = paraText;
             modalFullStory.appendChild(p);
         }
     });
-    
-    storyModal.classList.remove('modal-hidden'); // Prepare for transition
-    storyModal.classList.add('modal-visible');   // Make it visible
+
+    storyModal.classList.remove('modal-hidden');
+    storyModal.classList.add('modal-visible');
 }
+
 
 function closeStoryModal() {
     if (!storyModal) return;
@@ -252,7 +257,7 @@ function handleStoryItemClick(story) {
 
     // Pan map and open popup (optional, as modal now shows full story)
     if (map && story.lat && story.lng) {
-        map.setView([story.lat, story.lng], 15);
+        map.setView([story.lat, story.lng], 18);
         const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
         if (marker) {
             // marker.openPopup(); // You might not need this if modal is primary focus
@@ -328,7 +333,7 @@ function updateMapFocus(newReferencePoint = null, newTitle = null) { // Allow pa
 function handleStorySubmit(event) {
     event.preventDefault();
     const title = document.getElementById('title').value;
-    const storyText = document.getElementById('story').value;
+    const storyText = document.getElementById('fullStory').value;
     const latStr = document.getElementById('latitude').value;
     const lngStr = document.getElementById('longitude').value;
     const locationName = document.getElementById('locationName').value;
@@ -350,7 +355,7 @@ function handleStorySubmit(event) {
 
     const newStory = {
         id: 'story-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9),
-        title: title, story: storyText, locationName: locationName,
+        title: title, fullStory: storyText, locationName: locationName,
         lat: latNum, lng: lngNum,
         snippet: storyText.substring(0, 100) + (storyText.length > 100 ? '...' : '')
     };
