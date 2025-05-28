@@ -441,6 +441,7 @@ input[readonly] {
     padding-right: 10px; /* Space for scrollbar */
     line-height: 1.7;
     font-size: 1.05em;
+    text-align: justify;
 }
 
     @media (max-width: 768px) { /* Breakpoint for tablets and large phones */
