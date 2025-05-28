@@ -224,7 +224,7 @@ function displayStories(storiesToDisplay) {
                 openStoryModal(story);
 
                 if (map && story.lat && story.lng) {
-                 map.setView([story.lat, story.lng], 13);
+                 map.setView([story.lat, story.lng], 18);
                 const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
                    if (marker) {
            
@@ -243,7 +243,7 @@ function handleStoryItemClick(story) {
 
     // Pan map and open popup (optional, as modal now shows full story)
     if (map && story.lat && story.lng) {
-        map.setView([story.lat, story.lng], 15);
+        map.setView([story.lat, story.lng], 18);
         const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
         if (marker) {
             // marker.openPopup(); // You might not need this if modal is primary focus
