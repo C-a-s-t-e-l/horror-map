@@ -108,10 +108,25 @@ function initMap() {
     const northEast = L.latLng(PH_BOUNDS_COORDS.maxLat, PH_BOUNDS_COORDS.maxLng);
     philippinesMapBounds = L.latLngBounds(southWest, northEast);
    
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles © Esri — ...',
-        maxZoom: 18
-    }).addTo(map);
+// Satellite imagery layer
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles © Esri',
+    maxZoom: 18
+}).addTo(map);
+
+// Boundaries and places (cities, towns, etc.)
+L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles © Esri',
+    maxZoom: 18
+}).addTo(map);
+
+// Roads and street names overlay
+L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles © Esri',
+    maxZoom: 18
+}).addTo(map);
+
+
     
     // Set initial reference point for sorting (map center)
     lastClickedLatLng = map.getCenter();
@@ -209,7 +224,7 @@ function displayStories(storiesToDisplay) {
                 openStoryModal(story);
 
                 if (map && story.lat && story.lng) {
-                 map.setView([story.lat, story.lng], 18);
+                 map.setView([story.lat, story.lng], 13);
                 const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
                    if (marker) {
            
@@ -228,7 +243,7 @@ function handleStoryItemClick(story) {
 
     // Pan map and open popup (optional, as modal now shows full story)
     if (map && story.lat && story.lng) {
-        map.setView([story.lat, story.lng], 18);
+        map.setView([story.lat, story.lng], 15);
         const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
         if (marker) {
             // marker.openPopup(); // You might not need this if modal is primary focus
