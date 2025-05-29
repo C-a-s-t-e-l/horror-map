@@ -1,0 +1,161 @@
+/* landing-style.css */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* A clean, readable font for body text */
+    background-color: #121212; /* Very dark background */
+    color: #e0e0e0; /* Light gray text for readability */
+    line-height: 1.7;
+    /* Optional: Subtle repeating background texture */
+    /* background-image: url('images/dark_subtle_texture.png'); */
+    /* background-repeat: repeat; */
+}
+
+.landing-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add some horizontal padding */
+}
+
+/* --- Header --- */
+.landing-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    /* background: linear-gradient(to bottom, #1a1a1a, #121212); */
+    border-bottom: 1px solid #333;
+}
+
+.landing-header h1 {
+    font-family: 'Creepster', cursive; /* A very thematic horror font */
+    font-size: 4em; /* Adjust as needed */
+    color: #e74c3c; /* Blood red */
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.landing-header .ph-highlight {
+    font-family: 'Special Elite', cursive; /* Your existing thematic font */
+    color: #c0392b; /* Slightly different red or keep same */
+}
+
+.landing-header .tagline {
+    font-family: 'Special Elite', cursive;
+    font-size: 1.3em;
+    color: #aaa;
+    margin-top: 0;
+}
+
+/* --- Sections --- */
+.about-section, .features-section, .cta-section {
+    padding: 40px 20px;
+    text-align: center; /* Center section content by default */
+    border-bottom: 1px dashed #2a2a2a; /* Subtle dashed separator */
+}
+
+.about-section p, .features-section p, .cta-section p {
+    max-width: 700px; /* Constrain paragraph width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+    color: #bbb;
+}
+
+.about-section h2, .features-section h2, .cta-section h2 {
+    font-family: 'Special Elite', cursive;
+    font-size: 2.2em;
+    color: #d35400; /* An orange-red or other accent */
+    margin-bottom: 30px;
+}
+
+/* --- Features Grid --- */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-around;
+    gap: 30px; /* Space between feature items */
+    margin-top: 30px;
+}
+
+.feature-item {
+    flex-basis: 280px; /* Base width, will grow/shrink a bit */
+    background-color: rgba(26, 26, 26, 0.7); /* Dark, slightly transparent cards */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+}
+
+.feature-icon {
+    width: 60px; /* Adjust size of your icons */
+    height: 60px;
+    margin-bottom: 15px;
+    /* Basic filter for a creepy feel - you can use actual themed icons */
+    /* filter: grayscale(80%) sepia(30%) brightness(0.8); */
+}
+
+.feature-item h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.4em;
+    color: #e74c3c;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* --- CTA Button --- */
+.cta-button {
+    display: inline-block;
+    background-color: #e74c3c; /* Theme red */
+    color: white;
+    padding: 15px 35px;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.4em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    border: 2px solid #c0392b;
+}
+
+.cta-button:hover {
+    background-color: #c0392b; /* Darker red */
+    transform: scale(1.05);
+}
+
+/* --- Footer --- */
+.landing-footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+    color: #777;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+/* --- Responsive Adjustments (Basic Example) --- */
+@media (max-width: 768px) {
+    .landing-header h1 {
+        font-size: 3em;
+    }
+    .landing-header .tagline {
+        font-size: 1.1em;
+    }
+    .feature-item {
+        flex-basis: 100%; /* Stack feature items on smaller screens */
+    }
+    .about-section h2, .features-section h2, .cta-section h2 {
+        font-size: 1.8em;
+    }
+    .cta-button {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+}
