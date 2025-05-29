@@ -171,6 +171,10 @@ body::before {
 .intro-text {
     flex: 2;
 }
+
+.intro-text p{
+    text-align: justify;
+}
 .intro-visual {
     flex: 1;
     text-align: center;

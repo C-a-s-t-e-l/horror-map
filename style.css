@@ -1,574 +1,816 @@
-/* In public/style.css */
+/* map-style.css */
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2b2b2b; /* Slightly lighter for panels */
+    --tertiary-bg: #101010; /* Even darker for navbar/footer or deep elements */
+    --text-color: #c5c5c5;
+    --text-muted: #888888;
+    --accent-color: #9c1a1a;
+    --accent-hover: #7a0e0e;
+    --highlight-color: #ff4d4d;
+    --font-creepy: 'Creepster', cursive;
+    --font-narrative: 'Special Elite', cursive;
+    --font-body: 'Merriweather', serif;
+    --input-bg: #222;
+    --input-border: #444;
+    --input-text: #ddd;
+    --border-color: #3a3a3a;
+      --paper-bg: #ede8d9; /* Aged paper color */
+    --ink-color: #3a302A; /* Dark brownish ink */
+    --stamp-color: #8c2323; /* Faded red for stamps */
+    --modal-frame-bg: #1f1f1f; /* Darker frame for modal */
+}
 
-body {
-    font-family: Arial, Helvetica, sans-serif; /* General readable font */
-    margin: 0; /* Use margin: 0; then control spacing with .horrorMapContainer */
-    background-color: #1a1a1a; /* Dark base if image fails or for contrast */
-    background-image: url('https://cdn.wallpapersafari.com/27/36/jKuAis.jpg');
-    /* https://www.gog.com/blog/wp-content/uploads/2022/10/Little.jpg */
-    background-size: cover;
+/* Basic Reset & Body Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.map-page-body { /* Changed from just 'body' to avoid conflict if global CSS is used */
+    font-family: var(--font-body);
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'),
+                      radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
     background-attachment: fixed;
-    color: #e0e0e0; /* Default light text color for dark backgrounds */
-
-
+    padding-top: 70px; /* Space for fixed navbar */
 }
 
-/* .horrorMapContainer { 
-    max-width: 90%; 
-    margin: 20px auto; 
-    padding: 20px;
-    background-color: rgba(26, 26, 26, 0.9); 
-    box-shadow: 0 0 25px rgba(0,0,0,0.7);
-    border-radius: 8px;
-} */
-
-h1, h2 { /* Keep form out of this generic selector if it needs different font */
-    font-family: 'Special Elite', cursive;
-    color: #e74c3c; /* Using your red accent for headings */
-    text-align: center;
-    
-}
-/* If you want forms to also use Special Elite, add it specifically: */
-/*
-#storyForm, #storyForm label, #storyForm button {
-    font-family: 'Special Elite', cursive;
-}
-*/
-
-h2{
+.map-page-body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 120px rgba(0,0,0,0.6);
+    pointer-events: none;
+    z-index: 999; /* Below navbar, above content */
+}
+
+/* Navigation Bar */
+.eerie-navbar {
+    background-color: var(--tertiary-bg);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo-link {
+    font-family: var(--font-creepy);
+    font-size: 1.8rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+.ph-highlight-nav {
+    color: var(--accent-color);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--font-narrative);
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 3px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+.nav-menu a i {
+    margin-right: 6px;
+    color: var(--accent-color);
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: #fff;
+    background-color: var(--accent-hover);
+    text-shadow: 0 0 5px var(--highlight-color);
+}
+.nav-menu a.active {
+    background-color: var(--accent-color);
+}
+
+.nav-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Map Page Header */
+.map-page-header {
+    text-align: center;
+    padding: 30px 20px 40px;
+    border-bottom: 1px dashed var(--border-color);
+    margin-bottom: 30px;
+}
+
+.map-page-header h1 {
+    font-family: var(--font-creepy);
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0 #000, 0 0 10px var(--accent-hover);
+}
+
+.map-tagline {
+    font-family: var(--font-narrative);
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+/* Main Container */
+.horrorMapContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px; /* No top padding, handled by body */
+}
+
+/* Layout for Map and Form */
+.main-content-area {
+    display: flex;
+    flex-wrap: wrap; /* Allow form to wrap below map on small screens */
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+#map-column {
+    flex: 3; /* Map takes more space */
+    min-width: 300px; /* Ensure map has a minimum width */
+    display: flex;
+    flex-direction: column;
 }
 
 #map {
-    height: 500px;
     width: 100%;
-    min-width: 250px;
-    border: 2px solid #555; /* Slightly different border */
-    border-radius: 6px;
-    margin-bottom: 20px; /* Adjusted from 30px from your #map-column */
-    background-color: #111; /* Darker placeholder for map */
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Add border-color transition */
-    border: 2px solid #555; /* <<< GOOD PRACTICE: to contain pseudo-elements if #map has border-radius */
-                           /* and to prevent Leaflet controls from overflowing if map is too small */
+    height: 500px; /* Adjust as needed */
+    background-color: #000; /* Placeholder while map loads */
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.3);
+    position: relative; /* For loading overlay */
 }
 
-/* Fog effect using ::before on the map element itself */
-#map.philippines-focused-style { /* NEW class when PH is focused */
-    border-color: #e74c3c; /* Your theme red for accent */
-    box-shadow: 0 0 15px rgba(231, 76, 60, 0.5); /* Subtle red glow */
-}
-
-
-
-/* ... rest of your CSS for map-controls, story list, form, etc. should be mostly fine ... */
-
-/* Minor tweak for form element font if you want it different from Special Elite */
-#storyForm input[type="text"],
-#storyForm textarea,
-#storyForm button,
-#storyForm label,
-#story-search-bar {
-    font-family: Arial, Helvetica, sans-serif; /* Or your preferred readable font */
-}
-
-/* Ensure map column takes up space if it's empty before map loads */
-#map-column {
-    flex: 3; /* Map takes up more space, e.g., 3 parts */
-    /* Or if you set form to 40%, this could be flex: 1; or width: 60% */
-    display: flex; /* Allow map-controls to be positioned easily if needed */
+.map-loading-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Above map tiles, below controls if any are on map */
+    color: var(--text-color);
+    font-family: var(--font-narrative);
 }
+.map-loading-overlay p { margin-bottom: 15px; }
+.map-loading-overlay .fa-spinner { font-size: 2rem; color: var(--accent-color); }
 
+/* Map Controls */
 .map-controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.eerie-button {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    font-family: var(--font-narrative);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
     text-align: center;
-    margin-top: 10px; /* Add margin-top if map-column is flex-direction: column */
-    margin-bottom: 15px;
-    display: flex; /* To place buttons side-by-side */
-    justify-content: center; /* Center buttons horizontally */
-    gap: 10px; /* Space between buttons */
+}
+.eerie-button i {
+    margin-right: 8px;
 }
 
-#toggle-post-form-button { /* Style for the new button */
-    padding: 8px 15px;
-    background-color: #e74c3c; /* A different color, e.g., green */
-    color: white;
-    border: 1px solid #b8a5a3;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-family: Special Elite, cursive; 
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.2s ease;
+.eerie-button:hover {
+    background-color: var(--border-color);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
-#toggle-post-form-button:hover {
-    background-color: #ad291d;
+.eerie-button.accent {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-hover);
+}
+.eerie-button.accent:hover {
+    background-color: var(--accent-hover);
 }
 
-
-/* Class to hide the form column */
-#form-column.hidden-form {
-    display: none;
-}
-
+/* Story Form */
 #form-column {
-    flex: 2; /* Form takes up less space, e.g., 2 parts */
-    /* Or width: 40%; as you mentioned */
-    background-color: rgba(20, 20, 20, 0.7); /* Optional: background for form area */
-    padding: 20px;
+    flex: 2; /* Form takes less space than map */
+    min-width: 300px;
+    background-color: rgba(0,0,0,0.2);
+    padding: 25px;
     border-radius: 5px;
-    border: 1px solid #444;
-    display: flex; /* To help with internal alignment of form if needed */
-    flex-direction: column;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 #form-column.hidden-form {
     display: none;
 }
-#toggle-world-button {
-    padding: 8px 15px;
-    background-color: #4a5568; /* A neutral dark gray */
-    color: white;
-    border: 1px solid #2d3748;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: Special Elite, cursive; /* Theme font */
+
+#storyForm h2 {
+    font-family: var(--font-creepy);
+    color: var(--accent-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
+#storyForm h2 i {
+    margin-right: 10px;
 }
 
-#toggle-world-button:hover {
-    background-color: #2d3748;
+.form-field, .form-field-group {
+    margin-bottom: 20px;
 }
 
-.horrorMapContainer {
-    max-width: 95%;
-    margin: 30px auto;
-    padding: 25px 30px;
-    background-color: rgba(34, 34, 34, 0.85); /* Dark, semi-transparent background for content over image */
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    border-radius: 5px;
-    position: relative; /* For vignette if you use it */
-}
-
-
-#storyForm {
+.form-field-group {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 100%;
 }
-
 
 
 #storyForm label {
     display: block;
-    margin-bottom: 6px;
-    color: #cccccc;
-    font-weight: bold;
-    font-size: 0.95em;
+    font-family: var(--font-narrative);
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+#storyForm label i {
+    margin-right: 5px;
+    color: var(--accent-color);
 }
 
-input[type="text"],
-textarea {
+#storyForm input[type="text"],
+#storyForm textarea {
     width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #333;
-    color: #e0e0e0;
-    font-size: 1em;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.4);
-
+    padding: 10px 12px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 3px;
+    color: var(--input-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
 }
-
-input[type="text"]:focus,
-textarea:focus {
+#storyForm input[type="text"]:focus,
+#storyForm textarea:focus {
     outline: none;
-    border-color: #e74c3c;
-    box-shadow: 0 0 8px rgba(231, 76, 60, 0.5);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
 }
-
-textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-input[readonly] {
-    background-color: #2b2b2b;
+#storyForm input[readonly] {
+    background-color: #1e1e1e;
     cursor: not-allowed;
+    opacity: 0.7;
 }
 
+#storyForm textarea {
+    resize: vertical;
+    min-height: 100px;
+}
 
-#storyForm button {
+#storyForm button[type="submit"] {
+    width: 100%;
     padding: 12px 20px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    align-self: center;
-    min-width: 200px;
+    font-size: 1.1rem;
 }
 
-#storyForm button:hover {
-    background-color: #c0392b;
-    transform: translateY(-1px);
-}
-
-#storyForm button:active {
-    transform: translateY(0px);
-}
-
-
-
-
-
-.leaflet-popup-content-wrapper {
-    background: #2b2b2b;
-    color: #e0e0e0;
-    border-radius: 6px;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
-}
-
-.leaflet-popup-content {
-    font-size: 0.95em;
-}
-
-.leaflet-popup-tip {
-    background: #2b2b2b;
-}
-
-.leaflet-container a.leaflet-popup-close-button {
-    color: #cccccc;
-}
-.leaflet-container a.leaflet-popup-close-button:hover {
-    color: #ffffff;
-}
-
-
-.main-content-area {
-    display: flex;     /* Enable Flexbox for map and form columns */
-    gap: 20px;         /* Space between map and form */
-    margin-bottom: 30px; /* Space before the story list panel */
-}
-
-
-
-#story-list-panel {
-    flex: 1; /* Story list takes up 1 part of the available space */
-    /* Or you can use a fixed width or percentage: */
-    /* width: 33%; */
-    background-color: rgba(20, 20, 20, 0.7); /* Slightly different dark for panel */
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #444;
-    display: flex;
-    flex-direction: column; /* Stack elements inside panel vertically */
-    max-height: 500px; /* Match map height, or adjust as needed */
-    /* overflow-y: auto; /* Will be for stories-container */
-}
-
-#story-list-panel h3 {
-    font-family: 'Special Elite', cursive; /* Theme font */
-    color: #e74c3c; /* Theme accent color */
+/* Section Divider */
+.section-divider-map {
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.5em;
+    margin: 50px 0;
+    font-size: 2.5rem;
+    color: var(--border-color);
+    opacity: 0.6;
+}
+.section-divider-map i {
+    padding: 0 20px;
+    transform: rotate(5deg); /* Slight tilt */
 }
 
+
+/* Story List Panel (styles for search and loading text, panel itself is in "Improvements") */
+.search-wrapper {
+    position: relative;
+    margin-bottom: 25px;
+}
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
 #story-search-bar {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #555;
-    border-radius: 3px;
-    background-color: #1c1c1c;
-    color: #bdbdbd;
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Readable font */
+    padding: 12px 15px 12px 40px; /* Space for icon */
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 20px; /* Pill shape */
+    color: var(--input-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
 }
-
 #story-search-bar:focus {
     outline: none;
-    border-color: #e74c3c;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-color);
+}
+
+.loading-stories-text {
+    font-family: var(--font-narrative);
+    text-align: center;
+    color: var(--text-muted);
+    padding: 20px;
+    grid-column: 1 / -1; /* Make it span all columns if inside the grid */
+}
+
+/* Footer */
+.map-page-footer {
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--tertiary-bg);
+    background-color: var(--tertiary-bg);
+}
+
+/* --- Story List Panel Improvements --- */
+#story-list-panel {
+    background-color: rgba(0,0,0,0.15); /* Existing panel bg */
+    padding: 25px 30px; /* Added a bit more horizontal padding to the panel */
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    margin-top: 30px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+#story-list-panel h3 { /* "STORIES IN THE PHILIPPINES" title */
+    font-family: var(--font-creepy);
+    color: var(--accent-color);
+    font-size: 2.3rem; /* Slightly increased */
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 0 #000, 0 0 5px var(--accent-hover); /* Adjusted shadow */
+}
+#story-list-panel h3 i {
+    margin-right: 10px;
+    filter: drop-shadow(0 0 3px var(--accent-hover));
 }
 
 #stories-container {
-    flex-grow: 1; /* Allows this div to take up remaining space */
-    overflow-y: auto; /* Add scrollbar if stories exceed panel height */
-    padding-right: 5px; /* Space for scrollbar */
-    font-family: Special Elite, cursive; /* Theme font for stories */
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 10px 5px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-x: hidden;
 }
 
-/* Styling for individual story items (we'll create these with JS) */
-.story-item {
-    background-color: rgba(40, 40, 40, 0.8);
-    padding: 10px 12px;
-    margin-bottom: 10px;
+.story-item { /* THIS IS THE KEY CLASS FOR EACH STORY ENTRY */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--accent-color);
     border-radius: 4px;
-    border-left: 3px solid #e74c3c; /* Accent border */
+    padding: 12px 18px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    
 }
 
 .story-item:hover {
-    background-color: rgba(60, 60, 60, 0.9);
+    background-color: #383838;
+    border-color: var(--accent-hover);
+    border-left-color: var(--highlight-color);
+    transform: translateX(5px) scale(1.01);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 8px var(--accent-hover);
 }
 
-.story-item h4 { /* Story title */
-    margin: 0 0 5px 0;
-    color: #f0f0f0;
-    /* font-family: 'Helvetica Neue', Arial, sans-serif; */
-    font-family: Special Elite, cursive; /* Theme font */
-    font-size: 1.1em;
+/* Individual Story Item Snippet - "Case File" Style */
+.story-item-snippet {
+    background-color: var(--paper-bg); /*  KEY CHANGE: Light paper background */
+    background-image: url('https://www.transparenttextures.com/patterns/old-paper.png'); /* Or your preferred paper texture */
+    background-blend-mode: multiply; /* Works well with a light base */
+    color: var(--ink-color);         /*  KEY CHANGE: Dark ink for text on light paper */
+    padding: 15px 20px;
+    border-radius: 3px;
+    border: 1px solid #b4a898; /* A border color suiting aged paper */
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.25), /* Default shadow */
+                inset 0 0 3px rgba(0,0,0,0.05); /* Subtle inner depth */
+    cursor: pointer;
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+    position: relative;
+    overflow: hidden; /* To contain pseudo-elements */
+    min-height: 110px; /* Ensure items have some substance */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to top */
 }
 
-.story-item p { /* Story snippet or location */
-    margin: 0;
-    font-size: 0.85em;
-    color: #aaa;
-    font-style: italic;
+.story-item-snippet::before { /* "Staple" or "Clip" effect */
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -5px; /* Adjusted for better visual */
+    width: 10px;
+    height: 30px;
+    background-color: #6a6a6a; /* Slightly darker staple */
+    border: 1px solid #404040;
+    transform: rotate(10deg);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    opacity: 0.75;
+}
+
+.story-item-snippet::after {
+    content: "CLASSIFIED";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    color: var(--stamp-color);
+    border: 1px solid var(--stamp-color);
+    padding: 2px 4px;
+    transform: rotate(-5deg);
+    opacity: 0.6;
 }
 
 
-/* Story css */
+.story-item-snippet:hover {
+    transform: translateY(-5px) scale(1.025); /* Enhanced lift and scale */
+    border-color: var(--accent-color);      /* Clear accent border on hover */
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.3),  /* Stronger outer shadow */
+                0 0 10px var(--accent-hover),   /* Accent glow */
+                inset 0 0 5px rgba(0,0,0,0.1); /* Slightly deeper inner shadow */
+}
 
+
+.story-item-snippet h4 { /* Title in snippet */
+    font-family: var(--font-narrative);
+    color: var(--ink-color); /* Ensured dark ink color */
+    font-size: 1.2rem;       /* Good readable size */
+    margin-bottom: 8px;
+    line-height: 1.3;
+    padding-left: 10px; /* Ensure title is not under the staple */
+}
+
+.story-item-snippet p.story-item-location,
+.story-item-snippet p.story-item-preview {
+    font-size: 0.88rem;      /* Slightly smaller for hierarchy */
+    color: #5c5248;          /* Muted ink color */
+    font-family: var(--font-body);
+    margin-bottom: 5px;
+    line-height: 1.4;
+    padding-left: 10px; /* Ensure text is not under the staple */
+}
+.story-item-snippet p.story-item-location i {
+    margin-right: 5px;
+    color: var(--stamp-color); /* Consistent stamp color for icons */
+}
+
+.story-item-snippet .read-more-indicator { /* Hidden by default, shown on hover */
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.story-item-snippet:hover .read-more-indicator {
+    opacity: 1;
+    transform: translateX(0) scale(1); /* Smoothly animate into view */
+    color: var(--highlight-color); /* Change color on hover for more feedback */
+}
+
+
+/* --- Story Modal Redesign --- */
 #story-modal {
-    position: fixed; /* Stay in place even if page scrolls */
-    left: 0;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(10, 10, 10, 0.85); /* Dark, semi-transparent overlay */
-    z-index: 1000; /* Ensure it's on top of everything */
-    display: flex; /* For centering modal-content */
-    align-items: center;
+    background-color: rgba(0,0,0,0.92); /* Even darker overlay */
+    display: flex;
     justify-content: center;
-    opacity: 0; /* Start hidden */
-    visibility: hidden; /* Start hidden */
-    transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s; /* Fade transition */
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    padding: 20px; /* Padding for smaller screens */
 }
 
 #story-modal.modal-visible {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.4s ease-in-out, visibility 0s linear 0s;
 }
 
-.modal-content {
-    background-color: #1a1a1a; /* Very dark background */
-    color: #c7c7c7; /* Off-white text */
-    padding: 25px 30px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 700px; /* Max width of the modal */
-    max-height: 85vh; /* Max height, viewport relative */
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
-    position: relative; /* For positioning the close button */
+.modal-outer-frame { /* New wrapper for overall modal appearance */
+    background-color: var(--modal-frame-bg); /* Dark frame */
+    padding: 8px; /* Thickness of the "frame" */
+    border-radius: 8px; /* Slightly rounded frame */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 0 2px rgba(0,0,0,0.5); /* Deep shadow + hard edge */
+    width: 95%;
+    max-width: 800px; /* Max width of modal */
+    max-height: 90vh;
+    display: flex; /* To make modal-content fill it */
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy entry */
+}
+#story-modal.modal-visible .modal-outer-frame {
+    transform: scale(1);
+}
+
+.modal-content { /* This is now the "inner document" area */
+    background-color: var(--paper-bg); /* Aged paper background */
+    /* More distinct paper texture for modal */
+    background-image: url('https://www.transparenttextures.com/patterns/notebook-dark.png');
+    background-blend-mode: overlay;
+    background-size: auto;
+    color: var(--ink-color); /* Dark ink color for text */
+    border-radius: 4px; /* Inner document slightly rounded */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    font-family: 'Georgia', 'Times New Roman', serif; /* A more classic, slightly eerie serif font */
-    transform: scale(0.9); /* Start slightly scaled down for entry animation */
-    transition: transform 0.3s ease-out;
-}
-
-#story-modal.modal-visible .modal-content {
-    transform: scale(1); /* Scale to full size when visible */
+    position: relative; /* For close button and other absolute elements */
+    overflow: hidden; /* Clip inner content, scrolling handled by modal-body-scrollable */
 }
 
 .modal-close {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 15px;
-    font-size: 2.5em; /* Larger close button */
-    font-weight: bold;
-    color: #777;
-    background: none;
-    border: none;
+    background: var(--stamp-color); /* "Wax seal" like button */
+    border: 2px solid #5a1818;
+    color: var(--paper-bg);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.2rem; /* Adjust icon size */
     cursor: pointer;
-    line-height: 1;
-    padding: 0;
-    transition: color 0.2s ease;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.modal-close:hover {
+    background-color: var(--accent-hover);
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
-.modal-close:hover {
-    color: #e74c3c; /* Theme red on hover */
+.modal-header-creepy {
+    padding: 25px 30px 15px;
+    text-align: center;
+    border-bottom: 2px dashed #bcaea0; /* Dashed line in paper color */
+    position: relative;
 }
+/* Optional: Corner flourishes for the header
+.modal-header-creepy::before, .modal-header-creepy::after {
+    content: '';
+    position: absolute;
+    width: 20px; height: 20px;
+    background-image: url('your-corner-flourish.svg');
+    background-size: contain;
+    opacity: 0.5;
+}
+.modal-header-creepy::before { top: 5px; left: 5px; }
+.modal-header-creepy::after { top: 5px; right: 5px; transform: scaleX(-1); }
+*/
+
 
 #modal-story-title {
-    font-family: 'Special Elite', cursive; /* Your theme heading font */
-    color: #e74c3c; /* Theme red */
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 2em;
-    text-align: center;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-family: var(--font-creepy);
+    color: var(--ink-color); /* Darker, more like printed title */
+    font-size: 2.8rem; /* Slightly larger */
+    margin-bottom: 8px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 #modal-story-location {
-    font-size: 0.9em;
-    color: #999;
-    text-align: center;
-    margin-bottom: 20px;
-    font-style: italic;
+    font-family: var(--font-narrative);
+    color: #716558; /* Faded ink for location */
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+#modal-story-location i {
+    margin-right: 5px;
+    color: var(--stamp-color);
 }
 
-.modal-divider {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(100, 100, 100, 0), rgba(100, 100, 100, 0.75), rgba(100, 100, 100, 0));
-    margin-bottom: 20px;
+.modal-body-scrollable { /* NEW: Handles the scrolling part */
+    flex-grow: 1; /* Takes available space */
+    overflow-y: auto;
+    padding: 0 10px; /* Padding around the inner document */
 }
 
-.story-text-container {
-    overflow-y: auto; /* Make story content scrollable if it's long */
-    flex-grow: 1; /* Allow it to take up available vertical space */
-    padding-right: 10px; /* Space for scrollbar */
-    line-height: 1.7;
-    font-size: 1.05em;
+.modal-story-document { /* NEW: inner document visual */
+    padding: 20px 25px; /* Padding inside the "document" */
+}
+
+.story-text-container { /* Actual story text */
+    line-height: 1.9; /* Increased line height for readability on "paper" */
+    font-size: 1rem; /* Standard reading size */
+    color: var(--ink-color);
     text-align: justify;
+    /* Optional: First letter drop cap */
+}
+.story-text-container p:first-of-type::first-letter {
+    font-family: var(--font-creepy); /* Or a more ornate serif */
+    font-size: 3em;
+    float: left;
+    line-height: 0.8em;
+    margin-right: 0.1em;
+    margin-top: 0.1em;
+    color: var(--stamp-color);
 }
 
-    @media (max-width: 768px) { /* Breakpoint for tablets and large phones */
-            h1 {
-                font-size: 2.2em; /* Slightly smaller title */
-            }
-
-            .main-content-area {
-                flex-direction: column; /* Stack map and form */
-            }
-
-            #map-column, #form-column {
-                flex: 1 1 100%; /* Make them full width when stacked */
-                width: 100%;
-            }
-
-            #map {
-                height: 350px; /* Adjust map height for mobile */
-            }
-            
-            #storyForm input[type="text"],
-            #storyForm textarea,
-            #story-search-bar {
-                width: calc(100% - 20px); /* Ensure full width considering padding */
-            }
-
-            .modal-content {
-                width: 90%; /* Modal takes more screen width on smaller devices */
-                padding: 20px;
-            }
-
-            #modal-story-title {
-                font-size: 1.5em;
-            }
-            .story-text-container {
-                font-size: 0.95em;
-            }
-        }
-
-        @media (max-width: 480px) { /* Breakpoint for smaller phones */
-            .horrorMapContainer {
-                padding: 10px;
-            }
-            
-            h1 {
-                font-size: 1.8em;
-                margin-bottom: 20px;
-            }
-
-            #map {
-                height: 300px; /* Further adjust map height */
-            }
-
-            #form-column, #story-list-panel {
-                padding: 15px;
-            }
-            
-            #storyForm label {
-                font-size: 0.9em;
-            }
-
-            #storyForm input[type="text"],
-            #storyForm textarea,
-            #story-search-bar,
-            .map-controls button,
-            #storyForm button[type="submit"] {
-                font-size: 0.9em; /* Smaller font for form elements and buttons */
-            }
-            
-            #storyForm button[type="submit"],
-            .map-controls button {
-                 padding: 10px 15px;
-            }
-
-            .modal-content {
-                width: 95%;
-                padding: 15px;
-                max-height: 85vh;
-            }
-            .modal-close {
-                top: 5px;
-                right: 10px;
-                font-size: 1.8em;
-            }
-            #modal-story-title {
-                font-size: 1.3em;
-            }
-            .story-text-container {
-                font-size: 0.9em;
-            }
-             .story-card h4 {
-                font-size: 1.1em;
-            }
-            .story-card p {
-                font-size: 0.85em;
-            }
-        }
-
-
-/* Creepy scrollbar for the modal content */
-.story-text-container::-webkit-scrollbar {
-    width: 10px;
+.story-text-container p {
+    margin-bottom: 1.2em;
 }
-.story-text-container::-webkit-scrollbar-track {
-    background: #111;
+
+.modal-footer-creepy {
+    padding: 15px 30px;
+    text-align: center;
+    font-family: var(--font-narrative);
+    font-size: 0.9rem;
+    color: #8a7d6f; /* Faded ink for footer */
+    border-top: 1px solid #d4c8b8; /* Lighter paper-colored line */
 }
-.story-text-container::-webkit-scrollbar-thumb {
-    background-color: #500; /* Dark red scrollbar */
-    border-radius: 5px;
-    border: 2px solid #111;
-}
-.story-text-container::-webkit-scrollbar-thumb:hover {
-    background-color: #800;
+.modal-footer-creepy i {
+    margin-right: 8px;
+    color: var(--stamp-color);
 }
 
 
-
-::-webkit-scrollbar {
+/* Ensure scrollbar within modal is also themed */
+.modal-body-scrollable::-webkit-scrollbar {
     width: 8px;
 }
-::-webkit-scrollbar-track {
-    background: #2c2c2c;
-}
-::-webkit-scrollbar-thumb {
-    background: #555;
+.modal-body-scrollable::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1); /* Subtle track on paper */
     border-radius: 4px;
 }
+.modal-body-scrollable::-webkit-scrollbar-thumb {
+    background: var(--accent-hover); /* Ink/blood colored thumb */
+    border-radius: 4px;
+}
+.modal-body-scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+.modal-body-scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-hover) rgba(0,0,0,0.1);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .main-content-area {
+        flex-direction: column;
+    }
+    #map-column, #form-column {
+        flex: 1 1 100%; /* Take full width when stacked */
+    }
+}
+
+@media (max-width: 768px) {
+    .map-page-body {
+        padding-top: 60px; /* Adjust for smaller navbar if height changes */
+    }
+    .nav-menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Position below navbar */
+        left: 0;
+        background-color: var(--tertiary-bg);
+        border-top: 1px solid var(--border-color);
+    }
+    .nav-menu.active {
+        display: flex; /* Show when toggled */
+    }
+    .nav-menu li {
+        margin: 0;
+        text-align: center;
+    }
+    .nav-menu a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid var(--secondary-bg);
+    }
+    .nav-menu li:last-child a {
+        border-bottom: none;
+    }
+    .nav-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    .map-page-header h1 { font-size: 2.8rem; }
+    #storyForm h2 { font-size: 1.8rem; }
+    #story-list-panel h3 { font-size: 2rem; }
+    #modal-story-title { font-size: 2rem; }
+
+    .modal-content { /* This targets the new .modal-content (inner document) */
+        padding: 20px; /* Adjust padding if needed for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .map-page-header h1 { font-size: 2.2rem; }
+    .map-tagline { font-size: 1rem; }
+    .eerie-button { font-size: 0.9rem; padding: 8px 15px; }
+    #storyForm input[type="text"],
+    #storyForm textarea,
+    #story-search-bar {
+        font-size: 0.9rem;
+    }
+}
+
+/* Custom Scrollbar for Webkit Browsers */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-hover);
+    border-radius: 5px;
+}
 ::-webkit-scrollbar-thumb:hover {
-    background: #777;
+    background: var(--accent-color);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-hover) var(--primary-bg);
 }
