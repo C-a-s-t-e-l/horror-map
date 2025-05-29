@@ -59,8 +59,8 @@ body::before {
 
 .landing-header h1 {
     font-family: 'Creepster', 'HorrorFontFallback', cursive; /* Add a generic fallback */
-    font-size: 5em; /* Even bigger */
-    color: #8B0000; /* DarkRed */
+    font-size: 4em; /* Even bigger */
+    color: #c80505; /* DarkRed */
     margin: 0 0 5px 0;
     letter-spacing: 3px;
     text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #c71f16, 2px 2px 3px #000; /* More intense shadow/glow */
