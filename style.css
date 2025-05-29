@@ -781,6 +781,36 @@
     .modal-content { /* This targets the new .modal-content (inner document) */
         padding: 20px; /* Adjust padding if needed for smaller screens */
     }
+        .modal-outer-frame {
+        padding: 5px; /* Reduce frame thickness slightly */
+        max-width: 90%; /* Allow a bit more width usage */
+    }
+    .modal-header-creepy {
+        padding: 20px 20px 10px; /* Reduce padding */
+    }
+    #modal-story-title {
+        font-size: 1.9rem; /* Reduce title font size */
+    }
+    #modal-story-location {
+        font-size: 0.9rem; /* Reduce location font size */
+    }
+    .modal-story-document {
+        padding: 15px 20px; /* Reduce padding inside the document */
+    }
+    .story-text-container {
+        font-size: 0.95rem; /* Slightly reduce body text */
+        line-height: 1.8; /* Maintain readability */
+    }
+    .story-text-container p:first-of-type::first-letter {
+        font-size: 2.5em; /* Scale down drop cap */
+        line-height: 0.8em;
+        margin-top: 0.05em;
+    }
+    .modal-footer-creepy {
+        padding: 10px 20px; /* Reduce padding */
+        font-size: 0.85rem; /* Reduce footer font size */
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -791,6 +821,53 @@
     #storyForm textarea,
     #story-search-bar {
         font-size: 0.9rem;
+    }
+        #story-modal {
+        padding: 10px; /* Reduce overall modal padding for very small screens */
+    }
+    .modal-outer-frame {
+        padding: 4px; /* Further reduce frame thickness */
+        max-width: 100%;
+    }
+    .modal-close {
+        width: 30px; /* Smaller close button */
+        height: 30px;
+        font-size: 1rem; /* Smaller icon */
+        top: 10px;
+        right: 10px;
+    }
+    .modal-header-creepy {
+        padding: 15px 15px 10px; /* Further reduce padding */
+    }
+    #modal-story-title {
+        font-size: 1.6rem; /* Further reduce title font size */
+        line-height: 1.3;
+    }
+    #modal-story-location {
+        font-size: 0.8rem; /* Further reduce location font size */
+    }
+    .modal-body-scrollable {
+        padding: 0 5px; /* Reduce side padding for scrollable area */
+    }
+    .modal-story-document {
+        padding: 10px 15px; /* Further reduce padding inside the document */
+    }
+    .story-text-container {
+        font-size: 0.9rem; /* Further reduce body text */
+        line-height: 1.7;
+    }
+    .story-text-container p:first-of-type::first-letter {
+        font-size: 2.2em; /* Further scale down drop cap */
+        /* Consider removing float if it causes issues on very narrow screens:
+        float: none;
+        font-size: 1.5em;
+        margin-right: 0.05em;
+        display: inline-block; // or initial
+        */
+    }
+    .modal-footer-creepy {
+        padding: 8px 15px; /* Further reduce padding */
+        font-size: 0.75rem; /* Further reduce footer font size */
     }
 }
 
