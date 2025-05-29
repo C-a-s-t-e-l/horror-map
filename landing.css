@@ -111,11 +111,12 @@ body::before {
 
 
 .about-section p, .features-section p, .cta-section p {
+    font-family: 'Special Elite', 'Courier New', monospace;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.2em;
-    font-size: 1.14em;
+    font-size: 1.3em;
     color: #c7c7c7; /* Slightly brighter for readability */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
