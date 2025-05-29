@@ -1,227 +1,416 @@
-/* landing-style.css */
-body {
-    margin: 0;
-    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    background-color: #0a0a0a; /* Fallback color if image fails to load */
-    background-image: url('https://static.vecteezy.com/system/resources/previews/033/331/461/non_2x/black-grunge-texture-wall-texture-background-dark-grunge-stone-background-with-marble-vintage-texture-watercolor-background-in-grunge-style-dark-distressed-wall-grungy-background-vector.jpg');
-    background-repeat: no-repeat;   /* <<< CHANGE THIS */
-    background-size: cover;         /* <<< ADD THIS */
-    background-position: center center; /* <<< ADD THIS */
-    background-attachment: fixed;   /* <<< ADD THIS */
-    color: #c7c7c7; /* Adjusted default text color for better readability */
-    line-height: 1.7;
-    overflow-x: hidden;
+/* landing.css */
+:root {
+    --primary-bg: #1a1a1a; /* Very dark grey, almost black */
+    --secondary-bg: #2b2b2b; /* Dark grey */
+    --text-color: #c5c5c5; /* Light grey for text */
+    --accent-color: #9c1a1a; /* Deep, blood red */
+    --accent-hover: #7a0e0e; /* Darker red for hover */
+    --highlight-color: #ff4d4d; /* Brighter red for emphasis */
+    --font-creepy: 'Creepster', cursive;
+    --font-narrative: 'Special Elite', cursive;
+    --font-body: 'Merriweather', serif; /* More readable serif for body */
+
+    --vignette-intensity: 0.5; /* 0 to 1 */
 }
 
-/* Page Vignette */
+/* Subtle flicker animation */
+@keyframes flicker-kf {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes subtle-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 10px transparent; }
+    50% { transform: scale(1.02); box-shadow: 0 0 15px var(--accent-color); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-image: url('https://www.transparenttextures.com/patterns/black-felt.png'),
+                      radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    background-attachment: fixed;
+    opacity: 0; /* For entry animation */
+    transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* Pseudo-element for vignette effect */
 body::before {
-    content: '';
-    position: fixed; /* Fixed to viewport */
+    content: "";
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 150px 50px rgba(0, 0, 0, 0.75); /* Adjust for desired intensity */
-    pointer-events: none; /* So it doesn't interfere with clicks */
-    z-index: 999; /* High z-index to be on top of background but below content */
+    box-shadow: inset 0 0 150px rgba(0,0,0, var(--vignette-intensity));
+    pointer-events: none; /* Allows interaction with elements behind it */
+    z-index: 9999;
 }
 
+.page-blood-stain {
+    position: fixed;
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    background-image: url('https://www.pngplay.com/wp-content/uploads/13/Blood-Splatter-PNG-HD-Quality.png'); /* Use a transparent blood splatter PNG */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.top-left {
+    top: -50px;
+    left: -50px;
+    transform: rotate(-15deg);
+}
+
+.bottom-right {
+    bottom: -60px;
+    right: -70px;
+    transform: rotate(195deg);
+    opacity: 0.2;
+}
+
+
 .landing-container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
-    position: relative; /* To ensure its content is above the body::before vignette */
-    z-index: 1; /* Content above body vignette */
+    padding: 20px;
+    position: relative; /* For z-indexing above stains */
+    z-index: 1;
+    animation: fadeIn 1.5s ease-out 0.5s forwards; /* Content fade in */
+    opacity: 0; /* Start hidden for animation */
 }
 
 .landing-header {
     text-align: center;
-    padding: 30px 30px; /* More top padding */
-    /* border-bottom: 2px solid rgba(139, 0, 0, 0.3);  */
-    position: relative; /* For pseudo-elements if needed */
-    /* Add a subtle "mist" or "glow" behind the header text */
-    background: radial-gradient(ellipse at center, rgba(139,0,0,0.2) 0%,rgba(0,0,0,0) 60%);
+    margin-bottom: 60px;
+    padding-top: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.landing-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 #logo {
-    width: 80px; /* Adjust size as needed */
-    height: 80px;
-    margin-bottom: 15px;
-    /* Optional: slight animation or filter */
-    /* filter: drop-shadow(0 0 5px #c71f16); */
-    /* animation: pulseLogo 3s infinite ease-in-out; */
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 8px var(--accent-color));
+    transition: transform 0.3s ease;
 }
-
-/* @keyframes pulseLogo {
-    0%, 100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.05); opacity: 1; }
-} */
+#logo:hover {
+    transform: scale(1.1) rotate(-5deg);
+}
 
 .landing-header h1 {
-    font-family: 'Creepster', 'HorrorFontFallback', cursive; /* Add a generic fallback */
-    font-size: 4em; /* Even bigger */
-    color: #c80505; /* DarkRed */
-    margin: 0 0 5px 0;
-    letter-spacing: 3px;
-    text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #c71f16, 2px 2px 3px #000; /* More intense shadow/glow */
-    line-height: 1;
+    font-family: var(--font-creepy);
+    font-size: 4rem;
+    color: var(--text-color);
+    margin: 0 0 10px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 #000, 
+                 0 0 15px var(--accent-hover);
 }
 
-.landing-header .ph-highlight {
-    font-family: 'Special Elite', 'Courier New', monospace; /* Different thematic font */
-    color: #c71f16;
-    /* font-size: 0.8em; */ /* If you want it slightly smaller than main H1 part */
+.ph-highlight {
+    color: var(--accent-color);
+    font-family: var(--font-creepy); /* Ensure PH also uses creepy font if desired */
 }
 
-.landing-header .tagline {
-    font-family: 'Special Elite', 'Courier New', monospace;
-    font-size: 1.5em;
-     color: #999999; /* Brighter */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    margin-top: 15px;
-    letter-spacing: 1px;
+.tagline {
+    font-family: var(--font-narrative);
+    font-size: 1.3rem;
+    color: #a0a0a0; /* Slightly dimmer text */
+    margin: 0;
+    transition: opacity 0.1s ease-in-out;
 }
 
-.about-section, .features-section, .cta-section {
-    padding: 30px 30px;/* More padding */
-    text-align: center;
-    border-bottom: none; /* Remove default dashed border for now */
-    position: relative; /* For custom dividers */
+.tagline.flicker {
+    opacity: 0.8;
+    text-shadow: 0 0 5px var(--highlight-color);
 }
 
-/* .features-section::before, .about-section::after {
-    content: '💀'; /* Or any other creepy unicode/emoji, or use an image */
-    /* display: block;
-    text-align: center;
-    font-size: 2em;
-    color: rgba(139, 0, 0, 0.4); 
-    margin: 30px auto; */
-    /* For an image divider: */
-    /* content: '';
-    display: block;
-    width: 100px; height: 20px;
-    background-image: url('images/creepy-divider.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 30px auto; 
-} */
-.about-section::after { /* Only after about section to separate from features */
-    margin-top: 50px;
-}
-
-
-.about-section p, .features-section p, .cta-section p {
-    font-family: 'Special Elite', 'Courier New', monospace;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.2em;
-    font-size: 1.3em;
-    color: #c7c7c7; /* Slightly brighter for readability */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-}
-
-.about-section strong, .features-section strong, .cta-section strong {
-    color: #c71f16; /* Highlight strong text with theme color */
-    font-weight: normal; /* Special Elite is already boldish */
-    font-family: 'Special Elite', cursive;
-}
-
-.about-section h2, .features-section h2, .cta-section h2 {
-    font-family: 'Special Elite', 'Courier New', monospace;
-    font-size: 1.5em;
-    color: #bb1a09; /* A more desaturated, aged red */
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-}
-
-.features-grid {
+/* Intro Section Styling */
+.intro-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center items better if they don't fill row */
-    gap: 35px;
-    margin-top: 40px;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 60px;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.intro-text {
+    flex: 2;
+}
+.intro-visual {
+    flex: 1;
+    text-align: center;
+}
+.creepy-map-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 3px solid var(--secondary-bg);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.3);
+    filter: sepia(0.3) contrast(1.1) brightness(0.9);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+.creepy-map-image:hover {
+    transform: scale(1.05) rotate(-2deg);
+    filter: sepia(0.1) contrast(1.2) brightness(1);
+}
+
+/* General Section Styling */
+section {
+    margin-bottom: 60px;
+    padding: 30px 20px;
+    background-color: rgba(0,0,0,0.15); /* Slightly darker than secondary for depth */
+    border: 1px dashed var(--secondary-bg); /* Dashed border for an "old document" feel */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+section h2 {
+    font-family: var(--font-creepy);
+    font-size: 2.8rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 #000;
+}
+
+section p {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+section strong {
+    color: var(--accent-color); /* Brighter for emphasis */
+    font-weight: normal; /* Special Elite is already boldish */
+    font-family: var(--font-narrative);
+}
+
+/* Features Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .feature-item {
-    flex-basis: 300px;
-    background-color: rgba(10, 5, 5, 0.6); /* Darker, more reddish transparent background */
-    padding: 30px;
-    border-radius: 4px; /* Sharper corners */
-    border: 1px solid #400; /* Dark red border */
- 
-     background-image: url('https://media.istockphoto.com/id/182216417/photo/an-old-black-paper-texture-background.jpg?s=612x612&w=0&k=20&c=99FvBOp4Jac2PW00vOtBILZLL2qwXHt0hnbCAjFE0Qw='), linear-gradient(rgba(10,5,5,0.8), rgba(10,5,5,0.8)); 
-     background-blend-mode: multiply;
-     background-size: cover; 
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3); /* Inset shadow for depth */
+    background-color: var(--primary-bg);
+    background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAyL3JtNjE5LTA4LWEtYmFja2dyb3VuZC1zaS0wMDJiLWNfMS5qcGc.jpg');
+    padding: 25px;
+    text-align: center;
+    border-radius: 3px; /* Sharper edges */
+    border: 1px solid var(--secondary-bg);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-item:hover {
-    transform: translateY(-8px) scale(1.02); /* More pronounced hover */
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.6), 0 5px 15px rgba(139,0,0,0.3); /* Reddish glow on hover */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 0 20px var(--accent-hover);
+    border-color: var(--accent-hover);
 }
 
-.feature-icon { /* Your Lordicon styles are mostly fine here, just ensure container respects it */
-    display: block; /* Make it block to allow margin auto for centering if needed */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    /* The width/height is set inline on your lord-icon tags */
-}
-/* If you need to adjust colors for Lordicon specifically if inline doesn't take precedence */
-/* .feature-item lord-icon {
-    --lord-icon-primary: #c71f16;
-    --lord-icon-secondary: #8B0000;
-} */
-
-
-.feature-item h3 {
-    font-family: 'Special Elite', 'Courier New', monospace;
-    font-weight: normal;
-    font-size: 1.6em;
-    color: #d9534f; /* Slightly brighter red for these headings */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    margin-top: 0;
+.feature-item lord-icon {
     margin-bottom: 15px;
 }
 
-.feature-item p {
-    font-size: 1em; /* Slightly smaller text within cards */
-    color: #b0b0b0; /* Brighter */
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);color: #999;
+.feature-item h3 {
+    font-family: var(--font-narrative);
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Section Divider */
+.section-divider {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 2rem;
+    color: var(--secondary-bg);
+    opacity: 0.5;
+}
+.section-divider i {
+    margin: 0 15px;
+}
+.alt-divider {
+    font-family: var(--font-creepy);
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    color: var(--accent-color);
+    opacity: 0.7;
+}
+.alt-divider span {
+    font-family: serif; /* For more standard dots */
+    vertical-align: middle;
+}
+
+
+/* CTA Section */
+.cta-section {
+    background-color: rgba(0,0,0,0.3);
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5), 0 0 20px var(--accent-color) inset;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #8B0000; /* DarkRed */
-    color: #ccc; /* Off-white */
-    padding: 18px 40px; /* Bigger padding */
-    font-family: 'Creepster', 'HorrorFontFallback', cursive; /* Thematic font */
-    font-size: 1.8em; /* Larger font */
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 15px 35px;
+    font-family: var(--font-creepy);
+    font-size: 1.8rem;
     text-decoration: none;
-    border-radius: 3px; /* Sharper */
-    margin-top: 25px;
-    transition: background-color 0.3s ease, transform 0.2s ease, letter-spacing 0.3s ease, color 0.3s ease;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5), inset 0 0 5px rgba(255,0,0,0.3); /* Inner red glow */
-    border: 2px solid #400; /* Dark red border */
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     letter-spacing: 1px;
+    border: 2px solid var(--accent-hover);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3), inset 0 -3px 5px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 1px #000;
 }
 
-.cta-button:hover {
-    background-color: #c71f16; /* Brighter red on hover */
-    color: white;
-    transform: scale(1.08) rotate(-2deg); /* Slight scale and rotate */
-    letter-spacing: 2px; /* Expand spacing */
-    box-shadow: 0 0 15px rgba(200,0,0,0.7), inset 0 0 10px rgba(255,100,100,0.4);
+.cta-button:hover, .cta-button:focus {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4), 0 0 20px var(--highlight-color), inset 0 -3px 5px rgba(0,0,0,0.3);
+    color: #fff; /* Ensure text color stays white on hover */
 }
 
+.cta-button i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+.cta-button:hover i {
+    transform: translateX(5px);
+}
+
+.warning-text {
+    font-size: 0.9rem;
+    font-family: var(--font-narrative);
+    color: #888;
+    margin-top: 25px;
+}
+
+/* Footer */
 .landing-footer {
     text-align: center;
     padding: 40px 20px;
-    font-size: 0.9em;
-    color: #555; /* Very faded */
-    font-family: 'Special Elite', 'Courier New', monospace;
-    border-top: 1px solid #222;
-    margin-top: 50px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+}
+
+.footer-scratches {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/worn-dots.png'); /* Subtle scratch texture */
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.landing-footer p {
+    margin: 0 0 15px 0;
+}
+
+.social-links a {
+    color: #666;
+    margin: 0 10px;
+    font-size: 1.3rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .landing-header h1 {
+        font-size: 3rem;
+    }
+    .tagline {
+        font-size: 1.1rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    .intro-section {
+        flex-direction: column;
+    }
+    .creepy-map-image {
+        max-width: 250px; /* Control size on mobile */
+        margin-top: 20px;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* Stack features on smaller screens */
+    }
+    .cta-button {
+        font-size: 1.5rem;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-header h1 {
+        font-size: 2.5rem;
+    }
+    #logo {
+        width: 80px;
+    }
+    .page-blood-stain {
+        width: 150px;
+        height: 150px;
+    }
+    .top-left { top: -30px; left: -30px; }
+    .bottom-right { bottom: -40px; right: -40px; }
 }

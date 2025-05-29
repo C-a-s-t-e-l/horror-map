@@ -3,62 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eerie Grid PH - Uncover Local Horror</title>
-    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/8494/8494367.png" type="image/x-icon"> <!-- Your existing favicon -->
-    <link rel="stylesheet" href="landing.css"> <!-- We'll create this CSS file -->
+    <title>Eerie Grid PH - The Haunting Awaits</title>
+    <!-- Using a more thematic favicon - a stylized, slightly creepy map pin or eye -->
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/8494/8494367.png"" type="image/png">
+    <link rel="stylesheet" href="landing.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- Font Awesome for some extra icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <div class="page-blood-stain top-left"></div>
+    <div class="page-blood-stain bottom-right"></div>
+
     <div class="landing-container">
         <header class="landing-header">
-            <!-- Optional: A small, thematic logo image could go here -->
-            <img src="https://cdn-icons-png.freepik.com/256/8494/8494367.png" alt="Eerie Grid Logo" id="logo">
+            <img src="https://cdn-icons-png.freepik.com/256/8494/8494367.png"" alt="Eerie Grid Logo" id="logo">
             <h1>Eerie Grid <span class="ph-highlight">PH</span></h1>
-            <p class="tagline">Unearth the Chilling Tales Lurking in Every Corner of the Philippines.</p>
+            <p class="tagline">They say some places remember. Dare to listen to their whispers?</p>
         </header>
 
-        <section class="about-section">
-            <h2>What is Eerie Grid PH?</h2>
-            <p>Have you ever heard a spine-tingling story about a haunted house in your neighborhood? A local legend whispered about a creature in the nearby woods? Or perhaps you've had your own unexplainable, terrifying experience tied to a specific place?</p>
-            <p><strong>Eerie Grid PH</strong> is a community-driven platform dedicated to collecting and mapping these horror stories from across the Philippines. We believe that every town, every street, every old building holds a secret, a chilling tale waiting to be told.</p>
+        <section class="intro-section">
+            <div class="intro-text">
+                <h2>What Lurks Beneath the Map?</h2>
+                <p>Have you ever heard a spine-tingling story about a haunted house in your neighborhood? A local legend whispered about a creature in the nearby woods? Or perhaps you've had your own unexplainable, terrifying experience tied to a specific place?</p>
+                <p><strong>Eerie Grid PH</strong> is a community-driven platform dedicated to collecting and mapping these horror stories from across the Philippines. We believe that every town, every street, every old building holds a secret, a chilling tale waiting to be told.</p>
+            </div>
+            <div class="intro-visual">
+                <!-- Placeholder for a creepy, stylized map snippet or illustration -->
+                <img src="https://www.maptive.com/wp-content/uploads/2024/07/The-Pentagram-Kazakhstan.png" alt="Creepy map snippet" class="creepy-map-image">
+            </div>
         </section>
+
+        <div class="section-divider">
+            <i class="fa-solid fa-skull-crossbones"></i>
+        </div>
 
         <section class="features-section">
             <h2>Explore the Unknown:</h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    
-                    <!-- <img src="images/feature-map-icon.png" alt="Map Icon" class="feature-icon"> -->
-                    <lord-icon
+                                    <lord-icon
                          src="https://cdn.lordicon.com/tyntlpjn.json"
                          trigger="hover"
                          colors="primary:#c71f16,secondary:#911710"
                          style="width:150px;height:150px">
                         </lord-icon> 
                     <h3>Interactive Horror Map</h3>
-                    <p>Navigate a detailed map of the Philippines and discover stories pinned to their real-world locations. See what horrors lie hidden near you or in places you've only dared to imagine.</p>
+                    <p>Navigate an interactive map bleeding with stories. Discover haunted locales near you or explore the grim tales of distant islands. Each pin a heartbeat, each story a shiver.</p>
                 </div>
                 <div class="feature-item">
-                    <!-- <img src="images/feature-story-icon.png" alt="Story Icon" class="feature-icon"> -->
                     <lord-icon
                         src="https://cdn.lordicon.com/hrwmjtsw.json"
                         trigger="hover"
                         colors="primary:#c71f16,secondary:#e83a30"
                         style="width:150px;height:150px">
                         </lord-icon>
+                    </lord-icon>
                     <h3>Share Your Encounters</h3>
                     <p>Become a part of the narrative. Pin your own paranormal experiences, local urban legends, or family ghost stories directly onto the map for others to read and feel the chill.</p>
                 </div>
                 <div class="feature-item">
-                    <!-- <img src="images/feature-community-icon.png" alt="Community Icon" class="feature-icon">  -->
                      <lord-icon
                         src="https://cdn.lordicon.com/jdgfsfzr.json"
                         trigger="hover"
                         colors="primary:#c71f16,secondary:#e83a30"
                         style="width:150px;height:150px">
+                        </lord-icon>
                         </lord-icon>
                     <h3>A Community of Fear</h3>
                     <p>Read tales submitted by fellow horror enthusiasts. From ancient folklore to modern-day scares, connect with a community that shares your passion for the macabre and the unexplained.</p>
@@ -66,17 +79,53 @@
             </div>
         </section>
 
+        <div class="section-divider alt-divider">
+            <span>···</span>  <span>···</span> <!-- Ghost emoji -->
+        </div>
+
         <section class="cta-section">
-            <h2>Dare to Explore?</h2>
-            <p>The shadows are calling. Click below to venture into the map and confront the tales that haunt the islands.</p>
-            <a href="map.html" class="cta-button">Enter the Eerie Grid</a>
-            <!-- Assuming your current map page will be renamed to map.html -->
+            <div class="cta-content">
+                <h2>The Threshold Awaits...</h2>
+                <p>Do you possess the courage to cross over? To see what darkness the map holds? The stories are waiting. They are always waiting.</p>
+                <a href="map.html" class="cta-button">
+                    <span>Enter if You Dare</span>
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </a>
+                <p class="warning-text">Warning: Eerie Grid PH is not responsible for sleepless nights, sudden chills, or an increased tendency to look over your shoulder.</p>
+            </div>
         </section>
 
         <footer class="landing-footer">
-            <p>© 2025 Eerie Grid PH. All rights reserved (for the brave).</p>
-            <!-- Add links to About, Contact, Terms later if needed -->
+            <div class="footer-scratches"></div>
+            <p>© <span id="currentYear"></span> Eerie Grid PH. All souls documented. Venture responsibly.</p>
+            <div class="social-links">
+                <!-- Example social links - replace # with actual links -->
+                <a href="#" aria-label="Facebook" title="Find us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter" title="Follow our tweets"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram" title="See our eerie visuals"><i class="fab fa-instagram"></i></a>
+            </div>
         </footer>
     </div>
+
+    <script>
+        // Flicker effect for the tagline
+        const tagline = document.querySelector('.tagline');
+        if (tagline) {
+            setInterval(() => {
+                tagline.classList.toggle('flicker');
+                setTimeout(() => {
+                    tagline.classList.toggle('flicker');
+                }, Math.random() * 150 + 50);
+            }, Math.random() * 5000 + 3000);
+        }
+
+        // Update copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Add 'loaded' class to body after a delay for entry animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 </html>
