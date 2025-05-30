@@ -136,6 +136,10 @@
     cursor: pointer;
 }
 
+.leaflet-top{
+    z-index: 999 !important /* Ensure Leaflet controls are above other elements */
+}
+
 /* Map Page Header */
 .map-page-header {
     text-align: center;
