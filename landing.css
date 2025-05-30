@@ -10,7 +10,7 @@
     --font-narrative: 'Special Elite', cursive;
     --font-body: 'Merriweather', serif; /* More readable serif for body */
 
-    --vignette-intensity: 0.5; /* 0 to 1 */
+    --vignette-intensity: 1; /* 0 to 1 */
 }
 
 /* Subtle flicker animation */
