@@ -196,7 +196,7 @@ body::before {
 }
 
 .top-left {
-    top: -50px;
+    top: 50px;
     left: -50px;
     transform: rotate(-15deg);
 }
@@ -620,7 +620,7 @@ section strong {
         width: 120px; /* Smaller bloodstains */
         height: 120px;
     }
-    .top-left { top: -20px; left: -20px; }
+    .top-left { top: 50px; left: -20px; }
     .bottom-right { bottom: -30px; right: -30px; }
 
     .features-section, .cta-section {
