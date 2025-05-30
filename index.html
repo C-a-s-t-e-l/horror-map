@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eerie Grid PH - The Haunting Awaits</title>
-    <!-- Using a more thematic favicon - a stylized, slightly creepy map pin or eye -->
+    <!-- Using a more thematic favicon -->
     <link rel="icon" href="https://cdn-icons-png.freepik.com/256/8494/8494367.png" type="image/png">
     <link rel="stylesheet" href="landing.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +14,32 @@
     <!-- Font Awesome for some extra icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body class="landing-page-body"> <!-- Added class for specific body styling -->
+    
+        <nav class="eerie-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo-link">
+                <img src="https://cdn-icons-png.freepik.com/256/8494/8494367.png" alt="Eerie Grid PH Logo" class="nav-logo">
+                Eerie Grid  <span class="ph-highlight-nav">PH</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html "class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="map.html"><i class="fas fa-map-marked-alt"></i> The Grid</a></li>
+                <li><a href="#future-archives"><i class="fas fa-archive"></i> The Archives</a></li> <!-- Placeholder -->
+                <li><a href="#future-submit-anomaly"><i class="fas fa-feather-alt"></i> Submit Anomaly</a></li> <!-- Placeholder -->
+                <li><a href="#future-lore"><i class="fas fa-book-dead"></i> Lore & Legends</a></li> <!-- Placeholder -->
+            </ul>
+        </div>
+    </nav>
+
     <div class="page-blood-stain top-left"></div>
     <div class="page-blood-stain bottom-right"></div>
 
     <div class="landing-container">
         <header class="landing-header">
-            <img src="https://cdn-icons-png.freepik.com/256/8494/8494367.png"" alt="Eerie Grid Logo" id="logo">
             <h1>Eerie Grid <span class="ph-highlight">PH</span></h1>
             <p class="tagline">They say some places remember. Dare to listen to their whispers?</p>
         </header>
@@ -32,8 +51,7 @@
                 <p><strong>Eerie Grid PH</strong> is a community-driven platform dedicated to collecting and mapping these horror stories from across the Philippines. We believe that every town, every street, every old building holds a secret, a chilling tale waiting to be told.</p>
             </div>
             <div class="intro-visual">
-                <!-- Placeholder for a creepy, stylized map snippet or illustration -->
-                <img src="https://www.maptive.com/wp-content/uploads/2024/07/The-Pentagram-Kazakhstan.png" alt="Creepy map snippet" class="creepy-map-image">
+                <img src="https://www.maptive.com/wp-content/uploads/2024/07/The-Pentagram-Kazakhstan.png" alt="Creepy map snippet" class="creepy-map-image"> <!-- Changed to thematic image -->
             </div>
         </section>
 
@@ -41,7 +59,7 @@
             <i class="fa-solid fa-skull-crossbones"></i>
         </div>
 
-        <section class="features-section">
+     <section class="features-section">
             <h2>Explore the Unknown:</h2>
             <div class="features-grid">
                 <div class="feature-item">
@@ -99,7 +117,6 @@
             <div class="footer-scratches"></div>
             <p>© <span id="currentYear"></span> Eerie Grid PH. All souls documented. Venture responsibly.</p>
             <div class="social-links">
-                <!-- Example social links - replace # with actual links -->
                 <a href="#" aria-label="Facebook" title="Find us on Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" aria-label="Twitter" title="Follow our tweets"><i class="fab fa-twitter"></i></a>
                 <a href="#" aria-label="Instagram" title="See our eerie visuals"><i class="fab fa-instagram"></i></a>
@@ -126,6 +143,17 @@
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
+
+        // Simple Nav Toggle for Mobile (same as map.html)
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                navMenu.classList.toggle('active');
+            });
+        }
     </script>
 </body>
 </html>
