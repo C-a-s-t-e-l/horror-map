@@ -714,16 +714,15 @@
 }
 
 
-/* Ensure scrollbar within modal is also themed */
 .modal-body-scrollable::-webkit-scrollbar {
     width: 8px;
 }
 .modal-body-scrollable::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.1); /* Subtle track on paper */
+    background: rgba(0,0,0,0.1); 
     border-radius: 4px;
 }
 .modal-body-scrollable::-webkit-scrollbar-thumb {
-    background: var(--accent-hover); /* Ink/blood colored thumb */
+    background: var(--accent-hover); 
     border-radius: 4px;
 }
 .modal-body-scrollable::-webkit-scrollbar-thumb:hover {
@@ -784,12 +783,12 @@
     #story-list-panel h3 { font-size: 2rem; }
     #modal-story-title { font-size: 2rem; }
 
-    .modal-content { /* This targets the new .modal-content (inner document) */
-        padding: 20px; /* Adjust padding if needed for smaller screens */
+    .modal-content { 
+        padding: 20px; 
     }
         .modal-outer-frame {
-        padding: 5px; /* Reduce frame thickness slightly */
-        max-width: 90%; /* Allow a bit more width usage */
+        padding: 5px; 
+        max-width: 90%;
     }
     .modal-header-creepy {
         padding: 20px 20px 10px; /* Reduce padding */
@@ -820,6 +819,11 @@
 }
 
 @media (max-width: 480px) {
+
+.story-item{
+    font-size: .7rem; /* Reduce font size for very small screens */
+}
+
     .map-page-header h1 { font-size: 2.2rem; }
     .map-tagline { font-size: 1rem; }
     .eerie-button { font-size: 0.9rem; padding: 8px 15px; }
