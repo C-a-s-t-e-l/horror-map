@@ -863,7 +863,7 @@
         padding: 10px 15px; /* Further reduce padding inside the document */
     }
     .story-text-container {
-        font-size: 0.9rem; /* Further reduce body text */
+        font-size: 0.7rem; /* Further reduce body text */
         line-height: 1.7;
     }
     .story-text-container p:first-of-type::first-letter {
