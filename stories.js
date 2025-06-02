@@ -398,6 +398,486 @@ const dummyStories = [
         lat: 14.5180, lng: 121.0499,
         snippet: 'Sa sementeryo ng mga bayani, may misteryosong lalaki raw na laging nakaitim, nagbabantay sa mga puntod...',
         fullStory: "Ang Libingan ng mga Bayani, solemne at tahimik na lugar, 'di ba? Dito nakahimlay 'yung mga sundalo, mga dating presidente, at mga national artists. Pero kahit gaano katahimik, may mga kwento pa rin ng 'di maipaliwanag. Isa na rito 'yung tungkol sa isang 'Man in Black.' Sabi ng mga guwardiya at 'yung mga naglilinis doon, minsan daw, lalo na 'pag dapit-hapon or 'pag walang masyadong bisita, may makikita silang lalaki na laging nakasuot ng itim na amerikana, parang luma.\n\nTahimik lang daw itong naglalakad sa pagitan ng mga puntod, or minsan, nakatayo lang sa harap ng isang partikular na lapida, parang nagluluksa or nagbabantay. 'Pag sinubukan daw nilang lapitan or kausapin, dahan-dahan lang itong maglalakad palayo hanggang sa mawala sa paningin, parang naglaho sa hangin. Hindi raw ito namiminsala, pero 'yung presence niya, sobrang misteryoso at medyo nakakakilabot.\n\nMay mga haka-haka na baka raw 'yun 'yung kaluluwa ng isang 'unknown soldier' na hindi pa rin matahimik, or baka isang 'tagabantay' ng mga bayani. Minsan daw, 'pag may mga importanteng okasyon or 'pag may bagong libing, mas madalas daw siyang magpakita. Parang sinisigurado niya na maayos at nirerespeto ang lugar. Nakakatindig-balahibo, pero parang may halong respeto rin 'yung pakiramdam."
+    },  
+    {
+        "id": "51",
+        "title": "Ang Umiiyak na Bata sa Mansyon ng mga Lopez (Iloilo)",
+        "locationName": "Lopez Heritage House (Nelly Garden), Jaro, Iloilo City",
+        "lat": 10.7319, "lng": 122.5575,
+        "snippet": "Tour kami sa lumang mansyon, tapos may narinig kaming iyak ng bata, pero sabi ng guide, wala raw bata doon...",
+        "fullStory": "First time ko maka-tour sa Nelly Garden sa Jaro. Grabe, ang ganda ng bahay, parang bumalik ka sa past. Habang naglalakad kami sa second floor, 'yung guide, busy sa pagkukwento tungkol sa history ng pamilya Lopez. Bigla, may narinig kaming parang umiiyak na bata. Mahina lang, pero distinct. Nagkatinginan kami ng mga kasama ko.\n\n'Yung isa kong kaibigan, tinanong 'yung guide, 'Ma'am, may bata po bang kasama sa tour or nakatira dito?' Ngumiti lang si Ma'am, medyo weird 'yung ngiti. Sabi niya, 'Wala pong bata dito, sir. Matagal nang wala.' Tapos, parang binalewala na niya, nagpatuloy sa kwento. Pero kami, 'di na mapakali. Paulit-ulit naming naririnig 'yung iyak, parang nanggagaling sa isa sa mga saradong kwarto.\n\nNung pababa na kami, 'yung isa naming kasama na medyo 'sensitive', namutla. Sabi niya, nung napadaan daw siya malapit sa isang pinto, may naramdaman siyang malamig na hangin tapos parang may maliit na kamay na humawak sa laylayan ng damit niya. Hindi na kami nagtagal doon. Paglabas namin, parang ang bigat ng pakiramdam na nawala. Sabi ng mga local, may mga 'batang espiritu' raw talaga na naglalaro pa rin sa loob ng mansyon."
+    },
+    {
+        "id": "52",
+        "title": "Ang Sumusunod na Anino sa Kennon Road",
+        "locationName": "Kennon Road, Benguet",
+        "lat": 16.3500, "lng": 120.5833,
+        "snippet": "Pauwi kami galing Baguio, hatinggabi. May anino sa gilid ng kalsada, parang sumusunod sa takbo ng sasakyan...",
+        "fullStory": "This happened to my dad and his friends. Pauwi sila galing Baguio, mga 2 AM na, so Kennon Road 'yung dinaanan nila para mas mabilis daw. Tahimik 'yung byahe, medyo foggy pa. Bigla, 'yung katabi ni Daddy sa passenger seat, napansin niya sa side mirror, parang may anino ng tao na tumatakbo sa gilid ng kalsada, kasabay ng takbo ng van nila.\n\nSinabihan niya si Daddy, 'Pre, tingnan mo sa kanan mo.' Pagsilip ni Daddy, wala naman daw. Akala nila, guni-guni lang, pagod sa byahe. Pero after a few minutes, nakita na naman nila. This time, mas malinaw. Maitim na anino, parang tao, pero 'yung takbo, sobrang bilis, effortless na nasasabayan sila. Hindi nila maaninag 'yung mukha. Walang ibang sasakyan sa daan, maliban sa kanila.\n\nKinilabutan na sila. Nag-decide si Daddy na bilisan pa 'yung takbo. For a good 10 minutes, andun pa rin 'yung anino, parang nakikipagkarera. Tapos, bigla na lang, sa isang sharp curve, nawala na. Pagdating nila sa kapatagan, nag-stop over sila sa isang gas station, lahat sila pinagpapawisan. Sabi nila, baka raw 'yun 'yung mga 'bantay' ng Kennon or kaluluwa ng mga naaksidente doon. Never again daw sila dadaan ng Kennon ng hatinggabi."
+    },
+    {
+        "id": "53",
+        "title": "Ang mga Bumubulong sa Pader ng Lumang Kumbento (Cebu)",
+        "locationName": "Ruins of an Old Convent, Oslob, Cebu",
+        "lat": 9.4650, "lng": 123.3800,
+        "snippet": "Nag-explore kami sa ruins ng isang lumang kumbento. Bigla, parang may mga bumubulong sa paligid namin...",
+        "fullStory": "My cousins and I love exploring old places. One time, we went to Oslob, Cebu, and heard about these really old Spanish-era convent ruins, medyo off the beaten path. Syempre, pinuntahan namin. It was late afternoon, and 'yung atmosphere, sobrang quiet and a bit eerie. Ang ganda ng stonework, pero halata mong matagal nang abandonado.\n\nWhile we were walking through what used to be a courtyard, bigla kaming nakarinig ng whispers. Parang maraming boses, pero hindi namin maintindihan 'yung sinasabi. Akala namin, may ibang tao. We called out, 'Hello? Anyone here?' Pero walang sumasagot. 'Yung bulungan, tuloy pa rin. Parang nanggagaling sa mga pader mismo. Tapos, naamoy namin 'yung parang old incense, 'yung amoy sa mga lumang simbahan.\n\nKinilabutan na kami. 'Yung isa kong pinsan, sabi niya, parang may naramdaman siyang humawak sa braso niya, pero wala namang tao sa tabi niya. Nagmadali na kaming umalis. Habang papalayo kami, parang may narinig kaming mahinang tawa ng babae. Sabi ng mga local na napagtanungan namin, 'wag daw basta-basta pumapasok doon, lalo na 'pag mag-isa or 'pag palubog na ang araw. Marami raw 'naiwan' na madre at pari doon."
+    },
+    {
+        "id": "54",
+        "title": "Ang Naglalarong Bote sa Opisina (Makati)",
+        "locationName": "An Office Building in Makati CBD",
+        "lat": 14.5547, "lng": 121.0244,
+        "snippet": "Graveyard shift ako. Bigla na lang 'yung bote ng tubig ko sa table, gumalaw mag-isa. Akala ko lindol, pero hindi...",
+        "fullStory": "I used to work the graveyard shift in a call center in Makati. Our office was on one ofthe higher floors. Sanay na ako sa katahimikan at sa pagiging 'zombie' 'pag madaling araw. One night, mga 3 AM, break ko, so ako lang sa station ko, nanonood ng YouTube sa phone. May bote ako ng mineral water sa table, half-full.\n\nBigla na lang, 'yung bote, gumalaw. As in, umusog ng mga two inches to the right. Napatingin ako agad. Akala ko, imagination ko lang. Tinitigan ko 'yung bote. After a few seconds, gumalaw ulit! This time, parang umikot pa ng konti. Walang hangin, walang vibration from aircon, walang lindol. Ako lang mag-isa sa row na 'yun.\n\nKinabahan na ako. Tinawag ko 'yung TL ko, pinakita ko. Sabi niya, 'Baka inaantok ka lang.' Pero nung kami na 'yung nakatingin, 'yung takip ng bote, biglang lumuwag tapos nahulog sa table! Nagkatinginan kami ni TL, tapos sabi niya, 'Tara, kape muna tayo sa pantry.' Hindi na namin pinag-usapan, pero a few days later, narinig ko sa ibang agents, may 'bata' raw talagang naglalaro sa floor namin 'pag gabi. Minsan, 'yung mga swivel chair, umiikot mag-isa."
+    },
+    {
+        "id": "55",
+        "title": "Hitchhiker at Lumang Pera (Quezon Province)",
+        "locationName": "A Highway in Lucban, Quezon",
+        "lat": 14.1119, "lng": 121.5529,
+        "snippet": "May pinasakyang matandang babae 'yung tito ko. Pagbaba, 'yung bayad niya, perang Hapon...",
+        "fullStory": "Kuwento 'to ng tito ko, jeepney driver siya sa Quezon. Isang gabi, pauwi na siya from a long trip, medyo liblib na 'yung part ng highway. May nakita siyang matandang babae, nakabarong saya, nakatayo sa gilid ng daan, kumakaway. Naawa siya, so pinasakay niya kahit siya na lang 'yung pasahero. Tahimik lang daw 'yung matanda sa buong byahe.\n\nPagdating sa may bayan, nagpara 'yung matanda sa tapat ng lumang simbahan. Bago bumaba, nag-abot daw ng bayad. Kinuha naman ng tito ko, 'di na niya tiningnan. Pag-alis ng matanda, tsaka lang niya sinilip 'yung pera. Laking gulat niya, 'yung pera, 'Mickey Mouse money' – 'yung perang ginagamit noong panahon ng Hapon! Tapos, 'yung sukli na dapat ibibigay niya, hawak pa niya.\n\nLumingon siya para habulin 'yung matanda, pero wala na. Parang bula na naglaho. Kinilabutan tito ko. Pag-uwi niya, pinakita niya 'yung pera sa lola ko. Sabi ni Lola, baka kaluluwa raw 'yun na hindi matahimik. Itinago na lang daw ng tito ko 'yung pera. Simula noon, 'pag may nakikita siyang matandang nakabarong saya sa daan 'pag gabi, nilalakasan na lang niya 'yung radyo at 'di na tumitigil."
+    },
+    {
+        "id": "56",
+        "title": "Ang Mangingisdang Nakakita ng Siyokoy (Palawan)",
+        "locationName": "Coastal Waters near El Nido, Palawan",
+        "lat": 11.2000, "lng": 119.4000,
+        "snippet": "Gabi na, mag-isa lang siyang nangingisda. Bigla, may humila sa lambat niya, sobrang lakas...",
+        "fullStory": "Lolo ko, mangingisda sa Palawan. Marami siyang kwentong dagat, pero 'yung isa, tungkol sa siyokoy, 'di ko makalimutan. Isang gabi, medyo malayo 'yung napuntahan niyang pangisdaan. Mag-isa lang siya sa bangka niya. Naghagis siya ng lambat, tapos maya-maya, naramdaman niyang sobrang bigat. Akala niya, jackpot, maraming huli.\n\nHinila niya nang hinila, pero parang may humihila rin pabalik, sobrang lakas. Tapos, bigla raw, may umangat na ulo mula sa tubig, malapit sa bangka niya. Hindi raw mukhang tao. Berde raw 'yung balat, may kaliskis, tapos 'yung mata, malalaki at dilaw. Nakatingin daw ng masama sa kanya. Binitawan ni Lolo 'yung lambat sa sobrang takot.\n\n'Yung nilalang daw, sumisid pabalik, pero bago 'yun, parang may sinabi na hindi niya naintindihan. Nagmadali si Lolo umuwi, nanginginig. Kinabukasan, 'yung lambat niya, nakita nilang nakasabit sa isang malaking bato sa pampang, punit-punit. Sabi ng ibang matatandang mangingisda, baka 'teritoryo' ng siyokoy 'yung napuntahan niya. Simula noon, 'di na pumalaot si Lolo nang mag-isa 'pag gabi."
+    },
+    {
+        "id": "57",
+        "title": "Amoy ng Sampaguita sa Saradong Kwarto (Davao)",
+        "locationName": "An Old House in Downtown Davao City",
+        "lat": 7.0678, "lng": 125.6073,
+        "snippet": "Nag-stay kami sa lumang bahay ng lola ng friend ko. Isang gabi, naamoy ko 'yung sampaguita, pero wala namang bulaklak...",
+        "fullStory": "Nag-sleepover kami sa bahay ng lola ng friend ko sa Davao. Sobrang luma na nung bahay, Spanish era pa yata. 'Yung kwarto kung saan kami natulog, andaming antigong gamit. Mga hatinggabi na, nagising ako kasi naamoy ko 'yung sampaguita. Sobrang tapang ng amoy. Akala ko, 'yung friend ko, nag-spray ng pabango or something.\n\nTinanong ko siya, pero tulog na tulog. Bumangon ako, hinanap ko kung saan galing 'yung amoy. Lahat ng bintana, sarado. Walang sampaguita sa loob ng kwarto, or kahit sa labas. Pero 'yung amoy, andun pa rin, parang nanggagaling sa isang sulok ng kwarto, malapit sa isang lumang aparador. Kinilabutan ako, bumalik na lang ako sa higaan at nagtalukbong ng kumot.\n\nKinabukasan, kinwento ko sa lola ng friend ko. Ngumiti lang siya, sabi niya, 'Ah, si Manang Ines 'yan. Mahilig 'yan sa sampaguita nung nabubuhay pa. Nagpaparamdam lang 'yan paminsan-minsan.' Si Manang Ines daw, 'yung dating caretaker ng bahay na matagal nang pumanaw. Hindi na ako nagtanong pa. Pero 'di ko makakalimutan 'yung amoy na 'yun."
+    },
+    {
+        "id": "58",
+        "title": "Ang Tren na Walang Tigil sa Paco Station",
+        "locationName": "PNR Paco Station (Old), Manila",
+        "lat": 14.5804, "lng": 120.9947,
+        "snippet": "Sabi ng mga taga-Paco, minsan daw may dumadaang tren sa lumang istasyon, pero 'di humihinto at walang sakay...",
+        "fullStory": "Laki ako sa Paco, Manila, malapit sa dating PNR station. May mga kwento 'yung mga matatanda doon na minsan daw, lalo na 'pag malalim na ang gabi, may maririnig kang tunog ng tren na dumadaan sa lumang riles. Ang kakaiba, 'yung tunog daw, parang 'di galing sa mga bagong tren. Mas mabigat, mas maingay, parang tren noong unang panahon.\n\nAng pinaka-creepy, 'pag sinilip mo raw, makikita mo 'yung tren na dumadaan, pero walang ilaw sa loob, madilim. Tapos, hindi raw ito humihinto sa istasyon, diretso lang. At wala raw itong sakay na tao. Parang ghost train. May isang beses, 'yung tiyuhin ko, lasing na umuwi, napadaan siya sa may riles. Nakita niya raw 'yung tren. Sinubukan niyang habulin, akala niya, may byahe pa. Pero 'yung tren, bigla na lang daw nag-fade sa dilim.\n\nSabi-sabi, baka 'yun daw 'yung mga tren na ginamit noong panahon ng giyera, or baka mga kaluluwa ng mga pasaherong naaksidente dati. Hanggang ngayon, 'pag napapadaan ako doon sa gabi, 'di ko maiwasang mapakinggan kung may paparating na 'ibang' tren."
+    },
+    {
+        "id": "59",
+        "title": "The Shifting Furniture in our Old Dumaguete Apartment",
+        "locationName": "An old apartment building, Dumaguete City",
+        "lat": 9.3077, "lng": 123.3054,
+        "snippet": "We'd come home to find chairs moved, or the small table in a different spot. No one else had keys...",
+        "fullStory": "When I was in college in Dumaguete, I rented a room in this very old apartment building near the university. It was cheap, but definitely had a vibe. The creepiest thing was the furniture. Sometimes, my roommate and I would come home from class, and a chair in the common area would be slightly out of place, or the small coffee table would be angled differently than how we left it.\n\nAt first, we thought maybe one of us just forgot. But it kept happening. We made sure to always put things back in their exact spots before leaving. Still, we'd find them moved. One time, we were both out for the entire weekend. When we got back Sunday night, the heavy wooden bookshelf in the hallway, which took two people to even nudge, was about an inch further from the wall. There was no sign of forced entry, and no one else had keys.\n\nWe asked the landlady, and she just gave this knowing smile and said, 'Oh, the previous tenants sometimes like to redecorate.' She said it so casually! We didn't stay there for another semester. It wasn't overtly scary, but the thought of unseen hands constantly shifting heavy furniture around us was just too unsettling."
+    },
+    {
+        "id": "60",
+        "title": "Ang Sigbin sa Gubat ng Bohol",
+        "locationName": "Rural forested area, Bohol",
+        "lat": 9.8200, "lng": 124.1500,
+        "snippet": "May nakita raw na kakaibang hayop 'yung magsasaka, parang aso pero paurong maglakad at may mahabang buntot...",
+        "fullStory": "Kuwento 'to ng lola ng kaibigan ko na taga-Bohol. May isang magsasaka raw sa baryo nila na galing sa bukid, medyo hapon na. Habang naglalakad siya sa may gilid ng gubat, may nakita siyang kakaibang hayop. Ang description niya, parang aso na walang balahibo, pero 'yung ulo, nakayuko palagi na parang sumisipsip sa lupa. Tapos, ang pinaka-weird daw, paurong ito maglakad, at 'yung buntot, sobrang haba na parang latigo.\n\nNatakot 'yung magsasaka, nagtago siya sa likod ng puno. Pinanood niya 'yung hayop. Mabilis daw itong kumilos, at parang may hinahanap. Maya-maya, bigla na lang itong tumalon papasok sa gubat at nawala. Pag-uwi ng magsasaka, kinwento niya sa mga matatanda. Sabi nila, 'Sigbin' daw 'yun.\n\nAng Sigbin daw, lumalabas 'pag gabi, sumisipsip ng dugo ng mga biktima, lalo na 'yung mga natutulog. Minsan daw, alaga 'yan ng mga aswang. Kinabukasan, 'yung alagang manok ng magsasaka, may nawawala. Walang bakas, walang ingay. Sabi nila, baka 'yun 'yung kinuha ng Sigbin. Brrr, buti na lang sa city ako lumaki."
+    },
+    {
+        "id": "61",
+        "title": "The Face in the Window of Aguinaldo Shrine",
+        "locationName": "Aguinaldo Shrine, Kawit, Cavite",
+        "lat": 14.4439, "lng": 120.9042,
+        "snippet": "Late afternoon visit. Took a photo of the iconic window, and later, saw a faint face looking out...",
+        "fullStory": "We visited the Aguinaldo Shrine in Kawit a few years back. It was a fascinating place, so much history. We were there until late afternoon, almost closing time. I was taking photos, and of course, I took one of the famous balcony window where independence was proclaimed. It was getting a bit dim, so I used my flash for some shots.\n\nLater that night, I was reviewing the photos on my camera. When I got to the one of the window, I zoomed in just to check the details. My blood ran cold. In the upper pane of the window, very faintly, there was what looked like a face. It was pale, with dark, hollow-looking eyes, and it seemed to be looking straight out, almost at the camera. It wasn't a reflection of anyone in our group, as we were all on the ground level looking up.\n\nI showed it to my family, and they were all creeped out. We couldn't explain it. Some said it might be a trick of the light or a smudge, but it really looked like a face. Considering the history of the house, the battles fought, and the lives lost, it wouldn't be surprising if some spirits still lingered there. I still have the photo, but I rarely look at it."
+    },
+    {
+        "id": "62",
+        "title": "Ang Malamig na Kamay sa Retreat House (Tagaytay)",
+        "locationName": "A Retreat House in Tagaytay City",
+        "lat": 14.1167, "lng": 120.9609,
+        "snippet": "School retreat namin. Natutulog ako, tapos naramdaman kong may humawak sa paa ko. Sobrang lamig...",
+        "fullStory": "High school retreat namin 'to sa Tagaytay. 'Yung retreat house, medyo luma na, tapos 'yung rooms namin, dormitory style. First night, mga hatinggabi na, tulog na lahat ng roommates ko. Ako, medyo gising pa, 'di makatulog. Nakahiga ako, nakatalukbong ng kumot.\n\nBigla, naramdaman ko na parang may humawak sa paa ko, sa labas ng kumot. Akala ko, isa sa mga roommate ko, baka nanggigising or nagbibiro. Pero 'yung kamay, sobrang lamig! As in, parang yelo. Tapos, dahan-dahan siyang humigpit, parang kinukurot 'yung ankle ko. Natigilan ako sa takot. Hindi ako makagalaw, hindi ako makasigaw.\n\nAfter a few seconds, biglang nawala 'yung kamay. Pero 'yung lamig, andun pa rin sa paa ko. Dahan-dahan akong sumilip sa baba ng kumot. Walang tao. Lahat ng roommates ko, mahimbing na natutulog. Kinabukasan, kinwento ko sa kanila. Sabi ng isa, baka raw 'binangungot' lang ako. Pero alam ko 'yung naramdaman ko. 'Yung lamig na 'yun, hindi normal. May mga kwento rin pala 'yung ibang batches na may 'nagpaparamdam' daw talaga sa retreat house na 'yun."
+    },
+    {
+        "id": "63",
+        "title": "The Whispering Walls of Fort Pilar (Zamboanga)",
+        "locationName": "Fort Pilar, Zamboanga City",
+        "lat": 6.8989, "lng": 122.0767,
+        "snippet": "Visiting the old fort, very quiet. Heard faint whispers, like prayers, but no one was near me...",
+        "fullStory": "Fort Pilar in Zamboanga is a really historical place, and also a shrine. I went there on a weekday afternoon, so it wasn't very crowded. I was walking along one of the old ramparts, looking out at the sea. It was very peaceful, almost too quiet. Then, I started hearing it – faint whispers. It sounded like multiple voices, very soft, like people praying or murmuring in a language I couldn't quite make out. Spanish, maybe?\n\nI looked around, thinking there might be a group praying nearby, but I was completely alone in that section of the fort. The whispers seemed to be coming from the ancient stone walls themselves. It wasn't scary in an aggressive way, more... solemn and a bit unsettling. I felt like I was intruding on something very private, very old.\n\nI continued my walk, and the whispers faded as I moved to a different area. I later read that the fort has seen centuries of conflict and devotion. It's said that Our Lady of the Pillar, the patroness, has performed miracles there. Maybe what I heard were the echoes of countless prayers offered over the years, or perhaps, the spirits of those who defended the fort. It gave me goosebumps."
+    },
+    {
+        "id": "64",
+        "title": "Ang Duwende sa Ilalim ng Punso (Bulacan)",
+        "locationName": "A backyard in a rural part of Bulacan",
+        "lat": 14.8400, "lng": 120.9500,
+        "snippet": "May punso sa likod-bahay namin. Minsan, 'yung mga laruan ng kapatid ko, nawawala tapos makikita malapit sa punso...",
+        "fullStory": "Sa likod-bahay namin sa Bulacan, may malaking punso. Sabi ni Lola, 'wag daw naming gagalawin or duduraan 'yun, kasi 'bahay' daw ng mga duwende. Noong bata ako, 'di ako naniniwala. Pero 'yung kapatid kong bunso, madalas siyang maglaro sa labas, malapit doon.\n\nMinsan, 'yung mga paborito niyang laruan, bigla na lang nawawala. Hahanapin namin sa buong bahay, wala. Tapos, after a few days, makikita na lang namin 'yung laruan, nakapatong sa gilid ng punso, or minsan, medyo nakabaon pa sa lupa. Parang 'hinihiram' daw ng mga duwende. Minsan naman, 'yung kapatid ko, magkakaroon ng biglaang sakit ng tiyan or lagnat na 'di maipaliwanag. Sabi ni Lola, 'nabati' raw ng duwende.\n\nPinapatawas namin siya, tapos 'yung albularyo, mag-aalay ng pagkain at kendi doon sa punso, tapos hihingi ng pasensya. Madalas, gumagaling naman 'yung kapatid ko. Simula noon, natuto na kaming magbigay-galang sa punso. Laging may 'tabi-tabi po.' Hindi man namin sila nakikita, pero naniniwala kaming nandiyan sila."
+    },
+    {
+        "id": "65",
+        "title": "Ang Nagpapakitang Sundalo sa Corregidor Barracks",
+        "locationName": "Mile-Long Barracks, Corregidor Island",
+        "lat": 14.3810, "lng": 120.5765,
+        "snippet": "Touring the ruins. Saw a figure in an old uniform standing in a doorway, then it vanished...",
+        "fullStory": "Corregidor is just steeped in heavy history, and you can feel it everywhere. We were touring the Mile-Long Barracks, or what's left of it. It's just a shell, but you can imagine how it once was. I was a bit separated from our tour group, looking into one of the many empty, crumbling rooms through a ruined doorway.\n\nFor a split second, I saw a figure standing just inside. It was a man, and he seemed to be wearing an old-fashioned, khaki-colored military uniform, maybe American GI. He was just standing there, looking out, but not at me, more like through me. It was so quick, I blinked, and he was gone. I thought my eyes were playing tricks on me because of the heat and the somber atmosphere.\n\nBut then, as I was walking away to rejoin my group, I felt a sudden cold spot, even though it was a hot day. And I heard a very faint sound, like a sigh, or someone clearing their throat, right behind me. I spun around, but of course, no one was there. The tour guide later mentioned that soldiers' apparitions are commonly reported in the barracks. I guess I met one of them."
+    },
+    {
+        "id": "66",
+        "title": "Ang Tumatawag na Boses sa Phone (Bicol)",
+        "locationName": "A remote village in Sorsogon, Bicol Region",
+        "lat": 12.8000, "lng": 123.9500,
+        "snippet": "Nawalan ng signal 'yung phone ko. Bigla, may tumawag, unknown number. Boses ng lola ko, pero patay na siya...",
+        "fullStory": "This is a story from my cousin who lives in a remote part of Sorsogon. Cell signal is very spotty there. One night, there was a strong typhoon, and all power and communication lines were down. My cousin's phone had no signal at all. She was alone in their house, feeling a bit scared.\n\nSuddenly, her phone rang. She was shocked because, again, no signal. The caller ID showed 'Unknown Number.' Hesitantly, she answered. The voice on the other end was very faint, full of static, but she recognized it immediately. It was their lola's voice – their grandmother who had passed away two years prior. The voice just said, 'Apo, mag-ingat ka. Dito lang ako.' (Grandchild, take care. I'm just here.) Then the call dropped.\n\nMy cousin was terrified and confused. How could her phone ring without signal? And how could it be her dead grandmother? After the typhoon passed, she told her parents. Her mom said that maybe their lola was just watching over her. But my cousin couldn't shake off the creepiness of it all. She said the voice sounded so real, so close, yet so... otherworldly."
+    },
+    {
+        "id": "67",
+        "title": "The Shadow Figure in our Ancestral Home (Pampanga)",
+        "locationName": "An ancestral house in Bacolor, Pampanga",
+        "lat": 15.0000, "lng": 120.6500,
+        "snippet": "Every time we visit our lola's old house, I see a tall, dark shadow moving in the hallways at night...",
+        "fullStory": "Our ancestral house in Bacolor, Pampanga, is very old. It survived lahar, but it's always had this... presence. Every time we visit, especially if I stay overnight, I see it. It's a tall, dark shadow figure, man-shaped but with no discernible features. It usually moves silently along the upstairs hallway, or sometimes stands in the doorway of one of the empty rooms.\n\nI'm not the only one who's seen it. My cousins have, my aunts and uncles too. It doesn't seem to do anything, just... observes. But its presence is heavy. You feel a drop in temperature when it's near, and the hairs on your arms stand up. We've tried taking photos, but it never shows up. We've had the house blessed multiple times, but it always comes back, or perhaps, it never really leaves.\n\nMy lola used to say it was a 'bantay' (guardian) of the house, one of the very old ancestors. She wasn't scared of it. But for us younger ones, it's a constant, unnerving reminder that we're never truly alone in that house. It's particularly active when there are many family members around, as if it's checking on everyone."
+    },
+    {
+        "id": "68",
+        "title": "Ang Kumakatok na Walang Tao sa Condo Unit (Taguig)",
+        "locationName": "A condominium building in BGC, Taguig",
+        "lat": 14.5500, "lng": 121.0500,
+        "snippet": "Mag-isa ako sa unit. May kumakatok sa pinto, tatlong beses. Pagbukas ko, wala. Nangyari 'to ng ilang gabi...",
+        "fullStory": "I live alone in a condo in BGC. It's a relatively new building, so I didn't expect anything spooky. But for about a week, I experienced something really weird. It would always happen around 11 PM. I'd be watching TV or reading, and I'd hear three distinct knocks on my unit door: KNOCK. KNOCK. KNOCK. Not too loud, not too soft.\n\nThe first time, I got up and looked through the peephole. No one. I opened the door. Empty hallway. I thought, maybe kids from another unit, or someone got the wrong door. But it happened again the next night. Same time, same three knocks. Again, no one. This went on for five straight nights.\n\nI started getting really creeped out. I even asked the guard at the lobby if they saw anyone suspicious on my floor around that time via CCTV, but they said no unusual activity. On the sixth night, I was dreading 11 PM. When the knocks came, I just froze. I didn't answer. After a minute, I heard them again, but this time, they sounded like they were coming from *inside* my unit, on the other side of my bedroom door. I slept on the sofa that night with all the lights on. Thankfully, it stopped after that. I still don't know what it was."
+    },
+    {
+        "id": "69",
+        "title": "Ang Dalakit Tree sa Palayan (Antique)",
+        "locationName": "A rice field near a Dalakit tree, Antique Province",
+        "lat": 11.4500, "lng": 122.0800,
+        "snippet": "Sabi nila, 'wag daw titingin sa taas ng Dalakit 'pag gabi, baka makakita ng engkantada or 'di maganda...",
+        "fullStory": "Sa probinsya namin sa Antique, maraming kwento tungkol sa mga Dalakit tree. Ito 'yung mga malalaki at matatandang puno na parang balete, na pinaniniwalaang tirahan ng mga engkanto. May isa kaming palayan na may malaking Dalakit sa gilid. Sabi ng lolo ko, 'wag na 'wag daw kaming titingala doon 'pag kabilugan ng buwan or 'pag hatinggabi, baka raw 'di kami makauwi.\n\nMay isang pinsan daw ako na medyo matapang, sinubukan niyang sumilip isang gabi. Nagtago siya sa may pilapil. Maya-maya, may nakita raw siyang parang mga ilaw na maliliit na paikot-ikot sa taas ng puno, parang mga alitaptap pero mas malaki at iba-iba ang kulay. Tapos, may narinig siyang parang tugtugin, mahina lang, parang plawta. Nung tumingala siya, may nakita raw siyang anino ng babae na sobrang ganda, nakaputi, nakaupo sa isa sa mga sanga. Nakatingin daw ito sa kanya at ngumingiti.\n\nBigla raw siyang kinilabutan at parang nahihilo. Tumakbo siya pauwi. Kinabukasan, nilagnat siya ng ilang araw. Sabi ng albularyo, 'natuwaan' daw siya ng engkantada. Simula noon, 'di na siya umulit. Ako, hanggang tingin na lang sa puno 'pag umaga, 'di ko na sinusubukan 'pag gabi."
+    },
+    {
+        "id": "70",
+        "title": "The Empty Swing Set Moving (Subic Bay)",
+        "locationName": "An old playground near the former US Naval Base, Subic Bay",
+        "lat": 14.8210, "lng": 120.2840,
+        "snippet": "Abandoned playground. One swing was moving back and forth on its own. No wind at all.",
+        "fullStory": "My family used to live near Subic Bay, and there were a lot of areas around the former US base that felt... a bit haunted. There was this one old, slightly overgrown playground that my friends and I sometimes passed by. It had rusty swing sets and a creepy old slide.\n\nOne late afternoon, as the sun was starting to set, we were walking past it. It was a very still day, absolutely no wind. But one of the swings, just one, was moving. Not wildly, but steadily, back and forth, back and forth, as if a small child had just gotten off it. The chains were even creaking softly. We all just stopped and stared. There was no one else around. The other swings were perfectly still.\n\nIt went on for a good minute before it slowly started to lose momentum and stop. We didn't say anything to each other, just sort of looked at each other with wide eyes and then walked away a bit faster. We heard stories later that some of the old housing areas for American families had their share of unexplained happenings. Maybe a child's spirit was still enjoying the playground."
+    },
+    {
+        "id": "71",
+        "title": "Ang Pumipigil sa Sasakyan sa Atimonan (Zigzag Road)",
+        "locationName": "Old Zigzag Road (Bitukang Manok), Atimonan, Quezon",
+        "lat": 14.0050, "lng": 121.8980,
+        "snippet": "Byaheng Bicol. Biglang bumigat 'yung takbo ng bus namin sa Bitukang Manok. Parang may nakakapit...",
+        "fullStory": "Madalas kaming mag-Bicol ng pamilya ko, at 'yung Old Zigzag Road sa Atimonan, or Bitukang Manok, kilala talaga sa mga aksidente at kwentong kababalaghan. Isang beses, gabi kami bumibyahe, sakay kami ng bus. Pagpasok namin sa pinaka-curvy part ng Bitukang Manok, biglang parang bumagal at bumigat 'yung takbo ng bus, kahit naka-apak na 'yung driver sa gas.\n\nParang may humihila sa amin pababa or pumipigil sa pag-usad. 'Yung makina ng bus, umuugong na, pero ang bagal pa rin ng takbo namin. Nagdasal na lang 'yung nanay ko. Tapos, may katabi kaming matandang babae, bumulong siya, 'Naku, andiyan na naman sila.' Tinanong namin kung sino, sabi niya, 'Yung mga ayaw patawirin.' After mga 10 minutes na parang hirap na hirap 'yung bus, bigla na lang gumaan ulit 'yung takbo at bumilis kami.\n\nPaglabas namin ng Zigzag, 'yung driver, nag-stop over. Sabi niya, first time daw niyang naranasan 'yun na ganun kabigat. Parang may nakasabit daw na isang truck sa likod nila. Sabi ng matandang babae, 'swerte' pa raw kami kasi nakalusot. 'Yung iba daw, 'di na nakakalabas. Simula noon, 'pag dumadaan kami doon, doble dasal na talaga."
+    },
+    {
+        "id": "72",
+        "title": "Ang Multong Pusa sa Aming Garahe (General Santos)",
+        "locationName": "A house in General Santos City",
+        "lat": 6.1167, "lng": 125.1667,
+        "snippet": "May alaga kaming pusa dati, si Mingming. Namatay siya. Pero minsan, naririnig pa rin namin 'yung meow niya sa garahe...",
+        "fullStory": "May alaga kaming pusa dati, si Mingming. Sobrang love namin 'yun. One day, nasagasaan siya malapit sa bahay namin, namatay. Sobrang lungkot namin. Inilibing namin siya sa backyard. Mga ilang linggo pagkatapos, nagsimula 'yung mga weird na bagay.\n\nMinsan, 'pag nasa sala kami, maririnig namin 'yung distinct na meow ni Mingming, parang nanggagaling sa may garahe. Sisilipin namin, pero wala. Minsan naman, 'yung food bowl niya na iniwan namin sa garahe as a sort of memorial, makikita naming umusog ng konti. Or 'yung paborito niyang laruang bola, gugulong mag-isa.\n\nAng pinaka-nakakakilabot, one night, 'yung kapatid ko, nagising kasi parang may naramdaman siyang pusa na tumalon sa kama niya at humiga sa paanan niya, 'yung laging ginagawa ni Mingming. Pero pagdilat niya, wala. Sabi namin, baka nagpaparamdam lang si Mingming, nami-miss kami. Hindi naman siya nananakot, pero 'yung lungkot at 'yung konting takot, andun pa rin 'pag naririnig namin 'yung 'ghost meows' niya."
+    },
+    {
+        "id": "73",
+        "title": "The Girl in the Reflection (An old mirror in Vigan)",
+        "locationName": "A curio shop with old items, Vigan, Ilocos Sur",
+        "lat": 17.5745, "lng": 120.3880,
+        "snippet": "Looking at an antique mirror. For a second, my reflection was a different girl in old clothes...",
+        "fullStory": "I was in Vigan with friends, and we were browsing in one of those curio shops that sell antiques and old items. There was this beautiful, large, ornate mirror, clearly very old. I stood in front of it, just looking at my reflection. For a split second, and I swear this happened, my reflection flickered. It wasn't me looking back.\n\nIt was a young girl, maybe Filipina-Spanish, with long dark hair, wearing what looked like a very old-fashioned, high-necked dress. She looked sad, and her eyes seemed to meet mine for that briefest moment. Then, just as quickly, my own reflection was back. I gasped and stepped away from the mirror, my heart pounding.\n\nMy friends asked what was wrong, but I couldn't really explain it without sounding crazy. I just said the mirror creeped me out. I kept glancing back at it, but I only saw normal reflections after that. I often wonder who that girl was and what her story was. It felt like I'd looked through a window into the past, or perhaps, she had looked out."
+    },
+    {
+        "id": "74",
+        "title": "Ang Tumatawid na Kalabaw na Biglang Nawawala (Isabela)",
+        "locationName": "A provincial road in Isabela Province",
+        "lat": 17.1500, "lng": 121.8000,
+        "snippet": "Nagda-drive 'yung tatay ko, may kalabaw na tumatawid. Nagpreno siya. Pagtingin ulit, wala na 'yung kalabaw...",
+        "fullStory": "Tatay ko, byahero 'yan dati, nagde-deliver ng mga goods sa iba't-ibang probinsya. One time, nasa Isabela siya, gabi na, medyo madilim 'yung kalsada, puro palayan sa gilid. Bigla raw, may nakita siyang kalabaw na tumatawid sa daan, mga 50 meters ahead. Natural, nag-menor siya at nagpreno para 'di niya mabangga.\n\nPaglapit niya sa spot kung saan niya nakita 'yung kalabaw, wala. As in, wala. Tiningnan niya sa kaliwa't kanan ng kalsada, sa mga palayan, wala siyang makitang kalabaw. Imposible raw na ganun kabilis mawala 'yung kalabaw, lalo na't malaki 'yun. Wala ring ibang tao or sasakyan.\n\nKinilabutan daw tatay ko. Pinatakbo na lang niya ulit 'yung truck niya. Sabi niya, baka raw 'elemental' 'yun or 'multo ng kalabaw.' Narinig niya sa ibang driver, may mga ganun daw talagang 'nagpapakita' sa mga liblib na daan, parang nanloloko or nagpaparamdam lang. Buti na lang daw 'di siya bumaba ng truck para hanapin."
+    },
+    {
+        "id": "75",
+        "title": "Yapak sa Bubong ng Nipa Hut Namin (Siargao)",
+        "locationName": "A nipa hut near the beach, Siargao Island",
+        "lat": 9.8700, "lng": 126.1000,
+        "snippet": "Natutulog kami. Bigla, may narinig kaming mabibigat na yapak sa bubong namin. Pero nipa hut lang 'yun...",
+        "fullStory": "When I first went to Siargao years ago, we stayed in a very basic nipa hut right by the beach. It was charming, but one night was genuinely terrifying. It was around 2 or 3 AM, dead quiet except for the sound of the waves. My friend and I were asleep when we were both jolted awake by the sound of heavy footsteps on our roof.\n\nTHUMP. THUMP. THUMP. Like someone was slowly, deliberately walking across it. The thing is, it was a nipa roof. It wouldn't support the weight of a person. And even if it could, who would be on our roof in the middle of the night? There were no tall trees nearby for someone to jump from. We were frozen in fear, just listening. The footsteps went from one end of the small hut to the other, then stopped.\n\nWe didn't sleep for the rest of the night. The next morning, we checked the roof from the outside. Nothing. No damage, no footprints (not that we expected any on nipa). We asked some locals if they knew of anything. They just shrugged and said, 'Ah, the island has many spirits.' Some mentioned the 'Wakwak' or other creatures that are said to land on roofs. We moved to a concrete cottage after that."
+    },
+    {
+        "id": "76",
+        "title": "Ang Nawawalang Santo sa Lumang Simbahan (Laguna)",
+        "locationName": "Nagcarlan Underground Cemetery and Church, Laguna",
+        "lat": 14.1356, "lng": 121.4171,
+        "snippet": "Sa underground cemetery, may kwento tungkol sa isang rebulto ng santo na nawawala tapos bumabalik mag-isa...",
+        "fullStory": "Ang Nagcarlan Underground Cemetery, 'di ba, sikat na 'yan? Pero 'yung simbahan mismo sa taas, may mga kwento rin. May narinig ako sa isang local doon tungkol sa isang maliit na rebulto ng santo, 'di ko na maalala kung sinong santo, na nasa isa sa mga side altars. Sabi nila, minsan daw, nawawala 'yung rebulto.\n\nHahanapin ng mga sacristan, wala. Akala nila, ninakaw. Pero after a few days, or minsan, kinabukasan lang, makikita na lang nila 'yung rebulto, balik na ulit sa pwesto niya, parang walang nangyari. Minsan daw, medyo iba 'yung pwesto, or parang may alikabok na galing sa labas, na parang 'naglakwatsa' raw 'yung santo.\n\nMay isang matandang caretaker daw dati na nakakita mismo. Papasok siya sa simbahan ng madaling araw para maglinis. Pagtingin niya sa altar, wala 'yung rebulto. Nagulat siya. Habang nagpupunas siya sa ibang parte, narinig niya 'yung parang maliit na kaluskos. Paglingon niya, nakita niya 'yung rebulto na dahan-dahang umuusog pabalik sa pwesto niya, parang may 'di nakikitang kamay na naglalagay. Hindi na raw siya nagsalita, nagdasal na lang. Creepy 'pag 'yung santo na mismo ang 'gumagala'."
+    },
+    {
+        "id": "77",
+        "title": "The Cold Spot and Perfume in the UP Vargas Museum",
+        "locationName": "Jorge B. Vargas Museum, UP Diliman, Quezon City",
+        "lat": 14.6580, "lng": 121.0660,
+        "snippet": "Walking through a gallery, suddenly hit a very cold spot, and a strong smell of old lady perfume. Then it was gone.",
+        "fullStory": "I was visiting the Vargas Museum in UP Diliman. It's a great museum, lots of art and historical items. I was in one of the upstairs galleries, looking at some paintings. It was a warm day, and the gallery was air-conditioned but not freezing. As I walked past a particular display case with some old Filipiniana attire, I suddenly stepped into an intensely cold spot. It was like walking into a freezer for a second. The air was noticeably colder than the rest of the room.\n\nAt the exact same moment, I smelled a very strong, distinct perfume. It wasn't a modern scent; it smelled like old-fashioned floral perfume, the kind my grandmother used to wear. It was quite overpowering for a moment. I looked around, thinking maybe a staff member had walked past wearing it, but I was alone in that section of the gallery. The people I could see were at the other end of the room.\n\nThen, as quickly as it came, the coldness and the perfume vanished. I took a few more steps, and the temperature was back to normal. I even sniffed the air, but the perfume smell was completely gone. It was so bizarre. I've heard UP has its share of ghosts, so maybe one of them was checking out the exhibits with me."
+    },
+    {
+        "id": "78",
+        "title": "Ang mga Mata sa Dilim sa Balay na Bato (Aklan)",
+        "locationName": "Balay na Bato (Old Spanish House), Ibajay, Aklan",
+        "lat": 11.8180, "lng": 122.1670,
+        "snippet": "Nag-overnight kami sa lumang bahay. Paggising ko, may dalawang mata na nakatitig sa akin mula sa dilim...",
+        "fullStory": "My friend's family owns an old 'balay na bato' in Ibajay, Aklan, and we got to stay there one weekend. Sobrang authentic, 'yung mga gamit, luma talaga. No electricity in some parts, so we used gas lamps. Sa isang malaking kwarto kami natulog, sa sahig lang, may mga banig.\n\nMga madaling araw, nagising ako. Sobrang dilim, 'yung gas lamp namin, 'di na umabot 'yung ilaw sa parteng pader. Habang nakahiga ako, trying to go back to sleep, napansin ko, parang may dalawang tuldok na kumikinang sa dilim, sa may bandang paanan ng kwarto. Akala ko, reflection lang ng kung ano. Pero nung tinitigan ko, 'yung dalawang tuldok, parang mga mata. At parang nakatitig sa akin.\n\nHindi gumagalaw, pero alam kong mata 'yun. Hindi mata ng pusa or aso, kasi 'yung pwesto, mataas, parang mata ng taong nakatayo. Sinubukan kong 'di pansinin, pumikit ako. Pero ramdam ko pa rin 'yung titig. After a few minutes, naglakas-loob akong dumilat ulit. Wala na 'yung mga mata. Hindi na ako nakatulog hanggang mag-umaga. Kinwento ko sa friend ko, sabi niya, baka 'guni-guni' ko lang daw. Pero 'yung titig na 'yun, tandang-tanda ko pa rin."
+    },
+    {
+        "id": "79",
+        "title": "Ang Batang Naglalaro ng Holen sa Sementeryo (La Loma)",
+        "locationName": "La Loma Cemetery, Caloocan/Manila",
+        "lat": 14.6300, "lng": 120.9850,
+        "snippet": "Undas. May narinig kaming naglalaro ng holen sa isang lumang nitso. Pagtingin namin, walang bata...",
+        "fullStory": "Every Undas, we visit our relatives at La Loma Cemetery. It's a huge, sprawling place, and some parts are very old. One evening, it was getting dark, and we were lighting candles. My younger cousins and I were near a cluster of very old, somewhat neglected tombs. Suddenly, we heard the distinct 'click-clack' sound of marbles – holen – being played.\n\nIt sounded like it was coming from just behind one of the big, mausoleum-type tombs. We thought maybe some other kids were playing there. We peeked around the corner, expecting to see them. But there was no one. The sound stopped the moment we looked. We waited a bit, then we heard it again, from the same spot. 'Click-clack-click.' We quickly looked again – still empty. The ground was just dirt and old leaves, no sign of marbles or anyone playing.\n\nWe got a bit spooked and went back to our family. We told our tita, and she said, 'Naku, baka 'yung mga batang kaluluwa 'yan. Hayaan niyo lang sila maglaro.' It wasn't a terrifying experience, but it was definitely eerie to hear sounds of children playing in a place where no living child was present."
+    },
+    {
+        "id": "80",
+        "title": "The Persistent Knocking at the Hotel Door (Bacolod)",
+        "locationName": "An old hotel in Bacolod City",
+        "lat": 10.6740, "lng": 122.9500,
+        "snippet": "Checked into an old hotel. Middle of the night, someone knocked. Peephole showed an empty hallway. It happened three times.",
+        "fullStory": "I was in Bacolod for work and stayed in one of the older, more 'classic' hotels in the city. My room was at the end of a long, dimly lit hallway. The first night, around 1 AM, I was woken up by a series of firm knocks on my door – three knocks, then a pause, then three more. I got up, a bit groggy, and looked through the peephole. The hallway was completely empty. I figured it was a late-arriving guest who got the wrong room.\n\nAbout an hour later, it happened again. Same pattern of knocks. This time, I was more alert. I quickly looked through the peephole. Still empty. I even opened the door a crack. Nothing. Now I was getting a bit uneasy. I tried to go back to sleep, but then, for a third time, around 3:30 AM, the knocking came again, more insistent this time. I didn't even bother looking; I just yelled, 'Wrong room!' very loudly. The knocking stopped.\n\nThe next morning, I mentioned it to the front desk, just in case. The receptionist looked a bit uncomfortable and just said they hadn't received any other complaints. I read online later that some old hotels have 'resident ghosts' who like to make their presence known to new guests. I requested a different room for my remaining nights."
+    },
+    {
+        "id": "81",
+        "title": "Ang Babaeng Nakaputi sa Hibok-Hibok Volcano Trail (Camiguin)",
+        "locationName": "Mt. Hibok-Hibok Trail, Camiguin Island",
+        "lat": 9.2030, "lng": 124.6730,
+        "snippet": "Nagha-hike kami paakyat. Sa isang section ng trail, may nakita kaming babae, nakaputi, nakatayo sa malayo. Paglapit namin, wala na.",
+        "fullStory": "My friends and I decided to hike Mt. Hibok-Hibok in Camiguin. It was a challenging but beautiful trail. We were with a local guide. About halfway up, we were navigating a densely forested section. Ahead of us, maybe 50 meters down the trail where it curved, we all saw her – a figure of a woman, standing still, wearing a long white dress. Her back was mostly to us, and her hair was long and dark.\n\nOur guide, who was in front, suddenly stopped and made a small gesture, like 'wait'. We all paused. The woman didn't move. After a moment, our guide started walking again, and we followed. As we rounded the curve where we had seen her, she was gone. There was nowhere she could have gone that quickly without us seeing her. The trail was narrow, with thick vegetation on either side. No side paths.\n\nWe asked our guide, 'Nakita niyo 'yung babae kanina?' He just nodded slowly and said, 'Oo. Tagabantay 'yan dito. Minsan nagpapakita.' He didn't elaborate, and we didn't press him. But the rest of the hike, we were all a bit more quiet, a bit more aware of our surroundings. It wasn't scary, more like a reminder that some places have guardians you don't see."
+    },
+    {
+        "id": "82",
+        "title": "The Music Box in the Abandoned House (Antipolo)",
+        "locationName": "An abandoned house in a subdivision in Antipolo, Rizal",
+        "lat": 14.5870, "lng": 121.1760,
+        "snippet": "Urban exploring. Heard a faint music box tune coming from an upstairs room. The house was supposedly empty for years.",
+        "fullStory": "My friends and I were into urban exploring for a while, and there was this abandoned house in a subdivision in Antipolo that we'd heard stories about. Supposedly, the family just left everything and moved abroad years ago. We managed to get in one afternoon. It was dusty, cobweb-filled, and eerily silent. Furniture was still there, covered in white sheets, like a time capsule.\n\nAs we were cautiously exploring the ground floor, we suddenly heard it – a very faint, tinkling melody, like a music box. It seemed to be coming from upstairs. We froze, listening. It played for about 30 seconds, then stopped. We were all looking at each other, like, 'Did you hear that?' We slowly made our way upstairs, our hearts pounding. We checked every room. All empty, all dusty. No sign of a music box, or anything that could have made that sound.\n\nWe decided we'd seen enough and got out of there pretty quickly. The thought of that delicate music playing in a house that had been silent and empty for so long was deeply unsettling. Who, or what, was playing it?"
+    },
+    {
+        "id": "83",
+        "title": "Ang mga 'Hindi Nakikitang' Mangingisda sa Pantabangan Dam",
+        "locationName": "Pantabangan Dam, Nueva Ecija",
+        "lat": 15.8167, "lng": 121.1333,
+        "snippet": "Sabi ng mga local, 'yung lumang bayan na nalubog sa ilalim ng dam, may mga ' residente' pa rin daw na nangingisda 'pag gabi.",
+        "fullStory": "Ang Pantabangan Dam, 'di ba, may lumang bayan na nalubog sa ilalim niyan noong ginawa 'yung dam? May mga kwento 'yung mga local na mangingisda doon na medyo creepy. Sabi nila, minsan daw, 'pag pumapalaot sila sa dam 'pag gabi, lalo na 'pag kabilugan ng buwan at kalmado 'yung tubig, may makikita silang parang mga anino ng bangka sa malayo.\n\nPero 'pag nilapitan nila, wala naman. Or minsan, may maririnig silang parang may kumakanta or nag-uusap, 'yung boses, parang galing sa ilalim ng tubig. Ang pinaka-creepy, may mga nakakakita raw ng parang mga ilaw ng lampara na gumagalaw sa ilalim ng tubig, sa parteng dating kinatatayuan ng lumang bayan. Para raw 'yung mga dating residente, 'nangingisda' pa rin or 'naglalakad' sa kanilang lumang tahanan.\n\nSabi ng isang matandang mangingisda, 'wag daw masyadong magtatagal sa gitna ng dam 'pag gabi, baka raw 'isama' ka ng mga 'taga-ilalim.' Parang 'yung mga kaluluwa ng lumang Pantabangan, hindi pa rin tuluyang umalis."
+    },
+    {
+        "id": "84",
+        "title": "Ang Umaakyat na Anino sa Hagdan (Old House in Silay)",
+        "locationName": "Bernardino Jalandoni Museum (Pink House), Silay City, Negros Occidental",
+        "lat": 10.7975, "lng": 122.9763,
+        "snippet": "Nasa baba kami ng grand staircase. Bigla, may nakita kaming anino na paakyat, pero wala namang tao.",
+        "fullStory": "Silay City is famous for its beautiful ancestral houses. We were visiting the Bernardino Jalandoni Museum, also known as the Pink House. It's stunning. We were on the ground floor, near the foot of the magnificent wooden grand staircase. The house wasn't crowded, just a few other visitors milling about.\n\nSuddenly, my sister grabbed my arm and whispered, 'Look!' I looked where she was pointing – at the staircase. We both saw it: a dark, human-shaped shadow, as if cast by someone, slowly ascending the stairs. But there was no one on the stairs. No one walking up, no one who could have cast that shadow. It glided up a few steps and then just... dissolved into the darker shadows of the upper landing.\n\nWe were both speechless for a moment. We looked around to see if anyone else had noticed, but the other visitors seemed oblivious. The air around the staircase felt noticeably colder. We didn't go upstairs immediately after that. The caretakers there are used to such stories, apparently. They say the original owners still 'walk around' their beloved home."
+    },
+    {
+        "id": "85",
+        "title": "Ang Misteryosong Kabaong sa Lumang Sapa (Samar)",
+        "locationName": "A remote creek in a forested area of Samar",
+        "lat": 12.0000, "lng": 125.0000,
+        "snippet": "Nagliligo 'yung mga bata sa sapa. Bigla, may inanod na maliit na kabaong. Pagbukas nila, walang laman. Tapos nawala 'yung kabaong.",
+        "fullStory": "This story comes from a friend whose family is from a very remote village in Samar. May isang grupo raw ng mga bata na naglalaro at naliligo sa isang sapa (creek) na malapit sa gubat. Habang masaya silang nagtatampisaw, may napansin silang inanod na parang kahon. Nung lumapit, nakita nila, maliit na kabaong, parang kabaong ng sanggol or maliit na bata.\n\nSa halip na matakot, na-curious 'yung mga bata. Iniahon nila 'yung kabaong sa pampang. Medyo luma na 'yung itsura. Nagtulungan silang buksan. Pagbukas nila, wala namang laman. Medyo disappointed sila. Iniwan nila 'yung kabaong sa gilid ng sapa at nagpatuloy sa paglalaro. Maya-maya, nung paalis na sila, binalikan nila 'yung kabaong. Wala na. Naglaho na parang bula. Hinanap nila sa paligid, pero 'di na nila nakita.\n\nPag-uwi nila at kinwento sa mga magulang, pinagalitan sila. Sabi ng matatanda, masamang pangitain daw 'yun or baka 'laruan' ng mga engkanto 'yung kabaong. Baka raw may 'sumama' sa kanila pauwi. Buti na lang, wala namang nangyaring masama sa mga bata, pero 'di na sila pinayagang maligo ulit sa sapang 'yun."
+    },
+    {
+        "id": "86",
+        "title": "The Unseen Watcher in our Baguio Rental Cabin",
+        "locationName": "A rental cabin in a wooded area of Baguio City",
+        "lat": 16.4000, "lng": 120.6000,
+        "snippet": "Felt like someone was constantly watching us, especially at night. Doors would creak open on their own.",
+        "fullStory": "My family rented a cabin in Baguio for a holiday, one of those charming, slightly isolated ones surrounded by pine trees. From the first night, we all felt it – this distinct, unnerving feeling of being watched. It was strongest at night. You'd be sitting in the living room, and you'd just get this prickling sensation on your neck, like someone was standing right behind you, or peering in from the dark windows.\n\nDoors would also creak open slowly on their own, even when there was no draft. The master bedroom door was particularly bad; we'd close it firmly, and a few minutes later, we'd hear it creak open again. My mom, who is a bit sensitive, said she kept seeing fleeting shadows out of the corner of her eye, especially near the old stone fireplace.\n\nIt wasn't anything aggressive, but the constant feeling of an unseen presence made it hard to relax. It felt like the cabin had a permanent, invisible resident who wasn't too keen on sharing their space. We cut our stay short by a day. The relief we felt upon leaving that cabin was immense."
+    },
+    {
+        "id": "87",
+        "title": "Ang mga Kaluluwa sa Sunken Cemetery ng Camiguin (Pag Gabi)",
+        "locationName": "Sunken Cemetery, Catarman, Camiguin",
+        "lat": 9.2125, "lng": 124.6417,
+        "snippet": "Sumakay kami ng bangka papunta sa cross 'pag gabi. Parang may mga anino sa ilalim ng tubig...",
+        "fullStory": "Kilala 'yung Sunken Cemetery sa Camiguin, 'di ba? Usually, 'pag daytime 'yung punta. Pero may mga boatmen doon na nag-ooffer ng night tour, lalo na 'pag full moon, para daw mas 'atmospheric'. Na-try namin 'to ng mga kaibigan ko. Medyo kinakabahan, pero sige lang.\n\nHabang papunta kami sa malaking cross, 'yung tubig, sobrang itim, pero kitang-kita 'yung reflection ng buwan. Tahimik. Bigla, 'yung isa kong kaibigan, tinuro niya 'yung tubig. 'Guys, tingnan niyo!' Pagtingin namin, parang may mga anino na gumagalaw sa ilalim, malapit sa mga lumang puntod na kita pa 'yung outline. Hindi isda, kasi 'yung korte, parang tao. Marami sila, parang naglalakad or lumalangoy ng dahan-dahan.\n\n'Yung boatman namin, ngumiti lang. Sabi niya, 'Mga dating residente 'yan. Nagpaparamdam lang sila sa mga bisita.' Kinilabutan kami, pero at the same time, parang ang lungkot. Imagine, 'yung sementeryo nila, nasa ilalim na ng dagat. Hindi na kami nagtagal. Pagbalik namin sa pampang, parang ang bigat ng dala naming experience."
+    },
+    {
+        "id": "88",
+        "title": "The Handprint on the Dusty Car Window (Tagaytay Highlands)",
+        "locationName": "A secluded parking lot in Tagaytay Highlands",
+        "lat": 14.1310, "lng": 120.9810,
+        "snippet": "Parked our car for a few hours. When we came back, there was a child's handprint on the dusty rear window. We don't have kids.",
+        "fullStory": "My husband and I were at Tagaytay Highlands for an event. We parked our car in one of the more secluded, unpaved parking areas, a bit far from the main buildings. It was late afternoon. Our car was quite dusty from the drive up. We were gone for about three hours.\n\nWhen we returned to the car, it was already getting dark. As I was about to open my door, I noticed something on the dusty rear windshield. It was a perfect, small handprint – clearly a child's handprint. It was pressed firmly into the dust. The weird thing is, we don't have children. And we hadn't seen any kids playing around that remote parking lot when we arrived or when we left. The car had been locked the whole time.\n\nIt was so distinct and out of place. My husband saw it too and was just as baffled. It wasn't a smudge; you could see the little fingers and palm. We just wiped it off, feeling a bit uneasy. It was like a little ghost had decided to lean on our car while we were away. It's a small thing, but it stuck with us because it was so inexplicable."
+    },
+    {
+        "id": "89",
+        "title": "Ang Tumatawang Engkanto sa Marilog District (Davao)",
+        "locationName": "Marilog District, Davao City (Mountainous Area)",
+        "lat": 7.3500, "lng": 125.3000,
+        "snippet": "Nag-camping kami. Gabi, may narinig kaming tawa, parang bata pero 'di tao. Nanggagaling sa gubat.",
+        "fullStory": "My barkada and I went camping in Marilog District, 'yung bulubunduking part ng Davao. Ang ganda ng lugar, very peaceful. First night namin, nakagawa na kami ng bonfire, nagkukwentuhan. Mga bandang 10 PM, biglang tumahimik 'yung paligid, pati 'yung mga kuliglig.\n\nTapos, may narinig kaming tawa. Hindi tawa ng tao. Parang tawa ng bata, pero may echo at parang 'di natural. Nanggagaling sa direksyon ng gubat, medyo malayo pero malinaw. Nagkatinginan kami. Tumawa ulit, this time, parang mas malapit. Kinilabutan na kami. 'Yung isa naming kasama na local doon, sabi niya, 'Engkanto 'yan. 'Wag niyong papansinin. Mag-ingay lang tayo.'\n\nSinunod namin siya. Nagpatugtog kami ng malakas sa phone, nagkantahan kami, kahit pilit. After mga 15 minutes, nawala 'yung tawa. Pero 'di na kami mapakali. Hindi na kami masyadong nakatulog 'nun. Sabi ng kasama naming local, 'mabait' pa raw 'yun kasi tawa lang. 'Yung iba daw, nagpapakita or nanliligaw. Lesson learned: 'pag nasa gubat, laging magbigay-respeto sa mga 'di nakikita."
+    },
+    {
+        "id": "90",
+        "title": "The Whispering Mannequin (A Department Store in Cubao)",
+        "locationName": "A department store in Cubao, Quezon City",
+        "lat": 14.6195, "lng": 121.0510,
+        "snippet": "Working late, fixing a display. Swear I heard one of the mannequins whisper my name.",
+        "fullStory": "I used to work part-time in a big department store in Cubao, often doing late shifts for inventory or changing displays. One night, I was alone in the women's section, dressing a group of mannequins for a new promotion. It was very late, almost midnight, and the store was dead silent, except for the hum of the AC.\n\nI was adjusting the arm of one mannequin, and I swear, I heard a very soft, breathy whisper right by my ear say my name: 'Anna...' I froze. I even looked at the mannequin's face, half-expecting its painted lips to move. Of course, they didn't. There was absolutely no one else around. The other staff were on a different floor.\n\nI quickly finished what I was doing, my hands shaking a bit, and practically ran to the staff locker room. I told my supervisor the next day, and she laughed, saying the mannequins probably get lonely at night. But other older staff members told me that particular section had always been a bit 'creepy,' with stories of items falling off shelves on their own or shadows moving. I always felt uneasy around those mannequins after that."
+    },
+    {
+        "id": "91",
+        "title": "Ang Itim na Aso sa Sementeryo ng Paete (Laguna)",
+        "locationName": "Paete Cemetery (Old Section), Laguna",
+        "lat": 14.3620, "lng": 121.4820,
+        "snippet": "Dumalaw kami sa puntod. May malaking itim na aso na nakaupo sa tabi, nakatitig. Pag-alis namin, wala na.",
+        "fullStory": "Ang Paete Cemetery, lalo na 'yung lumang parte, medyo may kakatakutan din. Pumunta kami doon para dalawin 'yung lolo ng asawa ko. Habang nagtitirik kami ng kandila at nagdarasal, may napansin kaming malaking itim na aso na nakaupo sa tabi ng katabing puntod. Tahimik lang siya, pero 'yung mga mata niya, parang nakatitig sa amin. Sobrang itim ng balahibo niya, at parang malungkot 'yung itsura.\n\nWalang may-ari na kasama 'yung aso. Akala namin, ligaw lang. Hindi naman siya gumagalaw or tumatahol. Nandoon lang siya, nagmamasid. Medyo na-uncomfortable kami, pero pinagpatuloy lang namin 'yung ginagawa namin. After mga 30 minutes, paalis na kami. Paglingon namin sa pwesto ng aso, wala na siya. Naglaho na parang bula. Walang ingay, walang bakas.\n\nKinwento namin sa caretaker. Sabi niya, 'Ah, 'yung bantay. Minsan nagpapakita 'yan, lalo na 'pag may mga bagong dating or 'pag may bisitang 'di niya gusto.' Hindi raw 'yun ordinaryong aso. Bantay daw 'yun ng mga kaluluwa doon. Nakakakilabot isipin na 'yung asong 'yun, baka hindi talaga aso."
+    },
+    {
+        "id": "92",
+        "title": "The Rocking Chair That Moved on its Own (B&B in Sagada)",
+        "locationName": "An old guesthouse/B&B in Sagada, Mountain Province",
+        "lat": 17.0820, "lng": 120.9030,
+        "snippet": "Common room had an old rocking chair. We saw it rocking by itself when no one was near it.",
+        "fullStory": "Stayed at a very old, charming but rustic guesthouse in Sagada. The common room had a fireplace and several old wooden pieces of furniture, including a very antique-looking rocking chair. One evening, my friends and I were sitting around, talking. The rocking chair was in the corner, completely still. There was no wind, as the windows were closed because it was chilly.\n\nSuddenly, in a lull in our conversation, we all noticed it. The rocking chair started to rock. Gently at first, then a bit more pronouncedly, back and forth, back and forth. No one was anywhere near it. We all just stared, completely silent. It rocked for maybe a full minute, then gradually slowed down and stopped.\n\nOne of my friends, trying to be brave, got up and touched it, as if to check if it was loose or something. It was solid. We asked the innkeeper about it the next day. She just smiled and said, 'Lola Ayya likes to sit there in the evenings. She means no harm.' Apparently, Lola Ayya was the original owner of the house, long deceased. Well, Lola Ayya, you gave us quite the fright!"
+    },
+    {
+        "id": "93",
+        "title": "Ang 'Batingaw' na Tumutunog Mag-isa (Simbahan sa Siquijor)",
+        "locationName": "St. Isidore Labrador Church, Lazi, Siquijor",
+        "lat": 9.1310, "lng": 123.6240,
+        "snippet": "Sikat 'yung lumang kumbento at simbahan. Sabi nila, 'yung kampana raw minsan tumutunog mag-isa, kahit walang tao sa bell tower.",
+        "fullStory": "Ang Lazi Church and Convent sa Siquijor, 'di ba, National Historical Landmark? Sobrang ganda at ang tanda na. At dahil Siquijor 'yan, 'di mawawala 'yung mga kwentong kababalaghan. Isa sa mga narinig ko from a local guide 'yung tungkol sa 'batingaw' or 'yung malaking kampana ng simbahan.\n\nSabi niya, minsan daw, lalo na 'pag gabi or 'pag madaling araw na sobrang tahimik, bigla na lang daw tutunog 'yung kampana. Isang beses lang, or minsan, dalawa o tatlo. Pero 'pag chineck daw nila 'yung bell tower, wala namang tao. Imposible rin daw na hangin lang, kasi sobrang bigat ng kampana. Para raw may 'hindi nakikitang' kamay na nagpapatunog nito.\n\nMay mga naniniwala na baka 'yun daw 'yung mga dating kampanero na 'di pa rin umaalis, or baka 'babala' raw 'yun ng mga engkanto or 'yung mga 'tagabantay' ng isla. 'Yung guide namin, sabi niya, 'pag narinig daw nila 'yun, nagdarasal na lang sila. Parang sign daw 'yun na 'nandiyan lang sila.' Nakakatindig-balahibo, lalo na 'pag na-imagine mo 'yung tunog ng kampana sa gitna ng katahimikan ng gabi."
+    },
+    {
+        "id": "94",
+        "title": "The Child's Laughter in the Halls of Old Sto. Nino Orphanage (Cebu)",
+        "locationName": "Former site of an old orphanage near Basilica del Sto. Niño, Cebu City",
+        "lat": 10.2940, "lng": 123.9020,
+        "snippet": "Heard that the old, now repurposed, orphanage building sometimes echoes with children's laughter at night.",
+        "fullStory": "A friend of mine in Cebu once worked in an office that was located in a building that, decades ago, used to be part of an old orphanage connected to the Sto. Niño Basilica. The building was renovated, but some of the old structure remained. She often had to work late.\n\nShe told me that on several occasions, when she was alone in her section of the office, usually past 8 PM, she would hear the distinct sound of children's laughter. Not just one child, but several, as if they were playing in the hallways. It would be faint at first, then a bit clearer, then it would fade away. She'd check the hallways, but they were always empty and silent. The other offices on their floor would be closed and dark by then.\n\nShe wasn't scared, more melancholic, she said. It felt like the joyful echoes of the children who once lived there were still imprinted on the place. Other long-time employees in the building had similar stories – of hearing children's footsteps, or soft singing. It's a reminder that places hold memories, and sometimes, those memories feel very, very real."
+    },
+    {
+        "id": "95",
+        "title": "Ang mga Aninong Sumasayaw sa Loob ng Bahay Kubo (Rural Tarlac)",
+        "locationName": "A solitary bahay kubo in a field, Tarlac Province",
+        "lat": 15.4800, "lng": 120.5000,
+        "snippet": "Napadaan kami sa isang bahay kubo, walang ilaw. Pero sa bintana, may mga aninong parang nagsasayawan...",
+        "fullStory": "Kuwento 'to ng driver ng van na nasakyan namin pauwi galing Norte. Dumaan kami sa isang part ng Tarlac na puro bukid, gabi na 'yun. May nadaanan kaming isang bahay kubo, medyo malayo sa kalsada, nakatayo mag-isa sa gitna ng bukid. Walang ilaw 'yung bahay kubo, as in, madilim. Pero habang papalapit kami, may napansin kaming lahat sa bintana niya.\n\nParang may mga anino sa loob, gumagalaw, parang nagsasayawan. Maraming anino, iba't-ibang korte. Pero wala kaming marinig na tugtog or ingay. Sobrang weird, kasi 'yung anino, kitang-kita against the faint moonlight, pero 'yung bahay mismo, walang kailaw-ilaw. Para silang shadow puppets, pero walang source ng ilaw sa likod nila.\n\nNagkatinginan kami sa loob ng van. 'Yung driver, binilisan 'yung takbo. Sabi niya, 'Hayaan niyo na sila, baka may 'kasiyahan' 'yung mga hindi natin nakikita.' Hindi na kami nagtanong pa. Pero 'yung imahe ng mga aninong 'yun na nagsasayaw sa dilim, sa isang abandonadong bahay kubo, 'di ko makakalimutan. Sobrang eerie."
+    },
+    {
+        "id": "96",
+        "title": "The Disappearing Old Man on Session Road (Baguio)",
+        "locationName": "Session Road, Baguio City",
+        "lat": 16.4120, "lng": 120.5960,
+        "snippet": "Walking down Session Road at night. Saw an old man in tattered clothes. Turned to offer him food, and he was gone.",
+        "fullStory": "This happened to me late one evening in Baguio. I was walking down Session Road, it was a bit foggy and cold, not many people around. Ahead of me, I saw a very old man, shuffling slowly, wearing very tattered clothes. He looked like he needed help. I had some leftover bread from dinner in my bag, so I thought I'd offer it to him.\n\nI sped up a bit to catch up to him. He was just a few feet ahead. I looked down for a second to get the bread out of my bag. When I looked up again, he was gone. Vanished. Session Road is quite open; there were no side streets or doorways he could have ducked into that quickly without me seeing. I even looked around the parked cars. Nothing.\n\nIt was so strange. One moment he was there, clearly visible, the next, just empty pavement. I wondered if he was even real to begin with. Baguio has so many stories of spirits, especially of people from its long history. Maybe he was one of them, still walking his familiar path."
+    },
+    {
+        "id": "97",
+        "title": "Ang mga Matang Nakatitig Mula sa Ilog (Agusan Marsh)",
+        "locationName": "Agusan Marsh Wildlife Sanctuary, Agusan del Sur",
+        "lat": 8.2500, "lng": 125.8000,
+        "snippet": "Sakay kami ng bangka sa marsh, gabi. Sa gilid ng bangka, may mga matang lumitaw sa tubig, nakatitig sa amin...",
+        "fullStory": "Nag-tour kami sa Agusan Marsh, and part of it was a night boat ride to see nocturnal animals. Sobrang peaceful and dark, 'yung mga bituin lang at 'yung flashlight ng guide namin 'yung ilaw. Habang dahan-dahan kaming umaandar sa isang makitid na waterway, bigla na lang, may napansin 'yung guide namin.\n\nTinutok niya 'yung flashlight sa gilid ng bangka, sa may tubig. At first, akala namin, mga reflection lang. Pero nung tinitigan namin, parang may mga pares ng mata na lumitaw mula sa ilalim ng tubig, just above the surface. Hindi mata ng buwaya, kasi mas maliit at mas malapit sa isa't isa, parang mata ng tao or malaking mammal. Marami sila, nakapalibot sa gilid ng bangka namin, tahimik lang na nakatitig.\n\nWalang gumagalaw sa amin. 'Yung guide, bumulong, ''Wag kayong maingay. Mga 'tagabantay' 'yan ng tubig.' After mga isang minuto, dahan-dahan silang lumubog at nawala. Hindi na nagsalita 'yung guide namin tungkol doon. Pero kami, 'di na kami mapakali. Parang feeling namin, 'yung buong marsh, may mga matang nakamasid sa amin mula sa kadiliman ng tubig."
+    },
+    {
+        "id": "98",
+        "title": "The Cold Breath in the Old Library Stacks (National Library)",
+        "locationName": "National Library of the Philippines, Ermita, Manila",
+        "lat": 14.5825, "lng": 120.9830,
+        "snippet": "Researching in a quiet section. Felt a cold breath on my neck, but I was alone in the aisle.",
+        "fullStory": "I was doing some research at the National Library, in one of the older, less frequented sections with towering stacks of books. It was very quiet, the kind of silence where you can hear a pin drop. I was deeply engrossed in a book, sitting at a small carrel at the end of an aisle.\n\nSuddenly, I felt a distinct puff of cold air on the back of my neck, like someone had leaned in close and exhaled. It was so real, I instinctively flinched and turned around, expecting to see someone standing behind me, maybe another researcher or a librarian. But the aisle was completely empty. There was no one there. The air conditioning wasn't blowing in that direction either.\n\nI sat there for a moment, my heart racing a little. The feeling was so specific – not just a draft, but a *breath*. I tried to dismiss it, but I couldn't shake the feeling that I wasn't alone. I packed up my things a few minutes later and moved to a more open, populated area of the library. Old libraries, with all their stored knowledge and history, probably have a few lingering spirits who are also avid readers."
+    },
+    {
+        "id": "99",
+        "title": "Ang mga Nawawalang Gamit sa Dormitoryo (UP Los Baños)",
+        "locationName": "A dormitory in UP Los Baños, Laguna",
+        "lat": 14.1660, "lng": 121.2400,
+        "snippet": "Sa dorm namin, laging may nawawalang maliliit na gamit – ballpen, suklay. Tapos biglang lilitaw sa ibang lugar.",
+        "fullStory": "Noong nagdo-dorm ako sa UPLB, 'yung building namin, medyo luma na. At laging may 'kababalaghan' ng nawawalang gamit. Hindi 'yung malalaking bagay, kundi 'yung mga maliliit lang: ballpen, suklay, hair clip, minsan barya. Ilalagay mo sa table mo, saglit ka lang aalis, pagbalik mo, wala na.\n\nHahanapin mo, 'di mo makikita. Tapos, after a few hours, or minsan, kinabukasan, bigla na lang siyang lilitaw sa ibang lugar. Minsan, sa ilalim ng unan mo, or sa loob ng sapatos mo, or sa common room. Parang may 'naglalaro' or 'nanghihiram.' Sabi ng mga senior dormers, 'normal' lang daw 'yun. May 'bata' raw kasing 'nakatira' sa dorm na mahilig kumuha ng mga gamit.\n\nMay isang beses, 'yung paborito kong ballpen, nawala. Inis na inis ako. Bago ako matulog, sabi ko ng malakas, 'Sige na, kung sino man kumuha, pakibalik na, kailangan ko 'yan bukas.' Kinabukasan, paggising ko, 'yung ballpen, nakapatong sa unan ko. Kinilabutan ako, pero at least binalik. Simula noon, 'pag may nawawala akong gamit, kinakausap ko na lang 'yung 'bata'."
+    },
+    {
+        "id": "100",
+        "title": "The Face That Wasn't Mine in the Car's Rearview Mirror (SLEX)",
+        "locationName": "South Luzon Expressway (SLEX), at night",
+        "lat": 14.3000, "lng": 121.0700,
+        "snippet": "Driving alone at night. Glanced at my rearview mirror, and for a split second, saw a different, pale face looking back.",
+        "fullStory": "I was driving home late one night on SLEX, heading south. It was past midnight, not much traffic. I was tired but focused on the road. I idly glanced up at my rearview mirror, just a quick check. For a horrifying split second, the face looking back at me wasn't mine. It was a pale, gaunt face, with wide, dark eyes. It looked terrified, or maybe just empty. It was a woman's face, I think.\n\nI blinked hard, my heart leaping into my throat, and when I looked again, it was my own reflection. I gripped the steering wheel, trying to tell myself I was just overtired, that it was a trick of the light and shadows. But the image of that other face was seared into my mind. It felt so real. I even touched my own face to make sure I was still me.\n\nI drove the rest of the way home with an incredible sense of dread, barely looking at my mirrors. I've heard stories about phantom passengers or spirits on lonely highways. Maybe one decided to show me its face that night. I still get chills thinking about it whenever I drive alone at night."
+    }, 
+    {
+        "id": "101",
+        "title": "Ang Sumisitsit sa Dilim ng Callao Cave",
+        "locationName": "Callao Cave, Peñablanca, Cagayan",
+        "lat": 17.7008, "lng": 121.8175,
+        "snippet": "Nasa loob kami ng isa sa mga chamber, biglang may sumitsit. Walang ibang tao maliban sa grupo namin...",
+        "fullStory": "Kasama ko 'yung pamilya ko noong nag-tour kami sa Callao Cave. Ang ganda sa loob, lalo na 'yung chapel chamber. Medyo malalim na kami, 'yung guide namin, nagkukwento tungkol sa mga discoveries doon. Bigla, may narinig kaming malinaw na sitsit, 'Sst!' Napahinto kaming lahat. Akala namin, galing sa isa sa amin.\n\nNagtanong 'yung guide, 'Sino 'yun?' Pero lahat kami, nagkatinginan lang, walang umaamin. Sabi ng guide, baka raw hangin lang or paniki. Pero 'yung sitsit, parang ang lapit at parang may intensyon. Nagpatuloy kami sa paglalakad, medyo kinakabahan na. Maya-maya, sa isang mas madilim na part ng cave, narinig na naman namin. This time, parang may kasamang mahinang tawa.\n\n'Di na kami mapakali. 'Yung pinsan kong maliit, umiyak na. Nagmadali na 'yung guide na ilabas kami. Sabi niya, minsan daw talaga may mga 'mapaglarong espiritu' sa loob ng kweba, lalo na 'pag 'di ka nagbibigay-galang. Paglabas namin, parang ang gaan ng pakiramdam. Pero 'yung sitsit na 'yun, tandang-tanda ko pa rin."
+    },
+    {
+        "id": "102",
+        "title": "Ang Nawawalang Mangangaso sa Sierra Madre (Isabela)",
+        "locationName": "Sierra Madre Mountain Range, near Ilagan, Isabela",
+        "lat": 17.1550, "lng": 122.0050,
+        "snippet": "May mangangasong pumasok sa gubat, hindi na nakabalik. Sabi ng matatanda, kinuha raw ng 'diwata' ng bundok...",
+        "fullStory": "Kuwento 'to ng lolo ko na taga-Isabela. May isang kilalang mangangaso daw sa baryo nila na sanay na sanay na sa Sierra Madre. Isang araw, pumasok siya sa gubat para manghuli ng baboy-ramo, pero lumipas ang ilang araw, hindi na siya nakabalik. Nag-organize ng search party 'yung mga taga-baryo at ilang Aeta, pero wala silang makitang bakas.\n\nAng sabi ng mga matatandang Aeta, baka raw 'natuwaan' or 'kinuha' na siya ng 'diwata' ng bundok, or ng mga engkanto. May mga part daw kasi ng Sierra Madre na sagrado at 'di dapat basta-basta pinapasok, lalo na kung mayabang ka or 'di nagpapaalam. Minsan daw, 'yung mga 'kinukuha', dinadala sa ibang dimensyon, sa magandang lugar, pero 'di na sila makakabalik sa mundo natin.\n\nAfter a few weeks, sumuko na 'yung search party. Wala na talagang trace ng mangangaso. Ang pinaka-creepy, minsan daw, 'yung mga ibang mangangaso na napapadpad malapit sa area kung saan siya huling nakita, may naririnig silang parang may tumatawag sa pangalan nila, or parang may nagmamasid sa kanila mula sa mga puno. Pero 'pag tiningnan nila, wala namang tao."
+    },
+    {
+        "id": "103",
+        "title": "Ang mga Kamay Mula sa Ilalim ng Magat Dam",
+        "locationName": "Magat Dam, Ramon, Isabela / Alfonso Lista, Ifugao",
+        "lat": 16.7883, "lng": 121.3883,
+        "snippet": "May mga mangingisda raw na nakakakita ng mga kamay na parang umaabot mula sa tubig, lalo na 'pag gabi...",
+        "fullStory": "Ang Magat Dam, 'di ba, napakalaki niyan. At may mga lumang baryo na nalubog noong ginawa 'yan. May mga pinsan 'yung tatay ko na nangingisda doon paminsan-minsan. Sabi nila, 'pag gabi raw sila pumapalaot, lalo na 'pag tahimik at bilog ang buwan, may mga kakaibang karanasan sila.\n\nIsang beses, 'yung isa kong tiyuhin, mag-isa lang siya sa bangka niya. Bigla raw, sa gilid ng bangka niya, may nakita siyang parang mga kamay na dahan-dahang umaahon mula sa tubig. Mapuputla raw 'yung mga kamay, at parang kumakaway or umaabot sa kanya. Sobrang dami daw. Hindi naman siya hinila, pero 'yung takot niya, grabe. Mabilis siyang nagsagwan palayo.\n\nSabi ng ibang matatanda doon, baka 'yun daw 'yung mga kaluluwa ng mga taong nalunod doon dati, or 'yung mga 'naiwan' sa mga lumubog na baryo. Naghahanap daw ng 'kasama' or 'di kaya'y humihingi ng tulong. Nakakatakot isipin, lalo na 'pag nasa gitna ka ng malawak na tubig sa dilim ng gabi."
+    },
+    {
+        "id": "104",
+        "title": "Ang Mongheng Naglalakad sa Tumauini Church",
+        "locationName": "Tumauini Church (St. Matthias Parish Church), Tumauini, Isabela",
+        "lat": 17.2695, "lng": 121.8085,
+        "snippet": "Kilala 'yung simbahan sa kakaibang bricks niya. Pero may caretaker daw na nakakita ng monghe na naglalakad sa gabi...",
+        "fullStory": "Ang Tumauini Church sa Isabela, ang ganda ng design, 'yung pabilog na bell tower at 'yung mga intricate na brickwork. Pero dahil sobrang tanda na, may mga kwento rin ng multo. Narinig ko 'to sa isang taga-roon. May isang matandang caretaker daw dati na madalas mag-overnight sa may kumbento.\n\nIsang gabi, nagising daw siya ng madaling araw kasi parang may naririnig siyang yapak sa labas. Sumilip siya sa bintana. Nakita niya raw, sa may patyo ng simbahan, may naglalakad na monghe, naka-abito na kulay brown, 'yung may hood. Dahan-dahan lang daw itong naglalakad, parang nagdarasal or nagme-meditate. Akala niya, isa sa mga pari. Pero naalala niya, wala namang paring naka-assign doon na ganoon 'yung suot, at 'yung lakad, parang 'di tumatapak sa lupa.\n\nPinanood niya lang daw 'yung monghe hanggang sa pumasok ito sa pader ng simbahan at nawala. Kinabukasan, tinanong niya 'yung ibang matatanda. Sabi nila, baka 'yun daw 'yung kaluluwa ng isa sa mga unang prayleng Espanyol na nagtayo ng simbahan. Nagbabantay pa rin daw. Hindi naman daw nananakit, pero 'pag nagpakita, nakakakilabot pa rin."
+    },
+    {
+        "id": "105",
+        "title": "Ang mga Anito sa Lumang Bahay Bato (Batanes)",
+        "locationName": "An old Ivatan stone house, Sabtang Island, Batanes",
+        "lat": 20.3350, "lng": 121.8750,
+        "snippet": "Nag-stay kami sa isang heritage house sa Sabtang. Gabi, parang may mga bumubulong, tapos 'yung mga gamit, umuusog...",
+        "fullStory": "When we went to Batanes, we opted to stay in one of the traditional Ivatan stone houses in Sabtang for a night. It was beautiful, very rustic, but you could feel the age of the house. The first night, as we were trying to sleep, the wind was howling outside, which is normal for Batanes. But then, we started hearing other sounds.\n\nFaint whispers, like old people murmuring, seemed to come from the corners of the room. We couldn't make out any words. Then, a small wooden stool near the door slowly scraped across the floor for about an inch. We all saw it. There was no one near it, no earthquake. Later, a comb that was on a small table fell to the floor with a clatter, even though the table wasn't wobbly.\n\nThe next morning, we told our host, an elderly Ivatan woman. She just nodded sagely and said, 'The anitos (ancestral spirits) are just making their presence known. They are usually harmless, just checking on new guests.' She advised us to verbally greet them and ask for their 'permission' to stay. We did, but that night was still pretty unnerving for us city folk."
+    },
+    {
+        "id": "106",
+        "title": "Ang Bangkerong Walang Mukha sa Pinacanauan River",
+        "locationName": "Pinacanauan River, Peñablanca, Cagayan",
+        "lat": 17.6550, "lng": 121.7850,
+        "snippet": "Night river tour daw para sa bat watching. 'Yung bangkero namin, paglingon, parang blur 'yung mukha...",
+        "fullStory": "Kasama 'yung Pinacanauan River sa tour namin after Callao Cave, for the bat exodus at sunset. May option for a short night river tour. Sinubukan namin. Medyo madilim na, 'yung bangka namin, maliit lang, kami lang at 'yung bangkero. Tahimik, 'yung tunog lang ng sagwan at 'yung mga insekto sa gabi.\n\nHabang nasa gitna kami ng ilog, 'yung bangkero, biglang huminto sa pagsasagwan. Nagtaka kami. Tinanong namin kung bakit. Hindi siya sumagot. Maya-maya, dahan-dahan siyang lumingon sa amin. Pero 'yung mukha niya, parang... blangko. Parang blur, or parang anino lang. Hindi namin maaninag 'yung features niya. Nakatitig lang siya sa amin, walang emosyon.\n\nSobrang creepy. Nagkatinginan kami, 'di kami makapagsalita sa takot. After what felt like forever, lumingon siya ulit paharap at nagpatuloy sa pagsasagwan, na parang walang nangyari. Pagdating namin sa pampang, mabilis kaming bumaba. Paglingon namin sa bangkero para magpasalamat, wala na siya. 'Yung bangka, nakatali lang doon. Hindi na namin nalaman kung sino or ano 'yun."
+    },
+    {
+        "id": "107",
+        "title": "The Disorienting Echoes of Capisaan Cave",
+        "locationName": "Capisaan Cave System, Kasibu, Nueva Vizcaya",
+        "lat": 16.3250, "lng": 121.2750,
+        "snippet": "Spelunking kami. May mga echo sa loob na parang boses, tapos 'yung guide namin, parang nalito bigla sa daan...",
+        "fullStory": "My friends and I are into adventure, so we tried spelunking in Capisaan Cave System in Nueva Vizcaya. It's one of the longest cave systems in the country. We had a local guide, of course. The cave is amazing, but deep inside, it gets really dark and disorienting.\n\nIn one large chamber, our voices started to echo strangely. It wasn't just a normal echo; it sounded like the echoes were forming words, whispers we couldn't quite understand. Then, our guide, who was very experienced, suddenly seemed unsure of which passage to take. He paused for a long time, looking around, shining his light. He admitted he felt a bit 'turned around,' which was unusual for him.\n\nWe started to feel a bit panicky. The whispering echoes continued. It felt like the cave itself was trying to confuse us, to lead us astray. One of my friends swore she heard her name called from a dark crevice. After about 15 tense minutes, our guide found a familiar formation and got us back on track. He said the 'spirits of the cave' sometimes play tricks on those who enter. That experience made me respect caves a lot more."
+    },
+    {
+        "id": "108",
+        "title": "Ang Ilaw na Sumasagot sa Parola ng Palaui",
+        "locationName": "Cape Engaño Lighthouse, Palaui Island, Santa Ana, Cagayan",
+        "lat": 18.5685, "lng": 122.1405,
+        "snippet": "Nag-overnight 'yung caretaker. Sabi niya, minsan daw 'yung ilaw ng parola, parang may 'sinasagutan' na ilaw sa gitna ng dagat...",
+        "fullStory": "Ang Cape Engaño Lighthouse sa Palaui Island, napakaganda ng view, pero medyo isolated. May mga caretaker na nagbabantay doon. Narinig ko 'yung kwento sa isa sa mga boatmen namin papunta doon. Sabi niya, 'yung isang caretaker na matagal na doon, may mga kakaibang experience.\n\nMinsan daw, 'pag gabi, lalo na 'pag madilim ang langit at walang buwan, habang umiikot 'yung ilaw ng parola, may makikita raw siyang parang isa pang ilaw sa gitna ng dagat, sa malayo. 'Yung ilaw na 'yun, parang sumasagot sa pag-ikot ng ilaw ng parola. Parang Morse code, pero 'di maintindihan. Minsan, isang beses lang magbi-blink, minsan, tatlo. Tapos, mawawala na.\n\nWala namang ibang isla or malaking barko sa direksyon na 'yun. Sabi ng caretaker, baka raw 'yun 'yung 'ghost ship' ng mga Galleon na lumubog doon noong unang panahon, or baka mga engkanto ng dagat na 'nakikipag-usap' sa parola. Nakakakilabot isipin na 'yung parola, may 'kausap' sa gitna ng kadiliman ng karagatan."
+    },
+    {
+        "id": "109",
+        "title": "Ang Sigaw ng Agta sa Kagubatan ng Quirino",
+        "locationName": "Forested area near Maddela, Quirino",
+        "lat": 16.3500, "lng": 121.6000,
+        "snippet": "May mga nag-illegal logging daw. Gabi, may narinig silang nakakakilabot na sigaw mula sa gubat. Sabi nila, Agta raw 'yun.",
+        "fullStory": "Sa mga liblib na kagubatan ng Quirino, marami pa ring naninirahang katutubong Agta. Pero may mga kwento rin tungkol sa mga 'ibang klase' ng Agta – 'yung mga espiritu ng gubat. May grupo raw ng mga illegal loggers na pumasok sa isang remote na area. Gabi, habang natutulog sila sa makeshift camp nila, nagising sila sa isang nakakakilabot na sigaw.\n\nHindi raw sigaw ng tao or hayop. Sobrang lakas daw, parang nanggagaling sa lahat ng direksyon, at parang may halong galit at lungkot. Paulit-ulit daw 'yung sigaw, at kasabay noon, parang may yumuyugyog sa mga puno sa paligid nila. Sa sobrang takot, 'di na sila nakatulog. Kinabukasan, mabilis silang umalis, iniwan 'yung ibang mga gamit nila.\n\nSabi ng mga local na napagkwentuhan nila, baka raw 'yun 'yung sigaw ng mga 'Agta' na tagapagbantay ng gubat, nagagalit sa ginagawa nilang pamumutol ng puno. Babala raw 'yun. Simula noon, 'di na raw bumalik 'yung mga loggers na 'yun. 'Yung sigaw daw, tumatagos hanggang buto."
+    },
+    {
+        "id": "110",
+        "title": "Ang Puting Van na Sumusulpot sa Dalton Pass",
+        "locationName": "Dalton Pass (Balete Pass), Santa Fe, Nueva Vizcaya",
+        "lat": 16.1350, "lng": 120.9350,
+        "snippet": "Nagmamaneho kami paakyat ng Dalton Pass, gabi. May puting van sa likod namin, nag-overtake, tapos biglang nawala sa harap.",
+        "fullStory": "Dalton Pass, or Balete Pass, 'di ba, notorious 'yan sa mga aksidente at sharp curves, lalo na 'pag gabi at foggy. Pauwi kami from a trip to Baguio, dumaan kami diyan, mga 10 PM na. Medyo kinakabahan na 'yung driver namin. Habang paakyat kami, may napansin kaming puting van sa rearview mirror, mabilis 'yung takbo, sumusunod sa amin.\n\nMaya-maya, nag-overtake siya sa amin. Okay lang naman. Pero 'yung kakaiba, after niyang mag-overtake, mga ilang segundo lang, sa isang curve, bigla na lang siyang nawala. As in, wala na kaming makitang taillights niya sa harap. Imposible namang ganun kabilis 'yun, kahit sabihin mong mabilis 'yung takbo. Sinubukan naming habulin ng tingin, pero wala na talaga. Parang bula na naglaho.\n\nNagkatinginan kami sa loob ng sasakyan. 'Yung driver namin, nag-sign of the cross. Sabi niya, madalas daw may mga 'phantom vehicles' na nagpapakita sa Dalton Pass, lalo na 'yung mga naaksidente dati. Parang replay daw ng huling byahe nila. Sobrang creepy. Mas binagalan na lang namin 'yung takbo hanggang makalampas kami sa pass."
     }
 ]
 

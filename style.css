@@ -28,6 +28,50 @@
     padding: 0;
 }
 
+.leaflet-control-geosearch form {
+    border: 1px solid #555; /* Darker border */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); /* Subtle red glow */
+}
+
+.leaflet-control-geosearch form input.glass { /* The search input */
+    background-color: #222; /* Dark background */
+    color: #ddd; /* Light text */
+    border: none;
+    font-family: 'Special Elite', cursive; /* Match your theme font */
+}
+.leaflet-control-geosearch form input.glass::placeholder {
+    color: #777;
+}
+
+.leaflet-control-geosearch .results { /* The dropdown results list */
+    background-color: #1a1a1a;
+    border: 1px solid #555;
+}
+
+.leaflet-control-geosearch .results > * { /* Individual result items */
+    color: #ccc;
+    border-bottom: 1px solid #333;
+    font-family: 'Merriweather', serif; /* Or Special Elite */
+}
+
+.leaflet-control-geosearch .results > *:hover,
+.leaflet-control-geosearch .results > *.active {
+    background-color: #330000; /* Dark red hover/active */
+    color: #fff;
+}
+
+/* Adjust the search icon if needed */
+.leaflet-control-geosearch a.glass-button {
+    background-image: url('your-creepy-search-icon.svg'); 
+     background-color: #333; 
+     border-radius: 0;
+}
+.leaflet-control-geosearch a.glass-button:hover {
+    background-color: #555;
+}
+
+
+
 
 
 .map-page-body { /* Changed from just 'body' to avoid conflict if global CSS is used */

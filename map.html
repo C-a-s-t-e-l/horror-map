@@ -19,6 +19,7 @@
 
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.11.0/dist/geosearch.css" />
 
     <!-- Your New Map Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -48,6 +49,9 @@
         <header class="map-page-header">
             <h1>Chart of Horrors</h1>
             <p class="map-tagline">Navigate the paranormal. Every pin a whisper, every story a warning.</p>
+             <div id="external-map-search-container">
+              
+            </div>
         </header>
         
         <div class="main-content-area">
@@ -147,10 +151,14 @@
         <p>© <span id="currentYearMap"></span> Eerie Grid PH. The map remembers.</p>
     </footer>
 
+   
+
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
+
+             <script src="https://unpkg.com/leaflet-geosearch@3.11.0/dist/geosearch.umd.js"></script>
     
     <!-- Your Scripts -->
     <!-- Ensure stories.js defines functions to populate #stories-container and the modal -->
