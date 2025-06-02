@@ -1,6 +1,7 @@
 // Global variables
+
 let map;
-let currentMarker; 
+let currentMarker; // For the pin placed by the user when posting a new story
 let allStories = [];
 let storyMarkers = {};
 let philippinesFocus = true;
@@ -9,17 +10,17 @@ const PH_BOUNDS_COORDS = {
     minLng: 116.9, maxLng: 126.6
 };
 let philippinesMapBounds = null;
-let lastClickedLatLng = null;
-let geoSearchControlInstance = null;
+let lastClickedLatLng = null; 
 
 const creepyIcon = new L.Icon({
-    iconUrl: 'https://static.vecteezy.com/system/resources/previews/019/858/520/non_2x/eye-flat-color-outline-icon-free-png.png',
-    iconSize: [25, 35],
-    iconAnchor: [12, 35],
-    popupAnchor: [1, -30]
+    iconUrl: 'https://static.vecteezy.com/system/resources/previews/019/858/520/non_2x/eye-flat-color-outline-icon-free-png.png', 
+    iconSize: [25, 35],               
+    iconAnchor: [12, 35],                 
+    popupAnchor: [1, -30]              
 });
 
-// Modal elements
+
+
 const storyModal = document.getElementById('story-modal');
 const modalTitle = document.getElementById('modal-story-title');
 const modalLocation = document.getElementById('modal-story-location');
@@ -33,9 +34,11 @@ function openStoryModal(story) {
     }
     modalTitle.textContent = story.title || 'Untitled Story';
     modalLocation.textContent = `Location: ${story.locationName || 'Unknown Location'}`;
-    modalFullStory.innerHTML = '';
+
+    modalFullStory.innerHTML = ''; 
 
     const fullStoryText = story.fullStory || '';
+
     const paragraphs = fullStoryText.split('\n');
     paragraphs.forEach(paraText => {
         if (paraText.trim() !== '') {
@@ -44,33 +47,41 @@ function openStoryModal(story) {
             modalFullStory.appendChild(p);
         }
     });
+
     storyModal.classList.remove('modal-hidden');
     storyModal.classList.add('modal-visible');
 }
 
+
 function closeStoryModal() {
     if (!storyModal) return;
     storyModal.classList.remove('modal-visible');
+    // The 'modal-hidden' class with transition delay will handle actual hiding
+    // Alternatively, you could add it back after transition ends if needed, but CSS handles it.
 }
 
+// Add event listeners for closing the modal
 if (modalCloseButton) {
     modalCloseButton.addEventListener('click', closeStoryModal);
 }
+
 if (storyModal) {
+    // Close modal if user clicks on the dark overlay background
     storyModal.addEventListener('click', function(event) {
-        if (event.target === storyModal) {
+        if (event.target === storyModal) { // Check if the click was directly on the overlay
             closeStoryModal();
         }
     });
+    // Close modal if user presses the Escape key
     window.addEventListener('keydown', function(event) {
         if (event.key === 'Escape' && storyModal.classList.contains('modal-visible')) {
             closeStoryModal();
         }
     });
 }
-
+// --- Helper Function: Haversine Distance ---
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-    const R = 6371;
+    const R = 6371; // Radius of the earth in km
     const dLat = deg2rad(lat2 - lat1);
     const dLon = deg2rad(lon2 - lon1);
     const a =
@@ -78,13 +89,15 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
         Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c;
+    const d = R * c; // Distance in km
+    return d;
 }
 
 function deg2rad(deg) {
     return deg * (Math.PI / 180);
 }
 
+// --- Map Initialization and Interaction --
 function initMap() {
     const philippinesCenter = [12.8797, 121.7740];
     const initialZoom = 6;
@@ -104,7 +117,8 @@ function initMap() {
         attribution: 'Tiles © Esri', maxZoom: 18
     }).addTo(map);
 
-   
+    // Set initial reference point for sorting (map center)
+    // This must happen AFTER map is initialized.
     if (map) {
         lastClickedLatLng = map.getCenter();
     }
@@ -120,7 +134,7 @@ function initMap() {
     // --- ADD GEOSEARCH CONTROL ---
     const provider = new GeoSearch.OpenStreetMapProvider({
         params: {
-            countrycodes: philippinesFocus ? 'ph' : '', 
+            countrycodes: philippinesFocus ? 'ph' : '', // Initially restrict based on philippinesFocus
         },
     });
 
@@ -136,7 +150,7 @@ function initMap() {
         notFoundMessage: 'Sorry, that place is too elusive to find.',
     });
     map.addControl(searchControl);
-    geoSearchControlInstance = searchControl; 
+    geoSearchControlInstance = searchControl; // Store the instance globally
 
     map.on('geosearch/showlocation', function (result) {
         console.log('Geosearch result:', result.location);
@@ -147,7 +161,7 @@ function initMap() {
             document.getElementById('longitude').value = '';
             document.getElementById('locationName').value = '';
         }
-        lastClickedLatLng = L.latLng(result.location.y, result.location.x); 
+        lastClickedLatLng = L.latLng(result.location.y, result.location.x); // Update last clicked for story sorting
         
         const storyListTitle = document.querySelector('#story-list-panel h3');
         if (storyListTitle) {
@@ -156,30 +170,33 @@ function initMap() {
                                  result.location.label;
             storyListTitle.textContent = `Stories near "${displayLabel}"`;
         }
-        filterStories(document.getElementById('story-search-bar').value);
+        filterStories(document.getElementById('story-search-bar').value); // Re-filter/sort stories
     });
-   
+    // --- END GEOSEARCH CONTROL ---
 
+    // Hide loading overlay (can be done more robustly with map.whenReady or layer load events if needed)
     const mapLoadingOverlay = document.querySelector('.map-loading-overlay');
     if (mapLoadingOverlay) {
         mapLoadingOverlay.style.display = 'none';
     }
 
-    
+   
 }
 
-async function placeMarkerAndGetLocationName(mapClickEvent) {
+
+async function placeMarkerAndGetLocationName(mapClickEvent) { // For new story submission
     const latlng = mapClickEvent.latlng;
     if (currentMarker) currentMarker.remove();
     currentMarker = L.marker([latlng.lat, latlng.lng], { icon: creepyIcon }).addTo(map);
 
     document.getElementById('latitude').value = latlng.lat.toFixed(6);
     document.getElementById('longitude').value = latlng.lng.toFixed(6);
-    const locationNameInput = document.getElementById('locationName');
-    locationNameInput.value = "Fetching location...";
+
+    const locationNameInput = document.getElementById('locationName'); 
+    locationNameInput.value = "Fetching location..."; 
 
     try {
-        const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latlng.lat}&lon=${lngStr}`); // Typo corrected: lngStr to latlng.lng
+        const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latlng.lat}&lon=${latlng.lng}`);
         if (!response.ok) throw new Error(`Nominatim: ${response.status}`);
         const data = await response.json();
         locationNameInput.value = data.display_name || "Location name not found";
@@ -188,27 +205,27 @@ async function placeMarkerAndGetLocationName(mapClickEvent) {
         locationNameInput.value = "Error fetching location";
     }
 }
-
 function displayStories(storiesToDisplay) {
     const storiesContainer = document.getElementById('stories-container');
-    storiesContainer.innerHTML = '';
+    storiesContainer.innerHTML = ''; // Clear previous stories in the list
+
+    // Clear existing story markers from the map before adding new ones
     for (const storyId in storyMarkers) {
         if (storyMarkers.hasOwnProperty(storyId)) {
-            storyMarkers[storyId].remove();
+            storyMarkers[storyId].remove(); // Remove from map
         }
     }
-    storyMarkers = {};
+    storyMarkers = {}; // Reset the markers store
 
-    if (!storiesToDisplay || storiesToDisplay.length === 0) { 
+    if (storiesToDisplay.length === 0) {
         storiesContainer.innerHTML = '<p>No stories found for this view/search.</p>';
         return;
     }
 
+    // Sort stories by proximity to lastClickedLatLng before displaying
     let sortedStories = [...storiesToDisplay];
     if (lastClickedLatLng) {
         sortedStories.sort((a, b) => {
-         
-            if (!a.lat || !a.lng || !b.lat || !b.lng) return 0;
             const distA = getDistanceFromLatLonInKm(lastClickedLatLng.lat, lastClickedLatLng.lng, a.lat, a.lng);
             const distB = getDistanceFromLatLonInKm(lastClickedLatLng.lat, lastClickedLatLng.lng, b.lat, b.lng);
             return distA - distB;
@@ -216,40 +233,62 @@ function displayStories(storiesToDisplay) {
     }
 
     sortedStories.forEach(story => {
+        // Create and add story item to the list
         const storyItem = document.createElement('div');
         storyItem.className = 'story-item';
         storyItem.setAttribute('data-story-id', story.id);
+
         const titleElement = document.createElement('h4');
         titleElement.textContent = story.title;
         const locationElement = document.createElement('p');
         let distanceText = "";
-        if (lastClickedLatLng && story.lat && story.lng) { // Check story has lat/lng
+        if (lastClickedLatLng) {
             const dist = getDistanceFromLatLonInKm(lastClickedLatLng.lat, lastClickedLatLng.lng, story.lat, story.lng);
             distanceText = ` (~${dist.toFixed(1)} km away)`;
         }
         locationElement.textContent = story.locationName + distanceText;
+
         storyItem.appendChild(titleElement);
         storyItem.appendChild(locationElement);
-        storyItem.addEventListener('click', () => handleStoryItemClick(story));
+        storyItem.addEventListener('click', () => handleStoryItemClick(story)); // This already opens the modal
         storiesContainer.appendChild(storyItem);
 
+        // Create and add marker to the map for this story
         if (story.lat && story.lng) {
             const marker = L.marker([story.lat, story.lng], { icon: creepyIcon }).addTo(map);
-            storyMarkers[story.id] = marker;
+            
+            storyMarkers[story.id] = marker; // Store the marker
+
+            // When this marker is clicked on the map, open the story modal
             marker.on('click', () => {
+                console.log('Map marker clicked, opening modal for:', story.title);
                 openStoryModal(story);
+
                 if (map && story.lat && story.lng) {
-                    map.setView([story.lat, story.lng], 13);
-                }
+                 map.setView([story.lat, story.lng], 13);
+                const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
+                   if (marker) {
+           
+        }
+    }
             });
         }
     });
 }
 
 function handleStoryItemClick(story) {
+    console.log('Clicked story in list:', story.title);
+
+    // Open the modal with the story details
     openStoryModal(story);
+
+    // Pan map and open popup (optional, as modal now shows full story)
     if (map && story.lat && story.lng) {
         map.setView([story.lat, story.lng], 13);
+        const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
+        if (marker) {
+            // marker.openPopup(); // You might not need this if modal is primary focus
+        }
     }
 }
 
@@ -269,24 +308,28 @@ function filterStories(searchTerm) {
     let storiesToDisplayInList = baseStoriesForFiltering;
     if (lowerCaseSearchTerm) {
         storiesToDisplayInList = baseStoriesForFiltering.filter(story =>
-            (story.title && story.title.toLowerCase().includes(lowerCaseSearchTerm)) ||
-            (story.locationName && story.locationName.toLowerCase().includes(lowerCaseSearchTerm)) ||
+            story.title.toLowerCase().includes(lowerCaseSearchTerm) ||
+            story.locationName.toLowerCase().includes(lowerCaseSearchTerm) ||
             (story.snippet && story.snippet.toLowerCase().includes(lowerCaseSearchTerm))
         );
     }
+
     displayStories(storiesToDisplayInList);
 }
 
-function updateMapFocus(newReferencePoint = null, newTitle = null) {
+function updateMapFocus(newReferencePoint = null, newTitle = null) { // Allow passing a new ref point and title
     const toggleButton = document.getElementById('toggle-world-button');
     const storyListTitle = document.querySelector('#story-list-panel h3');
 
+    // If a specific reference point is given (e.g., after posting a story), use it.
+    // Otherwise, use the current map center.
     if (newReferencePoint) {
         lastClickedLatLng = newReferencePoint;
     } else {
-        if (map && !lastClickedLatLng) lastClickedLatLng = map.getCenter();
+        if (map) lastClickedLatLng = map.getCenter(); // Default to map center
     }
-
+    
+    // Set the title
     if (newTitle) {
         if (storyListTitle) storyListTitle.textContent = newTitle;
     } else {
@@ -296,41 +339,24 @@ function updateMapFocus(newReferencePoint = null, newTitle = null) {
             if (storyListTitle) storyListTitle.textContent = 'All Stories (World View)';
         }
     }
-    if (geoSearchControlInstance && map) {
-        
-        try {
-            map.removeControl(geoSearchControlInstance);
-        } catch (e) {
-     
-            console.warn("Attempted to remove geoSearchControlInstance that might not have been on the map, or another issue:", e);
-        }
 
-        const newProvider = new GeoSearch.OpenStreetMapProvider({
-            params: { countrycodes: philippinesFocus ? 'ph' : '' },
-        });
-        const newSearchControl = new GeoSearch.GeoSearchControl({
-            provider: newProvider, style: 'bar', showMarker: true, showPopup: false,
-            marker: { icon: creepyIcon, draggable: false },
-            autoClose: true, keepResult: true,
-            searchLabel: 'Search haunted locations...',
-            notFoundMessage: 'Sorry, that place is too elusive to find.',
-        });
-        map.addControl(newSearchControl);
-        geoSearchControlInstance = newSearchControl; 
-    }
 
     if (philippinesFocus) {
         if (map && philippinesMapBounds) map.setMaxBounds(philippinesMapBounds);
-        if (toggleButton) toggleButton.innerHTML = '<i class="fas fa-globe-americas"></i> Unveil World Horrors';
-        const phStories = allStories.filter(story => story.lat >= PH_BOUNDS_COORDS.minLat && story.lat <= PH_BOUNDS_COORDS.maxLat && story.lng >= PH_BOUNDS_COORDS.minLng && story.lng <= PH_BOUNDS_COORDS.maxLng);
-        displayStories(phStories);
-    } else {
+        if (toggleButton) toggleButton.textContent = 'Open up the Horrors of the World';
+
+        const phStories = allStories.filter(story =>
+            story.lat >= PH_BOUNDS_COORDS.minLat && story.lat <= PH_BOUNDS_COORDS.maxLat &&
+            story.lng >= PH_BOUNDS_COORDS.minLng && story.lng <= PH_BOUNDS_COORDS.maxLng
+        );
+        displayStories(phStories); // displayStories will use the current lastClickedLatLng for sorting
+    } else { // World view is active
         if (map) map.setMaxBounds(null);
-        if (toggleButton) toggleButton.innerHTML = '<i class="fas fa-map-pin"></i> Focus on Philippines';
-        displayStories(allStories);
+        if (toggleButton) toggleButton.textContent = 'Focus on Philippines';
+        
+        displayStories(allStories); // displayStories will use the current lastClickedLatLng for sorting
     }
 }
-
 function handleStorySubmit(event) {
     event.preventDefault();
     const title = document.getElementById('title').value;
@@ -349,7 +375,7 @@ function handleStorySubmit(event) {
     if (philippinesFocus) {
         if (latNum < PH_BOUNDS_COORDS.minLat || latNum > PH_BOUNDS_COORDS.maxLat ||
             lngNum < PH_BOUNDS_COORDS.minLng || lngNum > PH_BOUNDS_COORDS.maxLng) {
-            alert("Story location outside PH. To post, 'Unveil World Horrors' or select location in PH.");
+            alert("Story location outside PH. To post, 'View World Map' or select location in PH.");
             return;
         }
     }
@@ -360,35 +386,55 @@ function handleStorySubmit(event) {
         lat: latNum, lng: lngNum,
         snippet: storyText.substring(0, 100) + (storyText.length > 100 ? '...' : '')
     };
-    allStories.push(newStory);
 
+    allStories.push(newStory);
+    
+    // Define the reference point and title for after submission
     const newStoryLatLng = L.latLng(newStory.lat, newStory.lng);
     const postSubmitTitle = 'Stories Near Newly Posted';
+
+    // Call updateMapFocus, passing the new reference point and title
     updateMapFocus(newStoryLatLng, postSubmitTitle);
 
     document.getElementById('storyForm').reset();
     if (currentMarker) {
         currentMarker.remove();
-        currentMarker = null;
+        currentMarker = null; 
     }
     alert('Story posted locally!');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    initMap(); // Initializes map and geosearch control. Sets initial lastClickedLatLng.
+    initMap(); 
 
     const togglePostFormButton = document.getElementById('toggle-post-form-button');
-    const formColumn = document.getElementById('form-column');
+    const formColumn = document.getElementById('form-column'); // Get the form column div
+
     if (togglePostFormButton && formColumn) {
         togglePostFormButton.addEventListener('click', () => {
             const isHidden = formColumn.classList.contains('hidden-form');
-            formColumn.classList.toggle('hidden-form');
-            // Using innerHTML to include icons
-            togglePostFormButton.innerHTML = isHidden ? '<i class="fas fa-times-circle"></i> Hide Submission Form' : '<i class="fas fa-pen-nib"></i> Share Your Terror';
+            if (isHidden) {
+                formColumn.classList.remove('hidden-form');
+                // Optional: If using transitions that need display:flex
+                // formColumn.style.display = 'flex'; // Ensure it's flex if hidden by display:none
+                togglePostFormButton.textContent = 'Hide Submission Form';
+                // Optional: Add class to main-content-area if you need to adjust flex for map-column
+                // document.querySelector('.main-content-area').classList.add('form-visible');
+            } else {
+                formColumn.classList.add('hidden-form');
+                // Optional: If using transitions that need display:none and then flex
+                // formColumn.style.display = 'none';
+                togglePostFormButton.textContent = 'Post New Story';
+                // Optional: Remove class from main-content-area
+                // document.querySelector('.main-content-area').classList.remove('form-visible');
+            }
         });
     }
 
-    const searchBar = document.getElementById('story-search-bar'); // This is for the story list, not the map search
+   
+
+
+    const searchBar = document.getElementById('story-search-bar');
     if (searchBar) {
         searchBar.addEventListener('input', (event) => {
             filterStories(event.target.value);
@@ -399,7 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (toggleButton) {
         toggleButton.addEventListener('click', () => {
             philippinesFocus = !philippinesFocus;
-            updateMapFocus(); // This will update map bounds, stories, AND the geosearch country codes
+            updateMapFocus();
         });
     }
 
@@ -408,10 +454,6 @@ document.addEventListener('DOMContentLoaded', function() {
         storyForm.addEventListener('submit', handleStorySubmit);
     }
 
-
-    // }
-    allStories = [...dummyStories]; 
-
-
-    updateMapFocus();
+    allStories = [...dummyStories];
+    updateMapFocus(); 
 });

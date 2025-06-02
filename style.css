@@ -72,8 +72,6 @@
 
 
 
-
-
 .map-page-body { /* Changed from just 'body' to avoid conflict if global CSS is used */
     font-family: var(--font-body);
     background-color: var(--primary-bg);
