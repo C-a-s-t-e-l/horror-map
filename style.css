@@ -21,9 +21,20 @@
     --modal-frame-bg: #1f1f1f; /* Darker frame for modal */
 }
 
+html {
+    font-size: 100%; /* Optional: Good base for rem units */
+    -webkit-text-size-adjust: 100%; /* Optional: Prevents iOS text scaling issues */
+    margin: 0;
+    padding: 0;
+    border: 0; /* Ensure no default border */
+    box-sizing: border-box; /* Critical */
+    width: 100%;
+    overflow-x: hidden; /* Primary guard against horizontal scroll */
+}
+
 /* Basic Reset & Body Styles */
 *, *::before, *::after {
-    box-sizing: border-box;
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
 }
@@ -82,6 +93,14 @@
                       radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
     background-attachment: fixed;
     padding-top: 70px; /* Space for fixed navbar */
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh; /* Good for footer placement */
+    margin: 0;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
 }
 
 .map-page-body::before {
@@ -437,11 +456,12 @@
 /* --- Story List Panel Improvements --- */
 #story-list-panel {
     background-color: rgba(0,0,0,0.15); /* Existing panel bg */
-    padding: 25px 30px; /* Added a bit more horizontal padding to the panel */
+    /* Added a bit more horizontal padding to the panel */
     border-radius: 5px;
     border: 1px solid var(--border-color);
     margin-top: 30px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    padding: 25px 20px;
 }
 
 #story-list-panel h3 { /* "STORIES IN THE PHILIPPINES" title */
@@ -459,12 +479,15 @@
 
 #stories-container {
     max-height: 450px;
-    overflow-y: auto;
-    padding: 10px 5px 10px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    overflow-y: auto; /* This will allow vertical scrolling for the content within the grid */
     overflow-x: hidden;
+    padding: 10px; /* Consistent padding around the container */
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+   
+
+ 
 }
 
 .story-item { /* THIS IS THE KEY CLASS FOR EACH STORY ENTRY */
@@ -777,11 +800,14 @@
 }
 
 
+
+
+
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-    .main-content-area {
+    /* .main-content-area {
         flex-direction: column;
-    }
+    } */
     #map-column, #form-column {
         flex: 1 1 100%; /* Take full width when stacked */
     }
@@ -861,6 +887,7 @@
 }
 
 @media (max-width: 480px) {
+
 
 .story-item{
     font-size: .7rem; /* Reduce font size for very small screens */
