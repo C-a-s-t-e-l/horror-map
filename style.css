@@ -276,6 +276,7 @@ html {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .eerie-button {
