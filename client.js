@@ -1,7 +1,7 @@
 // Global variables
 
 let map;
-let currentMarker; // For the pin placed by the user when posting a new story
+let currentMarker; 
 let allStories = [];
 let storyMarkers = {};
 let philippinesFocus = true;
@@ -56,32 +56,30 @@ function openStoryModal(story) {
 function closeStoryModal() {
     if (!storyModal) return;
     storyModal.classList.remove('modal-visible');
-    // The 'modal-hidden' class with transition delay will handle actual hiding
-    // Alternatively, you could add it back after transition ends if needed, but CSS handles it.
+    
 }
 
-// Add event listeners for closing the modal
 if (modalCloseButton) {
     modalCloseButton.addEventListener('click', closeStoryModal);
 }
 
 if (storyModal) {
-    // Close modal if user clicks on the dark overlay background
+   
     storyModal.addEventListener('click', function(event) {
-        if (event.target === storyModal) { // Check if the click was directly on the overlay
+        if (event.target === storyModal) {   
             closeStoryModal();
         }
     });
-    // Close modal if user presses the Escape key
+ 
     window.addEventListener('keydown', function(event) {
         if (event.key === 'Escape' && storyModal.classList.contains('modal-visible')) {
             closeStoryModal();
         }
     });
 }
-// --- Helper Function: Haversine Distance ---
+
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-    const R = 6371; // Radius of the earth in km
+    const R = 6371; 
     const dLat = deg2rad(lat2 - lat1);
     const dLon = deg2rad(lon2 - lon1);
     const a =
@@ -89,7 +87,7 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
         Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const d = R * c; // Distance in km
+    const d = R * c; 
     return d;
 }
 
@@ -97,7 +95,6 @@ function deg2rad(deg) {
     return deg * (Math.PI / 180);
 }
 
-// --- Map Initialization and Interaction --
 function initMap() {
     const philippinesCenter = [12.8797, 121.7740];
     const initialZoom = 6;
@@ -117,8 +114,7 @@ function initMap() {
         attribution: 'Tiles © Esri', maxZoom: 18
     }).addTo(map);
 
-    // Set initial reference point for sorting (map center)
-    // This must happen AFTER map is initialized.
+    
     if (map) {
         lastClickedLatLng = map.getCenter();
     }
@@ -131,10 +127,9 @@ function initMap() {
         filterStories(document.getElementById('story-search-bar').value);
     });
 
-    // --- ADD GEOSEARCH CONTROL ---
     const provider = new GeoSearch.OpenStreetMapProvider({
         params: {
-            countrycodes: philippinesFocus ? 'ph' : '', // Initially restrict based on philippinesFocus
+            countrycodes: philippinesFocus ? 'ph' : '', 
         },
     });
 
@@ -150,7 +145,7 @@ function initMap() {
         notFoundMessage: 'Sorry, that place is too elusive to find.',
     });
     map.addControl(searchControl);
-    geoSearchControlInstance = searchControl; // Store the instance globally
+    geoSearchControlInstance = searchControl;
 
     map.on('geosearch/showlocation', function (result) {
         console.log('Geosearch result:', result.location);
@@ -161,7 +156,7 @@ function initMap() {
             document.getElementById('longitude').value = '';
             document.getElementById('locationName').value = '';
         }
-        lastClickedLatLng = L.latLng(result.location.y, result.location.x); // Update last clicked for story sorting
+        lastClickedLatLng = L.latLng(result.location.y, result.location.x); 
         
         const storyListTitle = document.querySelector('#story-list-panel h3');
         if (storyListTitle) {
@@ -170,11 +165,9 @@ function initMap() {
                                  result.location.label;
             storyListTitle.textContent = `Stories near "${displayLabel}"`;
         }
-        filterStories(document.getElementById('story-search-bar').value); // Re-filter/sort stories
+        filterStories(document.getElementById('story-search-bar').value); 
     });
-    // --- END GEOSEARCH CONTROL ---
 
-    // Hide loading overlay (can be done more robustly with map.whenReady or layer load events if needed)
     const mapLoadingOverlay = document.querySelector('.map-loading-overlay');
     if (mapLoadingOverlay) {
         mapLoadingOverlay.style.display = 'none';
@@ -184,7 +177,7 @@ function initMap() {
 }
 
 
-async function placeMarkerAndGetLocationName(mapClickEvent) { // For new story submission
+async function placeMarkerAndGetLocationName(mapClickEvent) { 
     const latlng = mapClickEvent.latlng;
     if (currentMarker) currentMarker.remove();
     currentMarker = L.marker([latlng.lat, latlng.lng], { icon: creepyIcon }).addTo(map);
@@ -207,22 +200,20 @@ async function placeMarkerAndGetLocationName(mapClickEvent) { // For new story s
 }
 function displayStories(storiesToDisplay) {
     const storiesContainer = document.getElementById('stories-container');
-    storiesContainer.innerHTML = ''; // Clear previous stories in the list
+    storiesContainer.innerHTML = ''; 
 
-    // Clear existing story markers from the map before adding new ones
     for (const storyId in storyMarkers) {
         if (storyMarkers.hasOwnProperty(storyId)) {
-            storyMarkers[storyId].remove(); // Remove from map
+            storyMarkers[storyId].remove(); 
         }
     }
-    storyMarkers = {}; // Reset the markers store
+    storyMarkers = {}; 
 
     if (storiesToDisplay.length === 0) {
         storiesContainer.innerHTML = '<p>No stories found for this view/search.</p>';
         return;
     }
 
-    // Sort stories by proximity to lastClickedLatLng before displaying
     let sortedStories = [...storiesToDisplay];
     if (lastClickedLatLng) {
         sortedStories.sort((a, b) => {
@@ -233,7 +224,7 @@ function displayStories(storiesToDisplay) {
     }
 
     sortedStories.forEach(story => {
-        // Create and add story item to the list
+        
         const storyItem = document.createElement('div');
         storyItem.className = 'story-item';
         storyItem.setAttribute('data-story-id', story.id);
@@ -250,23 +241,21 @@ function displayStories(storiesToDisplay) {
 
         storyItem.appendChild(titleElement);
         storyItem.appendChild(locationElement);
-        storyItem.addEventListener('click', () => handleStoryItemClick(story)); // This already opens the modal
+        storyItem.addEventListener('click', () => handleStoryItemClick(story)); 
         storiesContainer.appendChild(storyItem);
 
-        // Create and add marker to the map for this story
         if (story.lat && story.lng) {
             const marker = L.marker([story.lat, story.lng], { icon: creepyIcon }).addTo(map);
             
-            storyMarkers[story.id] = marker; // Store the marker
+            storyMarkers[story.id] = marker; 
 
-            // When this marker is clicked on the map, open the story modal
             marker.on('click', () => {
                 console.log('Map marker clicked, opening modal for:', story.title);
                 openStoryModal(story);
 
                 if (map && story.lat && story.lng) {
                  map.setView([story.lat, story.lng], 13);
-                const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
+                const marker = storyMarkers[story.id]; 
                    if (marker) {
            
         }
@@ -279,15 +268,13 @@ function displayStories(storiesToDisplay) {
 function handleStoryItemClick(story) {
     console.log('Clicked story in list:', story.title);
 
-    // Open the modal with the story details
     openStoryModal(story);
 
-    // Pan map and open popup (optional, as modal now shows full story)
     if (map && story.lat && story.lng) {
         map.setView([story.lat, story.lng], 13);
-        const marker = storyMarkers[story.id]; // Assuming storyMarkers is populated
+        const marker = storyMarkers[story.id]; 
         if (marker) {
-            // marker.openPopup(); // You might not need this if modal is primary focus
+            
         }
     }
 }
@@ -317,19 +304,16 @@ function filterStories(searchTerm) {
     displayStories(storiesToDisplayInList);
 }
 
-function updateMapFocus(newReferencePoint = null, newTitle = null) { // Allow passing a new ref point and title
+function updateMapFocus(newReferencePoint = null, newTitle = null) { 
     const toggleButton = document.getElementById('toggle-world-button');
     const storyListTitle = document.querySelector('#story-list-panel h3');
 
-    // If a specific reference point is given (e.g., after posting a story), use it.
-    // Otherwise, use the current map center.
     if (newReferencePoint) {
         lastClickedLatLng = newReferencePoint;
     } else {
-        if (map) lastClickedLatLng = map.getCenter(); // Default to map center
+        if (map) lastClickedLatLng = map.getCenter(); 
     }
     
-    // Set the title
     if (newTitle) {
         if (storyListTitle) storyListTitle.textContent = newTitle;
     } else {
@@ -349,12 +333,12 @@ function updateMapFocus(newReferencePoint = null, newTitle = null) { // Allow pa
             story.lat >= PH_BOUNDS_COORDS.minLat && story.lat <= PH_BOUNDS_COORDS.maxLat &&
             story.lng >= PH_BOUNDS_COORDS.minLng && story.lng <= PH_BOUNDS_COORDS.maxLng
         );
-        displayStories(phStories); // displayStories will use the current lastClickedLatLng for sorting
-    } else { // World view is active
+        displayStories(phStories); 
+    } else { 
         if (map) map.setMaxBounds(null);
         if (toggleButton) toggleButton.textContent = 'Focus on Philippines';
         
-        displayStories(allStories); // displayStories will use the current lastClickedLatLng for sorting
+        displayStories(allStories); 
     }
 }
 function handleStorySubmit(event) {
@@ -389,11 +373,9 @@ function handleStorySubmit(event) {
 
     allStories.push(newStory);
     
-    // Define the reference point and title for after submission
     const newStoryLatLng = L.latLng(newStory.lat, newStory.lng);
     const postSubmitTitle = 'Stories Near Newly Posted';
 
-    // Call updateMapFocus, passing the new reference point and title
     updateMapFocus(newStoryLatLng, postSubmitTitle);
 
     document.getElementById('storyForm').reset();
@@ -408,25 +390,21 @@ document.addEventListener('DOMContentLoaded', function() {
     initMap(); 
 
     const togglePostFormButton = document.getElementById('toggle-post-form-button');
-    const formColumn = document.getElementById('form-column'); // Get the form column div
+    const formColumn = document.getElementById('form-column'); 
 
     if (togglePostFormButton && formColumn) {
         togglePostFormButton.addEventListener('click', () => {
             const isHidden = formColumn.classList.contains('hidden-form');
             if (isHidden) {
                 formColumn.classList.remove('hidden-form');
-                // Optional: If using transitions that need display:flex
-                // formColumn.style.display = 'flex'; // Ensure it's flex if hidden by display:none
+                
                 togglePostFormButton.textContent = 'Hide Submission Form';
-                // Optional: Add class to main-content-area if you need to adjust flex for map-column
-                // document.querySelector('.main-content-area').classList.add('form-visible');
+               
             } else {
                 formColumn.classList.add('hidden-form');
-                // Optional: If using transitions that need display:none and then flex
-                // formColumn.style.display = 'none';
+              
                 togglePostFormButton.textContent = 'Post New Story';
-                // Optional: Remove class from main-content-area
-                // document.querySelector('.main-content-area').classList.remove('form-visible');
+               
             }
         });
     }
