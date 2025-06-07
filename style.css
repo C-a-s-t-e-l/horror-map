@@ -597,7 +597,7 @@ html {
 }
 
 
-#story-modal {
+.modal { /* CHANGED from #story-modal */
     position: fixed;
     top: 0;
     left: 0;
@@ -614,12 +614,12 @@ html {
     padding: 20px;
 }
 
-#story-modal.modal-visible {
+.modal.modal-visible { /* CHANGED from #story-modal.modal-visible */
     opacity: 1;
     visibility: visible;
 }
 
-.modal-outer-frame {
+.modal-outer-frame { /* This section does NOT change */
     background-color: var(--modal-frame-bg);
     padding: 8px;
     border-radius: 8px;
@@ -631,7 +631,8 @@ html {
     transform: scale(0.9);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-#story-modal.modal-visible .modal-outer-frame {
+
+.modal.modal-visible .modal-outer-frame { /* CHANGED from #story-modal.modal-visible .modal-outer-frame */
     transform: scale(1);
 }
 
