@@ -59,14 +59,12 @@ app.get('/api/stories', async (req, res) => {
  }
 });
 
-// 2. Use the environment variable from process.env
-// The variable name must match the one in your .env file
+
 const dbURI = process.env.MONGODB_URI;
 
-// Check if the URI was loaded correctly
 if (!dbURI) {
     console.error('Error: MONGODB_URI is not defined. Make sure you have a .env file with the variable.');
-    process.exit(1); // Exit the application if the database URI is missing
+    process.exit(1); 
 }
 
 mongoose.connect(dbURI)

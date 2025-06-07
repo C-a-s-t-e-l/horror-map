@@ -120,13 +120,13 @@
         </div>
 
       <div id="story-modal" class="modal-hidden">
-        <div class="modal-outer-frame"> <!-- NEW: Outer frame for shadow/border -->
+        <div class="modal-outer-frame"> 
             <div class="modal-content">
                 <button id="modal-close-button" class="modal-close" aria-label="Close story details">
-                    <i class="fas fa-times"></i> <!-- Changed to Font Awesome icon -->
+                    <i class="fas fa-times"></i> 
                 </button>
                 <div class="modal-header-creepy">
-                    <!-- Optional: could add a small thematic icon/sigil here -->
+                   
                     <h2 id="modal-story-title">Story Title Here</h2>
                     <p id="modal-story-location"><em><i class="fas fa-map-pin"></i> Location: Location Name Here</em></p>
                 </div>
@@ -157,17 +157,14 @@
 
              <script src="https://unpkg.com/leaflet-geosearch@3.11.0/dist/geosearch.umd.js"></script>
     
-    <!-- Your Scripts -->
-    <!-- Ensure stories.js defines functions to populate #stories-container and the modal -->
-    <!-- Ensure client.js initializes the map, handles form submissions, story fetching/display, and modal logic -->
+
     <script src="stories.js"></script> 
     <script src="client.js"></script>
 
     <script>
-        // Dynamic Year for Footer
+      
         document.getElementById('currentYearMap').textContent = new Date().getFullYear();
 
-        // Simple Nav Toggle for Mobile
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
         if (navToggle && navMenu) {
@@ -178,13 +175,6 @@
             });
         }
 
-        // Optional: Hide map loading overlay once Leaflet map is initialized
-        // This would typically be done in your client.js after L.map(...)
-        // For example:
-        // map.on('load', function() {
-        //    document.querySelector('.map-loading-overlay').style.display = 'none';
-        // });
-        // If your map takes a while, this provides feedback. If it's fast, you might not need it.
     </script>
 </body>
 </html>
