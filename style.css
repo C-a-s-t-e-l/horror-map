@@ -1,8 +1,7 @@
-/* map-style.css */
 :root {
     --primary-bg: #1a1a1a;
-    --secondary-bg: #2b2b2b; /* Slightly lighter for panels */
-    --tertiary-bg: #101010; /* Even darker for navbar/footer or deep elements */
+    --secondary-bg: #2b2b2b;
+    --tertiary-bg: #101010;
     --text-color: #c5c5c5;
     --text-muted: #888888;
     --accent-color: #9c1a1a;
@@ -15,24 +14,23 @@
     --input-border: #444;
     --input-text: #ddd;
     --border-color: #3a3a3a;
-      --paper-bg: #ede8d9; /* Aged paper color */
-    --ink-color: #3a302A; /* Dark brownish ink */
-    --stamp-color: #8c2323; /* Faded red for stamps */
-    --modal-frame-bg: #1f1f1f; /* Darker frame for modal */
+      --paper-bg: #ede8d9;
+    --ink-color: #3a302A;
+    --stamp-color: #8c2323;
+    --modal-frame-bg: #1f1f1f;
 }
 
 html {
-    font-size: 100%; /* Optional: Good base for rem units */
-    -webkit-text-size-adjust: 100%; /* Optional: Prevents iOS text scaling issues */
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
     margin: 0;
     padding: 0;
-    border: 0; /* Ensure no default border */
-    box-sizing: border-box; /* Critical */
+    border: 0;
+    box-sizing: border-box;
     width: 100%;
-    overflow-x: hidden; /* Primary guard against horizontal scroll */
+    overflow-x: hidden;
 }
 
-/* Basic Reset & Body Styles */
 *, *::before, *::after {
     box-sizing: inherit;
     margin: 0;
@@ -40,41 +38,40 @@ html {
 }
 
 .leaflet-control-geosearch form {
-    border: 1px solid #555; /* Darker border */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); /* Subtle red glow */
+    border: 1px solid #555;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
-.leaflet-control-geosearch form input.glass { /* The search input */
-    background-color: #222; /* Dark background */
-    color: #ddd; /* Light text */
+.leaflet-control-geosearch form input.glass {
+    background-color: #222;
+    color: #ddd;
     border: none;
-    font-family: 'Special Elite', cursive; /* Match your theme font */
+    font-family: 'Special Elite', cursive;
 }
 .leaflet-control-geosearch form input.glass::placeholder {
     color: #777;
 }
 
-.leaflet-control-geosearch .results { /* The dropdown results list */
+.leaflet-control-geosearch .results {
     background-color: #1a1a1a;
     border: 1px solid #555;
 }
 
-.leaflet-control-geosearch .results > * { /* Individual result items */
+.leaflet-control-geosearch .results > * {
     color: #ccc;
     border-bottom: 1px solid #333;
-    font-family: 'Merriweather', serif; /* Or Special Elite */
+    font-family: 'Merriweather', serif;
 }
 
 .leaflet-control-geosearch .results > *:hover,
 .leaflet-control-geosearch .results > *.active {
-    background-color: #330000; /* Dark red hover/active */
+    background-color: #330000;
     color: #fff;
 }
 
-/* Adjust the search icon if needed */
 .leaflet-control-geosearch a.glass-button {
-    background-image: url('your-creepy-search-icon.svg'); 
-     background-color: #333; 
+    background-image: url('your-creepy-search-icon.svg');
+     background-color: #333;
      border-radius: 0;
 }
 .leaflet-control-geosearch a.glass-button:hover {
@@ -83,7 +80,7 @@ html {
 
 
 
-.map-page-body { /* Changed from just 'body' to avoid conflict if global CSS is used */
+.map-page-body {
     font-family: var(--font-body);
     background-color: var(--primary-bg);
     color: var(--text-color);
@@ -92,15 +89,11 @@ html {
     background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'),
                       radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
     background-attachment: fixed;
-    padding-top: 70px; /* Space for fixed navbar */
+    padding-top: 70px;
     width: 100%;
     overflow-x: hidden;
-    min-height: 100vh; /* Good for footer placement */
+    min-height: 100vh;
     margin: 0;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 
 .map-page-body::before {
@@ -112,10 +105,9 @@ html {
     height: 100%;
     box-shadow: inset 0 0 120px rgba(0,0,0,0.6);
     pointer-events: none;
-    z-index: 999; /* Below navbar, above content */
+    z-index: 999;
 }
 
-/* Navigation Bar */
 .eerie-navbar {
     background-color: var(--tertiary-bg);
     padding: 10px 20px;
@@ -189,7 +181,7 @@ html {
 }
 
 .nav-toggle {
-    display: none; /* Hidden by default, shown on mobile */
+    display: none;
     background: none;
     border: none;
     color: var(--text-color);
@@ -198,10 +190,9 @@ html {
 }
 
 .leaflet-top{
-    z-index: 999 !important /* Ensure Leaflet controls are above other elements */
+    z-index: 999 !important
 }
 
-/* Map Page Header */
 .map-page-header {
     text-align: center;
     padding: 30px 20px 40px;
@@ -223,36 +214,34 @@ html {
     color: var(--text-muted);
 }
 
-/* Main Container */
 .horrorMapContainer {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px 40px; /* No top padding, handled by body */
+    padding: 0 20px 40px;
 }
 
-/* Layout for Map and Form */
 .main-content-area {
     display: flex;
-    flex-wrap: wrap; /* Allow form to wrap below map on small screens */
+    flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 40px;
 }
 
 #map-column {
-    flex: 3; /* Map takes more space */
-    min-width: 300px; /* Ensure map has a minimum width */
+    flex: 3;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
 }
 
 #map {
     width: 100%;
-    height: 500px; /* Adjust as needed */
-    background-color: #000; /* Placeholder while map loads */
+    height: 500px;
+    background-color: #000;
     border: 2px solid var(--border-color);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.3);
-    position: relative; /* For loading overlay */
+    position: relative;
 }
 
 .map-loading-overlay {
@@ -263,14 +252,13 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 10; /* Above map tiles, below controls if any are on map */
+    z-index: 10;
     color: var(--text-color);
     font-family: var(--font-narrative);
 }
 .map-loading-overlay p { margin-bottom: 15px; }
 .map-loading-overlay .fa-spinner { font-size: 2rem; color: var(--accent-color); }
 
-/* Map Controls */
 .map-controls {
     margin-top: 20px;
     display: flex;
@@ -310,9 +298,8 @@ html {
     background-color: var(--accent-hover);
 }
 
-/* Story Form */
 #form-column {
-    flex: 2; /* Form takes less space than map */
+    flex: 2;
     min-width: 300px;
     background-color: rgba(0,0,0,0.2);
     padding: 25px;
@@ -393,7 +380,6 @@ html {
     font-size: 1.1rem;
 }
 
-/* Section Divider */
 .section-divider-map {
     text-align: center;
     margin: 50px 0;
@@ -403,11 +389,10 @@ html {
 }
 .section-divider-map i {
     padding: 0 20px;
-    transform: rotate(5deg); /* Slight tilt */
+    transform: rotate(5deg);
 }
 
 
-/* Story List Panel (styles for search and loading text, panel itself is in "Improvements") */
 .search-wrapper {
     position: relative;
     margin-bottom: 25px;
@@ -421,10 +406,10 @@ html {
 }
 #story-search-bar {
     width: 100%;
-    padding: 12px 15px 12px 40px; /* Space for icon */
+    padding: 12px 15px 12px 40px;
     background-color: var(--input-bg);
     border: 1px solid var(--input-border);
-    border-radius: 20px; /* Pill shape */
+    border-radius: 20px;
     color: var(--input-text);
     font-family: var(--font-body);
     font-size: 1rem;
@@ -440,10 +425,9 @@ html {
     text-align: center;
     color: var(--text-muted);
     padding: 20px;
-    grid-column: 1 / -1; /* Make it span all columns if inside the grid */
+    grid-column: 1 / -1;
 }
 
-/* Footer */
 .map-page-footer {
     text-align: center;
     padding: 25px 20px;
@@ -454,10 +438,8 @@ html {
     background-color: var(--tertiary-bg);
 }
 
-/* --- Story List Panel Improvements --- */
 #story-list-panel {
-    background-color: rgba(0,0,0,0.15); /* Existing panel bg */
-    /* Added a bit more horizontal padding to the panel */
+    background-color: rgba(0,0,0,0.15);
     border-radius: 5px;
     border: 1px solid var(--border-color);
     margin-top: 30px;
@@ -465,13 +447,13 @@ html {
     padding: 25px 20px;
 }
 
-#story-list-panel h3 { /* "STORIES IN THE PHILIPPINES" title */
+#story-list-panel h3 {
     font-family: var(--font-creepy);
     color: var(--accent-color);
-    font-size: 2.3rem; /* Slightly increased */
+    font-size: 2.3rem;
     text-align: center;
     margin-bottom: 25px;
-    text-shadow: 1px 1px 0 #000, 0 0 5px var(--accent-hover); /* Adjusted shadow */
+    text-shadow: 1px 1px 0 #000, 0 0 5px var(--accent-hover);
 }
 #story-list-panel h3 i {
     margin-right: 10px;
@@ -480,18 +462,18 @@ html {
 
 #stories-container {
     max-height: 450px;
-    overflow-y: auto; /* This will allow vertical scrolling for the content within the grid */
+    overflow-y: auto;
     overflow-x: hidden;
-    padding: 10px; /* Consistent padding around the container */
+    padding: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
-   
 
- 
+
+
 }
 
-.story-item { /* THIS IS THE KEY CLASS FOR EACH STORY ENTRY */
+.story-item {
     display: flex;
     flex-direction: column;
     background-color: var(--secondary-bg);
@@ -506,7 +488,7 @@ html {
                 box-shadow 0.3s ease;
     position: relative;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    
+
 }
 
 .story-item:hover {
@@ -517,35 +499,34 @@ html {
     box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 8px var(--accent-hover);
 }
 
-/* Individual Story Item Snippet - "Case File" Style */
 .story-item-snippet {
-    background-color: var(--paper-bg); /*  KEY CHANGE: Light paper background */
-    background-image: url('https://www.transparenttextures.com/patterns/old-paper.png'); /* Or your preferred paper texture */
-    background-blend-mode: multiply; /* Works well with a light base */
-    color: var(--ink-color);         /*  KEY CHANGE: Dark ink for text on light paper */
+    background-color: var(--paper-bg);
+    background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+    background-blend-mode: multiply;
+    color: var(--ink-color);
     padding: 15px 20px;
     border-radius: 3px;
-    border: 1px solid #b4a898; /* A border color suiting aged paper */
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.25), /* Default shadow */
-                inset 0 0 3px rgba(0,0,0,0.05); /* Subtle inner depth */
+    border: 1px solid #b4a898;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.25),
+                inset 0 0 3px rgba(0,0,0,0.05);
     cursor: pointer;
     transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
     position: relative;
-    overflow: hidden; /* To contain pseudo-elements */
-    min-height: 110px; /* Ensure items have some substance */
+    overflow: hidden;
+    min-height: 110px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to top */
+    justify-content: flex-start;
 }
 
-.story-item-snippet::before { /* "Staple" or "Clip" effect */
+.story-item-snippet::before {
     content: '';
     position: absolute;
     top: 10px;
-    left: -5px; /* Adjusted for better visual */
+    left: -5px;
     width: 10px;
     height: 30px;
-    background-color: #6a6a6a; /* Slightly darker staple */
+    background-color: #6a6a6a;
     border: 1px solid #404040;
     transform: rotate(10deg);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
@@ -568,38 +549,38 @@ html {
 
 
 .story-item-snippet:hover {
-    transform: translateY(-5px) scale(1.025); /* Enhanced lift and scale */
-    border-color: var(--accent-color);      /* Clear accent border on hover */
-    box-shadow: 4px 4px 12px rgba(0,0,0,0.3),  /* Stronger outer shadow */
-                0 0 10px var(--accent-hover),   /* Accent glow */
-                inset 0 0 5px rgba(0,0,0,0.1); /* Slightly deeper inner shadow */
+    transform: translateY(-5px) scale(1.025);
+    border-color: var(--accent-color);
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.3),
+                0 0 10px var(--accent-hover),
+                inset 0 0 5px rgba(0,0,0,0.1);
 }
 
 
-.story-item-snippet h4 { /* Title in snippet */
+.story-item-snippet h4 {
     font-family: var(--font-narrative);
-    color: var(--ink-color); /* Ensured dark ink color */
-    font-size: 1.2rem;       /* Good readable size */
+    color: var(--ink-color);
+    font-size: 1.2rem;
     margin-bottom: 8px;
     line-height: 1.3;
-    padding-left: 10px; /* Ensure title is not under the staple */
+    padding-left: 10px;
 }
 
 .story-item-snippet p.story-item-location,
 .story-item-snippet p.story-item-preview {
-    font-size: 0.88rem;      /* Slightly smaller for hierarchy */
-    color: #5c5248;          /* Muted ink color */
+    font-size: 0.88rem;
+    color: #5c5248;
     font-family: var(--font-body);
     margin-bottom: 5px;
     line-height: 1.4;
-    padding-left: 10px; /* Ensure text is not under the staple */
+    padding-left: 10px;
 }
 .story-item-snippet p.story-item-location i {
     margin-right: 5px;
-    color: var(--stamp-color); /* Consistent stamp color for icons */
+    color: var(--stamp-color);
 }
 
-.story-item-snippet .read-more-indicator { /* Hidden by default, shown on hover */
+.story-item-snippet .read-more-indicator {
     position: absolute;
     bottom: 10px;
     right: 15px;
@@ -611,19 +592,18 @@ html {
 }
 .story-item-snippet:hover .read-more-indicator {
     opacity: 1;
-    transform: translateX(0) scale(1); /* Smoothly animate into view */
-    color: var(--highlight-color); /* Change color on hover for more feedback */
+    transform: translateX(0) scale(1);
+    color: var(--highlight-color);
 }
 
 
-/* --- Story Modal Redesign --- */
 #story-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.92); /* Even darker overlay */
+    background-color: rgba(0,0,0,0.92);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -631,7 +611,7 @@ html {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
-    padding: 20px; /* Padding for smaller screens */
+    padding: 20px;
 }
 
 #story-modal.modal-visible {
@@ -639,48 +619,47 @@ html {
     visibility: visible;
 }
 
-.modal-outer-frame { /* New wrapper for overall modal appearance */
-    background-color: var(--modal-frame-bg); /* Dark frame */
-    padding: 8px; /* Thickness of the "frame" */
-    border-radius: 8px; /* Slightly rounded frame */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 0 2px rgba(0,0,0,0.5); /* Deep shadow + hard edge */
+.modal-outer-frame {
+    background-color: var(--modal-frame-bg);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 0 2px rgba(0,0,0,0.5);
     width: 95%;
-    max-width: 800px; /* Max width of modal */
+    max-width: 800px;
     max-height: 90vh;
-    display: flex; /* To make modal-content fill it */
+    display: flex;
     transform: scale(0.9);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy entry */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 #story-modal.modal-visible .modal-outer-frame {
     transform: scale(1);
 }
 
-.modal-content { /* This is now the "inner document" area */
-    background-color: var(--paper-bg); /* Aged paper background */
-    /* More distinct paper texture for modal */
+.modal-content {
+    background-color: var(--paper-bg);
     background-image: url('https://www.transparenttextures.com/patterns/notebook-dark.png');
     background-blend-mode: overlay;
     background-size: auto;
-    color: var(--ink-color); /* Dark ink color for text */
-    border-radius: 4px; /* Inner document slightly rounded */
+    color: var(--ink-color);
+    border-radius: 4px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    position: relative; /* For close button and other absolute elements */
-    overflow: hidden; /* Clip inner content, scrolling handled by modal-body-scrollable */
+    position: relative;
+    overflow: hidden;
 }
 
 .modal-close {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: var(--stamp-color); /* "Wax seal" like button */
+    background: var(--stamp-color);
     border: 2px solid #5a1818;
     color: var(--paper-bg);
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    font-size: 1.2rem; /* Adjust icon size */
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     display: flex;
@@ -698,27 +677,15 @@ html {
 .modal-header-creepy {
     padding: 25px 30px 15px;
     text-align: center;
-    border-bottom: 2px dashed #bcaea0; /* Dashed line in paper color */
+    border-bottom: 2px dashed #bcaea0;
     position: relative;
 }
-/* Optional: Corner flourishes for the header
-.modal-header-creepy::before, .modal-header-creepy::after {
-    content: '';
-    position: absolute;
-    width: 20px; height: 20px;
-    background-image: url('your-corner-flourish.svg');
-    background-size: contain;
-    opacity: 0.5;
-}
-.modal-header-creepy::before { top: 5px; left: 5px; }
-.modal-header-creepy::after { top: 5px; right: 5px; transform: scaleX(-1); }
-*/
 
 
 #modal-story-title {
     font-family: var(--font-creepy);
-    color: var(--ink-color); /* Darker, more like printed title */
-    font-size: 2.8rem; /* Slightly larger */
+    color: var(--ink-color);
+    font-size: 2.8rem;
     margin-bottom: 8px;
     line-height: 1.2;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
@@ -726,7 +693,7 @@ html {
 
 #modal-story-location {
     font-family: var(--font-narrative);
-    color: #716558; /* Faded ink for location */
+    color: #716558;
     font-size: 1rem;
     margin-bottom: 0;
 }
@@ -735,25 +702,24 @@ html {
     color: var(--stamp-color);
 }
 
-.modal-body-scrollable { /* NEW: Handles the scrolling part */
-    flex-grow: 1; /* Takes available space */
+.modal-body-scrollable {
+    flex-grow: 1;
     overflow-y: auto;
-    padding: 0 10px; /* Padding around the inner document */
+    padding: 0 10px;
 }
 
-.modal-story-document { /* NEW: inner document visual */
-    padding: 20px 25px; /* Padding inside the "document" */
+.modal-story-document {
+    padding: 20px 25px;
 }
 
-.story-text-container { /* Actual story text */
-    line-height: 1.9; /* Increased line height for readability on "paper" */
-    font-size: 1rem; /* Standard reading size */
+.story-text-container {
+    line-height: 1.9;
+    font-size: 1rem;
     color: var(--ink-color);
     text-align: justify;
-    /* Optional: First letter drop cap */
 }
 .story-text-container p:first-of-type::first-letter {
-    font-family: var(--font-creepy); /* Or a more ornate serif */
+    font-family: var(--font-creepy);
     font-size: 3em;
     float: left;
     line-height: 0.8em;
@@ -771,8 +737,8 @@ html {
     text-align: center;
     font-family: var(--font-narrative);
     font-size: 0.9rem;
-    color: #8a7d6f; /* Faded ink for footer */
-    border-top: 1px solid #d4c8b8; /* Lighter paper-colored line */
+    color: #8a7d6f;
+    border-top: 1px solid #d4c8b8;
 }
 .modal-footer-creepy i {
     margin-right: 8px;
@@ -784,11 +750,11 @@ html {
     width: 8px;
 }
 .modal-body-scrollable::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.1); 
+    background: rgba(0,0,0,0.1);
     border-radius: 4px;
 }
 .modal-body-scrollable::-webkit-scrollbar-thumb {
-    background: var(--accent-hover); 
+    background: var(--accent-hover);
     border-radius: 4px;
 }
 .modal-body-scrollable::-webkit-scrollbar-thumb:hover {
@@ -800,36 +766,28 @@ html {
   scrollbar-color: var(--accent-hover) rgba(0,0,0,0.1);
 }
 
-
-
-
-
-/* Responsive Adjustments */
 @media (max-width: 992px) {
-    /* .main-content-area {
-        flex-direction: column;
-    } */
     #map-column, #form-column {
-        flex: 1 1 100%; /* Take full width when stacked */
+        flex: 1 1 100%;
     }
 }
 
 @media (max-width: 768px) {
     .map-page-body {
-        padding-top: 60px; /* Adjust for smaller navbar if height changes */
+        padding-top: 60px;
     }
     .nav-menu {
-        display: none; /* Hide menu by default */
+        display: none;
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 100%; /* Position below navbar */
+        top: 100%;
         left: 0;
         background-color: var(--tertiary-bg);
         border-top: 1px solid var(--border-color);
     }
     .nav-menu.active {
-        display: flex; /* Show when toggled */
+        display: flex;
     }
     .nav-menu li {
         margin: 0;
@@ -844,7 +802,7 @@ html {
         border-bottom: none;
     }
     .nav-toggle {
-        display: block; /* Show hamburger icon */
+        display: block;
     }
 
     .map-page-header h1 { font-size: 2.8rem; }
@@ -852,37 +810,37 @@ html {
     #story-list-panel h3 { font-size: 2rem; }
     #modal-story-title { font-size: 2rem; }
 
-    .modal-content { 
-        padding: 20px; 
+    .modal-content {
+        padding: 20px;
     }
         .modal-outer-frame {
-        padding: 5px; 
+        padding: 5px;
         max-width: 90%;
     }
     .modal-header-creepy {
-        padding: 20px 20px 10px; /* Reduce padding */
+        padding: 20px 20px 10px;
     }
     #modal-story-title {
-        font-size: 1.9rem; /* Reduce title font size */
+        font-size: 1.9rem;
     }
     #modal-story-location {
-        font-size: 0.9rem; /* Reduce location font size */
+        font-size: 0.9rem;
     }
     .modal-story-document {
-        padding: 15px 20px; /* Reduce padding inside the document */
+        padding: 15px 20px;
     }
     .story-text-container {
-        font-size: 0.95rem; /* Slightly reduce body text */
-        line-height: 1.8; /* Maintain readability */
+        font-size: 0.95rem;
+        line-height: 1.8;
     }
     .story-text-container p:first-of-type::first-letter {
-        font-size: 2.5em; /* Scale down drop cap */
+        font-size: 2.5em;
         line-height: 0.8em;
         margin-top: 0.05em;
     }
     .modal-footer-creepy {
-        padding: 10px 20px; /* Reduce padding */
-        font-size: 0.85rem; /* Reduce footer font size */
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
 
 }
@@ -891,7 +849,7 @@ html {
 
 
 .story-item{
-    font-size: .7rem; /* Reduce font size for very small screens */
+    font-size: .7rem;
 }
 
     .map-page-header h1 { font-size: 2.2rem; }
@@ -903,55 +861,48 @@ html {
         font-size: 0.9rem;
     }
         #story-modal {
-        padding: 10px; /* Reduce overall modal padding for very small screens */
+        padding: 10px;
     }
     .modal-outer-frame {
-        padding: 4px; /* Further reduce frame thickness */
+        padding: 4px;
         max-width: 100%;
     }
     .modal-close {
-        width: 30px; /* Smaller close button */
+        width: 30px;
         height: 30px;
-        font-size: 1rem; /* Smaller icon */
+        font-size: 1rem;
         top: 10px;
         right: 10px;
     }
     .modal-header-creepy {
-        padding: 15px 15px 10px; /* Further reduce padding */
+        padding: 15px 15px 10px;
     }
     #modal-story-title {
-        font-size: 1.6rem; /* Further reduce title font size */
+        font-size: 1.6rem;
         line-height: 1.3;
     }
     #modal-story-location {
-        font-size: 0.8rem; /* Further reduce location font size */
+        font-size: 0.8rem;
     }
     .modal-body-scrollable {
-        padding: 0 5px; /* Reduce side padding for scrollable area */
+        padding: 0 5px;
     }
     .modal-story-document {
-        padding: 10px 15px; /* Further reduce padding inside the document */
+        padding: 10px 15px;
     }
     .story-text-container {
-        font-size: 0.7rem; /* Further reduce body text */
+        font-size: 0.7rem;
         line-height: 1.7;
     }
     .story-text-container p:first-of-type::first-letter {
-        font-size: 2.2em; /* Further scale down drop cap */
-        /* Consider removing float if it causes issues on very narrow screens:
-        float: none;
-        font-size: 1.5em;
-        margin-right: 0.05em;
-        display: inline-block; // or initial
-        */
+        font-size: 2.2em;
     }
     .modal-footer-creepy {
-        padding: 8px 15px; /* Further reduce padding */
-        font-size: 0.75rem; /* Further reduce footer font size */
+        padding: 8px 15px;
+        font-size: 0.75rem;
     }
 }
 
-/* Custom Scrollbar for Webkit Browsers */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -966,7 +917,6 @@ html {
     background: var(--accent-color);
 }
 
-/* For Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--accent-hover) var(--primary-bg);
