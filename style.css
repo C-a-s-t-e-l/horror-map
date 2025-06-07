@@ -614,12 +614,12 @@ html {
     padding: 20px;
 }
 
-.modal.modal-visible { /* CHANGED from #story-modal.modal-visible */
+.modal.modal-visible { 
     opacity: 1;
     visibility: visible;
 }
 
-.modal-outer-frame { /* This section does NOT change */
+.modal-outer-frame { 
     background-color: var(--modal-frame-bg);
     padding: 8px;
     border-radius: 8px;
