@@ -139,8 +139,8 @@
     max-width: 800px;
     width: 100%;
     max-height: 90vh;
-    background-color: #F5F1E9;
-    border: 10px solid #2a2a2a;
+    /* background-color: #F5F1E9;
+    border: 10px solid #2a2a2a; */
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
     border-radius: 4px;
     display: flex;

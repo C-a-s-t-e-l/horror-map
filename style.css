@@ -29,6 +29,7 @@ html {
     box-sizing: border-box;
     width: 100%;
     overflow-x: hidden;
+    cursor: url('assets/Chained\ Ghost\ Hands..cur') 16 16, default;
 }
 
 *, *::before, *::after {
@@ -80,6 +81,7 @@ html {
 
 
 
+
 .map-page-body {
     font-family: var(--font-body);
     background-color: var(--primary-bg);
@@ -94,6 +96,8 @@ html {
     overflow-x: hidden;
     min-height: 100vh;
     margin: 0;
+
+    
 }
 
 .map-page-body::before {
@@ -497,6 +501,7 @@ html {
     border-left-color: var(--highlight-color);
     transform: translateX(5px) scale(1.01);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 8px var(--accent-hover);
+    cursor: url('assets/Chained\ Ghost\ Hands-pointer..cur'), pointer;
 }
 
 .story-item-snippet {
@@ -638,8 +643,9 @@ html {
 
 .modal-content {
     background-color: var(--paper-bg);
-    background-image: url('https://www.transparenttextures.com/patterns/notebook-dark.png');
-    background-blend-mode: overlay;
+    background-image: url('https://texturelabs.org/wp-content/uploads/Texturelabs_Paper_329S.jpg');
+    /* background-image: url('https://www.transparenttextures.com/patterns/notebook-dark.png'); */
+    /* background-blend-mode: overlay; */
     background-size: auto;
     color: var(--ink-color);
     border-radius: 4px;
@@ -765,6 +771,24 @@ html {
 .modal-body-scrollable {
   scrollbar-width: thin;
   scrollbar-color: var(--accent-hover) rgba(0,0,0,0.1);
+}
+
+.leaflet-grab{
+  cursor: url('assets/Chained\ Ghost\ Hands..cur') 4 4, grab;
+}
+
+.leaflet-dragging .leaflet-grab {
+  cursor: url('assets/Chained\ Ghost\ Hands--pointer--SweezyCursors..cur') 4 4, grabbing;
+}
+
+a[href], 
+button, textarea,
+input[type="submit"], 
+input[type="button"],
+input[type="text"],
+[role="button"],
+summary {
+  cursor: url('/horror-map/assets/Chained\ Ghost\ Hands--pointer--SweezyCursors..cur') 2 2, pointer;
 }
 
 @media (max-width: 992px) {
