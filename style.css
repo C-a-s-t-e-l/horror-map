@@ -29,8 +29,8 @@ html {
     box-sizing: border-box;
     width: 100%;
     overflow-x: hidden;
-    cursor: url('assets/Chained\ Ghost\ Hands..cur') 16 16, default;
-}
+    /* cursor: url('assets/Chained\ Ghost\ Hands..cur') 16 16, default; */
+} 
 
 *, *::before, *::after {
     box-sizing: inherit;
@@ -501,7 +501,7 @@ html {
     border-left-color: var(--highlight-color);
     transform: translateX(5px) scale(1.01);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 8px var(--accent-hover);
-    cursor: url('assets/Chained\ Ghost\ Hands-pointer..cur'), pointer;
+    /* cursor: url('assets/Chained\ Ghost\ Hands-pointer..cur'), pointer; */
 }
 
 .story-item-snippet {
@@ -744,7 +744,7 @@ html {
     text-align: center;
     font-family: var(--font-narrative);
     font-size: 0.9rem;
-    color: #8a7d6f;
+    /* color: #8a7d6f; */
     border-top: 1px solid #d4c8b8;
 }
 .modal-footer-creepy i {
@@ -774,11 +774,11 @@ html {
 }
 
 .leaflet-grab{
-  cursor: url('assets/Chained\ Ghost\ Hands..cur') 4 4, grab;
+  /* cursor: url('assets/Chained\ Ghost\ Hands..cur') 4 4, grab; */
 }
 
 .leaflet-dragging .leaflet-grab {
-  cursor: url('assets/Chained\ Ghost\ Hands--pointer--SweezyCursors..cur') 4 4, grabbing;
+  /* cursor: url('assets/Chained\ Ghost\ Hands--pointer--SweezyCursors..cur') 4 4, grabbing; */
 }
 
 a[href], 
@@ -788,7 +788,7 @@ input[type="button"],
 input[type="text"],
 [role="button"],
 summary {
-  cursor: url('/horror-map/assets/Chained\ Ghost\ Hands--pointer--SweezyCursors..cur') 2 2, pointer;
+  /* cursor: url('/horror-map/assets/Chained\ Ghost\ Hands--pointer--SweezyCursors..cur') 2 2, pointer; */
 }
 
 @media (max-width: 992px) {
