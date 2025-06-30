@@ -1,79 +1,44 @@
-
 require('dotenv').config();
-
 const express = require('express');
-const mongoose = require('mongoose');
-const Story = require('./models/story');
+
 
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.get('/', (req, res)=> {
-    res.send('Hello from the horror map server!');
+app.get('/', (req, res) => {
+    res.send('Hello from the horror map server! The server is running.');
 });
 
 app.post('/api/stories', async (req, res) => {
-    console.log("Received data for new story:", req.body);
+    console.log("Received data for new story (database is disabled):", req.body);
+    
+    const { title, fullStory, locationName, lat, lng } = req.body;
+    if (!title || !fullStory || !locationName || lat === undefined || lng === undefined) {
+        return res.status(400).json({ message: "Missing required fields." });
+    }
+
+    res.status(201).json({
+        message: 'Story submission received! (Database is temporarily disabled)',
+        story: req.body 
+    });
+});
+
+
+app.get('/api/stories', async (req, res) => {
+    console.log("Fetching stories... (database is disabled, returning empty array)");
     try {
-        const { title, fullStory, locationName, lat, lng, snippet } = req.body;
-
-        if (!title || !fullStory || !locationName || lat === undefined || lng === undefined) {
-            return res.status(400).json({ message: "Missing required fields (title, fullStory, locationName, lat, lng)." });
-        }
-
-        const newStory = new Story({
-            title: title,
-            fullStory: fullStory,
-            locationName: locationName,
-            latitude: lat,
-            longitude: lng,
-            snippet: snippet || (fullStory ? fullStory.substring(0, 100) + (fullStory.length > 100 ? '...' : '') : '')
-        });
-
-        const savedStory = await newStory.save();
-        res.status(201).json({
-            message: 'Story created successfully!',
-            story: savedStory
-        });
-
-    } catch (error) {
-        console.error('Error saving story to database:', error);
-        res.status(500).json({
-            message: 'Failed to create story.',
-            error: error.message
-        });
+        const stories = []; 
+        res.status(200).json(stories);
+    } catch(error) {
+        console.error('An unexpected error occurred:', error);
+        res.status(500).json({ message: 'An error occurred on the server.' });
     }
 });
 
-app.get('/api/stories', async (req, res) => {
- try {
-    const stories = await Story.find({});
-    console.log("Stories fetched:", stories.length);
-    res.status(200).json(stories);
 
- } catch(error) {
-    console.error('Error fetching stories:', error);
-    res.status(500).json({ message: 'Failed to fetch stories.' });
- }
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
-
-
-const dbURI = process.env.MONGODB_URI;
-
-if (!dbURI) {
-    console.error('Error: MONGODB_URI is not defined. Make sure you have a .env file with the variable.');
-    process.exit(1); 
-}
-
-mongoose.connect(dbURI)
-    .then((result) => {
-        console.log('Connected to MongoDB Atlas!');
-        app.listen(PORT, () => {
-            console.log(`Server is running on http://localhost:${PORT}`);
-        });
-    })
-    .catch((err) => {
-        console.error('Error connecting to MongoDB:', err);
-    });
